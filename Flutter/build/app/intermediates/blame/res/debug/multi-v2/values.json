@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Playdata\\Desktop\\Final_Project\\Flutter\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\Playdata\\Documents\\GitHub\\flutter_project_\\Flutter\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Playdata\\.gradle\\caches\\transforms-2\\files-2.1\\4f9b1a4f9bd92db774f5c7f885c8aa06\\ucrop-2.2.7\\res\\values\\values.xml",
@@ -220,22 +220,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Playdata\\Desktop\\Final_Project\\Flutter\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "C:\\Users\\Playdata\\Documents\\GitHub\\flutter_project_\\Flutter\\build\\app\\generated\\res\\google-services\\debug\\values\\values.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "57",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "353"
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,199,281,385,494,614,724",
+                        "endColumns": "143,81,103,108,119,109,86",
+                        "endOffsets": "194,276,380,489,609,719,806"
                     },
                     "to": {
-                        "startLines": "1490",
-                        "startColumns": "4",
-                        "startOffsets": "98448",
-                        "endLines": "1494",
-                        "endColumns": "12",
-                        "endOffsets": "98740"
+                        "startLines": "384,385,386,387,388,389,390",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "26328,26472,26554,26658,26767,26887,26997",
+                        "endColumns": "143,81,103,108,119,109,86",
+                        "endOffsets": "26467,26549,26653,26762,26882,26992,27079"
                     }
                 },
                 {
@@ -258,20 +256,22 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Playdata\\Desktop\\Final_Project\\Flutter\\build\\app\\generated\\res\\google-services\\debug\\values\\values.xml",
+                    "source": "C:\\Users\\Playdata\\Documents\\GitHub\\flutter_project_\\Flutter\\android\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "55,199,281,385,494,614,724",
-                        "endColumns": "143,81,103,108,119,109,86",
-                        "endOffsets": "194,276,380,489,609,719,806"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "57",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "353"
                     },
                     "to": {
-                        "startLines": "384,385,386,387,388,389,390",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "26328,26472,26554,26658,26767,26887,26997",
-                        "endColumns": "143,81,103,108,119,109,86",
-                        "endOffsets": "26467,26549,26653,26762,26882,26992,27079"
+                        "startLines": "1490",
+                        "startColumns": "4",
+                        "startOffsets": "98448",
+                        "endLines": "1494",
+                        "endColumns": "12",
+                        "endOffsets": "98740"
                     }
                 }
             ]

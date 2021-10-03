@@ -12,14 +12,14 @@
 12         to allow setting breakpoints, to provide hot reload, etc.
 13    -->
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->C:\Users\Playdata\Desktop\Final_Project\Flutter\android\app\src\debug\AndroidManifest.xml:6:5-66
-14-->C:\Users\Playdata\Desktop\Final_Project\Flutter\android\app\src\debug\AndroidManifest.xml:6:22-64
+14-->C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\android\app\src\debug\AndroidManifest.xml:6:5-66
+14-->C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\android\app\src\debug\AndroidManifest.xml:6:22-64
 15    <uses-permission android:name="android.permission.CAMERA" />
-15-->[:camera] C:\Users\Playdata\Desktop\Final_Project\Flutter\build\camera\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-65
-15-->[:camera] C:\Users\Playdata\Desktop\Final_Project\Flutter\build\camera\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-62
+15-->[:camera] C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\build\camera\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-65
+15-->[:camera] C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\build\camera\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-62
 16    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-16-->[:camera] C:\Users\Playdata\Desktop\Final_Project\Flutter\build\camera\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-71
-16-->[:camera] C:\Users\Playdata\Desktop\Final_Project\Flutter\build\camera\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-68
+16-->[:camera] C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\build\camera\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-71
+16-->[:camera] C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\build\camera\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-68
 17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 17-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Playdata\.gradle\caches\transforms-2\files-2.1\da2544393404562f7e37f5a284d0ee06\jetified-firebase-auth-21.0.1\AndroidManifest.xml:24:5-79
 17-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Playdata\.gradle\caches\transforms-2\files-2.1\da2544393404562f7e37f5a284d0ee06\jetified-firebase-auth-21.0.1\AndroidManifest.xml:24:22-76
@@ -31,41 +31,41 @@
 23         FlutterApplication and put your custom class here.
 24    -->
 25    <application
-25-->C:\Users\Playdata\Desktop\Final_Project\Flutter\android\app\src\main\AndroidManifest.xml:8:5-36:19
+25-->C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\android\app\src\main\AndroidManifest.xml:8:5-36:19
 26        android:name="io.flutter.app.FlutterApplication"
-26-->C:\Users\Playdata\Desktop\Final_Project\Flutter\android\app\src\main\AndroidManifest.xml:9:9-57
+26-->C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\android\app\src\main\AndroidManifest.xml:9:9-57
 27        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 27-->[androidx.core:core:1.5.0] C:\Users\Playdata\.gradle\caches\transforms-2\files-2.1\bf22273e1cbbff169f8c0939ba66a0d0\core-1.5.0\AndroidManifest.xml:24:18-86
 28        android:debuggable="true"
 29        android:icon="@mipmap/ic_launcher"
-29-->C:\Users\Playdata\Desktop\Final_Project\Flutter\android\app\src\main\AndroidManifest.xml:11:9-43
+29-->C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\android\app\src\main\AndroidManifest.xml:11:9-43
 30        android:label="flutter_auth"
-30-->C:\Users\Playdata\Desktop\Final_Project\Flutter\android\app\src\main\AndroidManifest.xml:10:9-37
+30-->C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\android\app\src\main\AndroidManifest.xml:10:9-37
 31        android:usesCleartextTraffic="true" >
-31-->C:\Users\Playdata\Desktop\Final_Project\Flutter\android\app\src\main\AndroidManifest.xml:12:9-44
+31-->C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\android\app\src\main\AndroidManifest.xml:12:9-44
 32        <activity
-32-->C:\Users\Playdata\Desktop\Final_Project\Flutter\android\app\src\main\AndroidManifest.xml:13:9-24:20
+32-->C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\android\app\src\main\AndroidManifest.xml:13:9-24:20
 33            android:name="com.example.flutter_auth.MainActivity"
-33-->C:\Users\Playdata\Desktop\Final_Project\Flutter\android\app\src\main\AndroidManifest.xml:14:13-41
+33-->C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\android\app\src\main\AndroidManifest.xml:14:13-41
 34            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-34-->C:\Users\Playdata\Desktop\Final_Project\Flutter\android\app\src\main\AndroidManifest.xml:17:13-163
+34-->C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\android\app\src\main\AndroidManifest.xml:17:13-163
 35            android:hardwareAccelerated="true"
-35-->C:\Users\Playdata\Desktop\Final_Project\Flutter\android\app\src\main\AndroidManifest.xml:18:13-47
+35-->C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\android\app\src\main\AndroidManifest.xml:18:13-47
 36            android:launchMode="singleTop"
-36-->C:\Users\Playdata\Desktop\Final_Project\Flutter\android\app\src\main\AndroidManifest.xml:15:13-43
+36-->C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\android\app\src\main\AndroidManifest.xml:15:13-43
 37            android:theme="@style/LaunchTheme"
-37-->C:\Users\Playdata\Desktop\Final_Project\Flutter\android\app\src\main\AndroidManifest.xml:16:13-47
+37-->C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\android\app\src\main\AndroidManifest.xml:16:13-47
 38            android:windowSoftInputMode="adjustResize" >
-38-->C:\Users\Playdata\Desktop\Final_Project\Flutter\android\app\src\main\AndroidManifest.xml:19:13-55
+38-->C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\android\app\src\main\AndroidManifest.xml:19:13-55
 39            <intent-filter>
-39-->C:\Users\Playdata\Desktop\Final_Project\Flutter\android\app\src\main\AndroidManifest.xml:20:13-23:29
+39-->C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\android\app\src\main\AndroidManifest.xml:20:13-23:29
 40                <action android:name="android.intent.action.MAIN" />
-40-->C:\Users\Playdata\Desktop\Final_Project\Flutter\android\app\src\main\AndroidManifest.xml:21:17-68
-40-->C:\Users\Playdata\Desktop\Final_Project\Flutter\android\app\src\main\AndroidManifest.xml:21:25-66
+40-->C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\android\app\src\main\AndroidManifest.xml:21:17-68
+40-->C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\android\app\src\main\AndroidManifest.xml:21:25-66
 41
 42                <category android:name="android.intent.category.LAUNCHER" />
-42-->C:\Users\Playdata\Desktop\Final_Project\Flutter\android\app\src\main\AndroidManifest.xml:22:17-76
-42-->C:\Users\Playdata\Desktop\Final_Project\Flutter\android\app\src\main\AndroidManifest.xml:22:27-74
+42-->C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\android\app\src\main\AndroidManifest.xml:22:17-76
+42-->C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\android\app\src\main\AndroidManifest.xml:22:27-74
 43            </intent-filter>
 44        </activity>
 45        <!--
@@ -73,48 +73,48 @@
 47             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
 48        -->
 49        <meta-data
-49-->C:\Users\Playdata\Desktop\Final_Project\Flutter\android\app\src\main\AndroidManifest.xml:27:9-29:33
+49-->C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\android\app\src\main\AndroidManifest.xml:27:9-29:33
 50            android:name="flutterEmbedding"
-50-->C:\Users\Playdata\Desktop\Final_Project\Flutter\android\app\src\main\AndroidManifest.xml:28:13-44
+50-->C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\android\app\src\main\AndroidManifest.xml:28:13-44
 51            android:value="2" />
-51-->C:\Users\Playdata\Desktop\Final_Project\Flutter\android\app\src\main\AndroidManifest.xml:29:13-30
+51-->C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\android\app\src\main\AndroidManifest.xml:29:13-30
 52
 53        <activity
-53-->C:\Users\Playdata\Desktop\Final_Project\Flutter\android\app\src\main\AndroidManifest.xml:30:9-33:71
+53-->C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\android\app\src\main\AndroidManifest.xml:30:9-33:71
 54            android:name="com.yalantis.ucrop.UCropActivity"
-54-->C:\Users\Playdata\Desktop\Final_Project\Flutter\android\app\src\main\AndroidManifest.xml:31:13-60
+54-->C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\android\app\src\main\AndroidManifest.xml:31:13-60
 55            android:screenOrientation="portrait"
-55-->C:\Users\Playdata\Desktop\Final_Project\Flutter\android\app\src\main\AndroidManifest.xml:32:13-49
+55-->C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\android\app\src\main\AndroidManifest.xml:32:13-49
 56            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-56-->C:\Users\Playdata\Desktop\Final_Project\Flutter\android\app\src\main\AndroidManifest.xml:33:13-69
+56-->C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\android\app\src\main\AndroidManifest.xml:33:13-69
 57        <!-- <uses-permission android:name="android.permission.INTERNET"/> -->
 58
 59        <service
-59-->[:firebase_auth] C:\Users\Playdata\Desktop\Final_Project\Flutter\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+59-->[:firebase_auth] C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
 60            android:name="com.google.firebase.components.ComponentDiscoveryService"
-60-->[:firebase_auth] C:\Users\Playdata\Desktop\Final_Project\Flutter\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-89
+60-->[:firebase_auth] C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-89
 61            android:directBootAware="true"
 61-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Playdata\.gradle\caches\transforms-2\files-2.1\00e5642bf69d715a02b07a5936218015\jetified-firebase-common-20.0.0\AndroidManifest.xml:35:13-43
 62            android:exported="false" >
 62-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Playdata\.gradle\caches\transforms-2\files-2.1\da2544393404562f7e37f5a284d0ee06\jetified-firebase-auth-21.0.1\AndroidManifest.xml:76:13-37
 63            <meta-data
-63-->[:firebase_auth] C:\Users\Playdata\Desktop\Final_Project\Flutter\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+63-->[:firebase_auth] C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 64                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
-64-->[:firebase_auth] C:\Users\Playdata\Desktop\Final_Project\Flutter\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
+64-->[:firebase_auth] C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
 65                android:value="com.google.firebase.components.ComponentRegistrar" />
-65-->[:firebase_auth] C:\Users\Playdata\Desktop\Final_Project\Flutter\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+65-->[:firebase_auth] C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 66            <meta-data
-66-->[:firebase_storage] C:\Users\Playdata\Desktop\Final_Project\Flutter\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+66-->[:firebase_storage] C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 67                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
-67-->[:firebase_storage] C:\Users\Playdata\Desktop\Final_Project\Flutter\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-126
+67-->[:firebase_storage] C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-126
 68                android:value="com.google.firebase.components.ComponentRegistrar" />
-68-->[:firebase_storage] C:\Users\Playdata\Desktop\Final_Project\Flutter\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+68-->[:firebase_storage] C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 69            <meta-data
-69-->[:firebase_core] C:\Users\Playdata\Desktop\Final_Project\Flutter\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+69-->[:firebase_core] C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 70                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
-70-->[:firebase_core] C:\Users\Playdata\Desktop\Final_Project\Flutter\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
+70-->[:firebase_core] C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
 71                android:value="com.google.firebase.components.ComponentRegistrar" />
-71-->[:firebase_core] C:\Users\Playdata\Desktop\Final_Project\Flutter\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+71-->[:firebase_core] C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 72            <meta-data
 72-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Playdata\.gradle\caches\transforms-2\files-2.1\da2544393404562f7e37f5a284d0ee06\jetified-firebase-auth-21.0.1\AndroidManifest.xml:77:13-79:85
 73                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
@@ -130,21 +130,21 @@
 78        </service>
 79
 80        <provider
-80-->[:image_picker] C:\Users\Playdata\Desktop\Final_Project\Flutter\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-16:20
+80-->[:image_picker] C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-16:20
 81            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-81-->[:image_picker] C:\Users\Playdata\Desktop\Final_Project\Flutter\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-82
+81-->[:image_picker] C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-82
 82            android:authorities="com.example.flutter_auth.flutter.image_provider"
-82-->[:image_picker] C:\Users\Playdata\Desktop\Final_Project\Flutter\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-74
+82-->[:image_picker] C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-74
 83            android:exported="false"
-83-->[:image_picker] C:\Users\Playdata\Desktop\Final_Project\Flutter\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-37
+83-->[:image_picker] C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-37
 84            android:grantUriPermissions="true" >
-84-->[:image_picker] C:\Users\Playdata\Desktop\Final_Project\Flutter\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-47
+84-->[:image_picker] C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-47
 85            <meta-data
-85-->[:image_picker] C:\Users\Playdata\Desktop\Final_Project\Flutter\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-15:75
+85-->[:image_picker] C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-15:75
 86                android:name="android.support.FILE_PROVIDER_PATHS"
-86-->[:image_picker] C:\Users\Playdata\Desktop\Final_Project\Flutter\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:14:17-67
+86-->[:image_picker] C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:14:17-67
 87                android:resource="@xml/flutter_image_picker_file_paths" />
-87-->[:image_picker] C:\Users\Playdata\Desktop\Final_Project\Flutter\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:15:17-72
+87-->[:image_picker] C:\Users\Playdata\Documents\GitHub\flutter_project_\Flutter\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:15:17-72
 88        </provider>
 89
 90        <activity

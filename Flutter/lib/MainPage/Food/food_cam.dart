@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_auth/MainPage/Food/Table/Table_Create.dart';
 import 'package:flutter_auth/MainPage/Food/food_info.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:image_cropper/image_cropper.dart';
@@ -233,8 +234,8 @@ class _Food_CameraState extends State<Food_Camera> {
                             ElevatedButton.styleFrom(fixedSize: Size(150, 20)),
                         onPressed: () {
                           getFoodInfo();
-                          // Navigator.of(context).push(MaterialPageRoute(
-                          //     builder: (context) => ));
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => MyHomePage()));
                         },
                         child: Text('Send')),
 

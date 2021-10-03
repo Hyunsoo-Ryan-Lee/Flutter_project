@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Playdata\\Desktop\\Final_Project\\Flutter\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rTW\\values-zh-rTW.xml",
+            "outputFile": "C:\\Users\\Playdata\\Documents\\GitHub\\flutter_project_\\Flutter\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rTW\\values-zh-rTW.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Playdata\\.gradle\\caches\\transforms-2\\files-2.1\\4f9b1a4f9bd92db774f5c7f885c8aa06\\ucrop-2.2.7\\res\\values-zh-rTW\\values-zh-rTW.xml",

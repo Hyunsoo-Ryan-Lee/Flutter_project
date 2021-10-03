@@ -38,6 +38,7 @@ dependencies:
   http:
   camera:
   tflite:
+  provider:
 
 dev_dependencies:
   flutter_test:

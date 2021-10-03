@@ -21,6 +21,7 @@ class _Pose_armpressState extends State<Pose_armpress> {
   int _imageHeight = 0;
   int _imageWidth = 0;
   int x = 0;
+
   @override
   void initState() {
     super.initState();
@@ -41,7 +42,7 @@ class _Pose_armpressState extends State<Pose_armpress> {
 
   loadModel() async {
     return await Tflite.loadModel(
-        model: "assets/4models.tflite", labels: "assets/labels.txt");
+        model: "assets/posenet_mv1_075_float_from_checkpoints.tflite");
   }
 
   @override
@@ -59,13 +60,13 @@ class _Pose_armpressState extends State<Pose_armpress> {
             cameras: widget.cameras,
             setRecognitions: _setRecognitions,
           ),
-          // RenderDataArmPress(
-          //   data: _data == null ? [] : _data,
-          //   previewH: max(_imageHeight, _imageWidth),
-          //   previewW: min(_imageHeight, _imageWidth),
-          //   screenH: screen.height,
-          //   screenW: screen.width,
-          // ),
+          RenderDataArmPress(
+            data: _data == null ? [] : _data,
+            previewH: max(_imageHeight, _imageWidth),
+            previewW: min(_imageHeight, _imageWidth),
+            screenH: screen.height,
+            screenW: screen.width,
+          ),
         ],
       ),
     );
