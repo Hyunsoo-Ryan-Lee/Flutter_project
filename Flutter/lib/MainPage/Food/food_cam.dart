@@ -3,12 +3,13 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_auth/MainPage/Food/Table/Table_Create.dart';
-import 'package:flutter_auth/MainPage/Food/food_info.dart';
+import 'package:flutter_auth/MainPage/Food/Table/json.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:http/http.dart' as http;
+import 'dart:async' show Future;
+import 'package:flutter/services.dart' show rootBundle;
 
 class Food_Camera extends StatefulWidget {
   @override
@@ -233,9 +234,9 @@ class _Food_CameraState extends State<Food_Camera> {
                         style:
                             ElevatedButton.styleFrom(fixedSize: Size(150, 20)),
                         onPressed: () {
-                          getFoodInfo();
+                          // getFoodInfo();
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => MyHomePage()));
+                              builder: (context) => JsonTable()));
                         },
                         child: Text('Send')),
 

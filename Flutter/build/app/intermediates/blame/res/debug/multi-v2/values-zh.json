@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Playdata\\Documents\\GitHub\\flutter_project_\\Flutter\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh\\values-zh.xml",
+            "outputFile": "D:\\Flutter_Project\\Flutter\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh\\values-zh.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Playdata\\.gradle\\caches\\transforms-2\\files-2.1\\4f9b1a4f9bd92db774f5c7f885c8aa06\\ucrop-2.2.7\\res\\values-zh\\values-zh.xml",
+                    "source": "C:\\Users\\YEIN\\.gradle\\caches\\transforms-2\\files-2.1\\4f9b1a4f9bd92db774f5c7f885c8aa06\\ucrop-2.2.7\\res\\values-zh\\values-zh.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
