@@ -9,7 +9,8 @@ import 'package:image_cropper/image_cropper.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async' show Future;
-import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter/services.dart' as rootBundle;
+import 'package:data_table_2/data_table_2.dart';
 
 class Food_Camera extends StatefulWidget {
   @override
@@ -161,43 +162,80 @@ class _Food_CameraState extends State<Food_Camera> {
     }
   }
 
-  // Widget _tableView() {
-  //   if (_image == null) {
-  //     return Text('');
-  //   } else {
-  //     return Table(
-  //         border: TableBorder
-  //             .all(), // Allows to add a border decoration around your table
-  //         children: [
-  //           TableRow(children: [
-  //             Text('음식 이름'),
-  //             Text('음식 중량'),
-  //             Text('칼로리'),
-  //             Text('탄수화물'),
-  //             Text('단백질'),
-  //             Text('지방'),
-  //           ]),
-  //           TableRow(children: [
-  //             Text(
-  //               '2011',
-  //             ),
-  //             Text('Dart'),
-  //             Text('Lars Bak'),
-  //             Text('Lars Bak'),
-  //             Text('Lars Bak'),
-  //             Text('Lars Bak'),
-  //           ]),
-  //           TableRow(children: [
-  //             Text('1996'),
-  //             Text('Java'),
-  //             Text('James Gosling'),
-  //             Text('Lars Bak'),
-  //             Text('Lars Bak'),
-  //             Text('Lars Bak'),
-  //           ]),
-  //         ]);
-  //   }
-  // }
+  List _items = [];
+  Future<void> readJson() async {
+    final String response =
+        await rootBundle.rootBundle.loadString('assets/json/mJson.json');
+    final data = await json.decode(response);
+    setState(() {
+      _items = data["items"];
+    });
+  }
+
+  Widget _foodTable() {
+    readJson();
+    if (_image == null) {
+      return Text('');
+    } else {
+      return DataTable2(
+          columnSpacing: 1,
+          horizontalMargin: 12,
+          columns: [
+            DataColumn2(
+              label: Text(
+                '음식명',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              size: ColumnSize.M,
+            ),
+            DataColumn2(
+              label: Text(
+                '섭취량',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              size: ColumnSize.M,
+            ),
+            DataColumn2(
+              label: Text(
+                '칼로리',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              size: ColumnSize.M,
+            ),
+            DataColumn2(
+              label: Text(
+                '탄수화물',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              size: ColumnSize.L,
+            ),
+            DataColumn2(
+              label: Text(
+                '단백질',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              size: ColumnSize.M,
+            ),
+            DataColumn2(
+              label: Text(
+                '지방',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              size: ColumnSize.M,
+            ),
+          ],
+          rows: List<DataRow>.generate(
+              _items.length,
+              (index) => DataRow(cells: [
+                    DataCell(Text(_items[index]["FNAME"])),
+                    DataCell(Text(_items[index]["CAL"])),
+                    DataCell(Text(_items[index]["CARBOH"])),
+                    DataCell(Text(_items[index]["PROTEIN"])),
+                    DataCell(Text(_items[index]["FAT"])),
+                    DataCell(Text(_items[index]["AMOUNT"])),
+                  ])));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -210,14 +248,12 @@ class _Food_CameraState extends State<Food_Camera> {
           backgroundColor: Colors.blueAccent[100],
           centerTitle: true,
         ),
-        body: CustomScrollView(slivers: [
-          SliverFillRemaining(
-            hasScrollBody: true,
+        body: SingleChildScrollView(
+          child: Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 _imageView(),
-
+                _foodTable(),
                 !_canShowButton
                     ? const SizedBox.shrink()
                     : ElevatedButton(
@@ -235,8 +271,8 @@ class _Food_CameraState extends State<Food_Camera> {
                             ElevatedButton.styleFrom(fixedSize: Size(150, 20)),
                         onPressed: () {
                           // getFoodInfo();
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => JsonTable()));
+                          // Navigator.of(context).push(MaterialPageRoute(
+                          //     builder: (context) => JsonTable()));
                         },
                         child: Text('Send')),
 
@@ -248,6 +284,6 @@ class _Food_CameraState extends State<Food_Camera> {
               ],
             ),
           ),
-        ]));
+        ));
   }
 }

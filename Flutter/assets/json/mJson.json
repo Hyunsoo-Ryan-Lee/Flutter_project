@@ -1,18 +1,36 @@
-[
+{
+  "items":[
   {
-    "id": 0,
-    "name": "NexMart - Casual Sneakers",
-    "category": "NOP",
-    "imageUrl": "https://m.media-amazon.com/images/I/81S-ekaE+vS._AC_UL320_.jpg",
-    "oldPrice": "1899",
-    "price": "799"
+    "FNAME":"치킨",
+    "CAL":"300",
+    "CARBOH":"50",
+    "PROTEIN":"56",
+    "FAT":"43",
+    "AMOUNT":"1000"
   },
   {
-    "id": 1,
-    "name": "Asian - Men Bouncer",
-    "category": "Men",
-    "oldPrice": "999",
-    "imageUrl": "https://m.media-amazon.com/images/I/61hMQOHmEIL._AC_UL320_.jpg",
-    "price": "719"
+    "FNAME":"피자",
+    "CAL":"250",
+    "CARBOH":"40",
+    "PROTEIN":"30",
+    "FAT":"30",
+    "AMOUNT":"800"
+  },
+  {
+    "FNAME":"피자",
+    "CAL":"250",
+    "CARBOH":"40",
+    "PROTEIN":"30",
+    "FAT":"30",
+    "AMOUNT":"800"
+  },
+  {
+    "FNAME":"피자",
+    "CAL":"250",
+    "CARBOH":"40",
+    "PROTEIN":"30",
+    "FAT":"30",
+    "AMOUNT":"800"
   }
 ]
+}
