@@ -3,25 +3,25 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_auth/MainPage/Food/Table/json.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async' show Future;
-import 'package:flutter/services.dart' as rootBundle;
+// import 'package:flutter/services.dart' as rootBundle;
 import 'package:data_table_2/data_table_2.dart';
+import 'package:path_provider/path_provider.dart';
 
-class Food_Camera extends StatefulWidget {
+class FoodCamera extends StatefulWidget {
   @override
-  _Food_CameraState createState() => _Food_CameraState();
+  _FoodCameraState createState() => _FoodCameraState();
 }
 
-class _Food_CameraState extends State<Food_Camera> {
+class _FoodCameraState extends State<FoodCamera> {
   final _picker = ImagePicker();
   File _image;
   String message = '';
-  String address = 'https://7a97-119-192-202-235.ngrok.io/foodselect';
+  String address = 'https://5ef5-112-154-191-206.ngrok.io/foodselect';
   Dio dio = new Dio();
   bool _canShowButton = true;
 
@@ -34,10 +34,44 @@ class _Food_CameraState extends State<Food_Camera> {
   getFoodInfo() async {
     try {
       var response = await Dio().get(address);
+
+      // readCounter();
+      // writeCounter(response);
+      // File file = new File('assets/json/mmJson.json');
+      // file.createSync();
+      // file.writeAsStringSync(json.encode(response));
       print(response);
     } catch (e) {
       print(e);
     }
+  }
+
+  Future<String> get _localPath async {
+    final directory = await getApplicationDocumentsDirectory();
+    return directory.path;
+  }
+
+  Future<File> get _localFile async {
+    final path = await _localPath;
+    return File('$path/counter.txt');
+  }
+
+  Future<int> readCounter() async {
+    try {
+      final file = await _localFile;
+      // Read the file
+      String contents = await file.readAsString();
+      return int.parse(contents);
+    } catch (e) {
+      // If encountering an error, return 0
+      return 0;
+    }
+  }
+
+  Future<File> writeCounter(var counter) async {
+    final file = await _localFile;
+    // Write the file
+    return file.writeAsString('$counter');
   }
 
   uploadImage() async {
@@ -164,11 +198,14 @@ class _Food_CameraState extends State<Food_Camera> {
 
   List _items = [];
   Future<void> readJson() async {
-    final String response =
-        await rootBundle.rootBundle.loadString('assets/json/mJson.json');
-    final data = await json.decode(response);
+    var responseJson = await Dio().get(address);
+
+    // final String response =
+    //     await rootBundle.rootBundle.loadString('assets/json/mJson.json');
+    // final data = await json.decode(response);
     setState(() {
-      _items = data["items"];
+      // _items = data['items'];
+      _items = [responseJson];
     });
   }
 
@@ -177,6 +214,14 @@ class _Food_CameraState extends State<Food_Camera> {
     if (_image == null) {
       return Text('');
     } else {
+      var iii = _items[0].toString();
+      var array = iii.split(",");
+      var fname = array[0].substring(1);
+      var famount = array[1];
+      var fcal = array[2];
+      var fcarboh = array[3];
+      var fprotein = array[4];
+      var ffat = array[5].substring(0, 1);
       return DataTable2(
           columnSpacing: 1,
           horizontalMargin: 12,
@@ -225,14 +270,21 @@ class _Food_CameraState extends State<Food_Camera> {
             ),
           ],
           rows: List<DataRow>.generate(
-              _items.length,
+              //  _items.length,
+              1,
               (index) => DataRow(cells: [
-                    DataCell(Text(_items[index]["FNAME"])),
-                    DataCell(Text(_items[index]["CAL"])),
-                    DataCell(Text(_items[index]["CARBOH"])),
-                    DataCell(Text(_items[index]["PROTEIN"])),
-                    DataCell(Text(_items[index]["FAT"])),
-                    DataCell(Text(_items[index]["AMOUNT"])),
+                    DataCell(Text("$fname")),
+                    DataCell(Text("$famount")),
+                    DataCell(Text("$fcal")),
+                    DataCell(Text("$fcarboh")),
+                    DataCell(Text("$fprotein")),
+                    DataCell(Text("$ffat")),
+                    // DataCell(Text(_items[index]["FNAME"])),
+                    // DataCell(Text(_items[index]["CAL"])),
+                    // DataCell(Text(_items[index]["CARBOH"])),
+                    // DataCell(Text(_items[index]["PROTEIN"])),
+                    // DataCell(Text(_items[index]["FAT"])),
+                    // DataCell(Text(_items[index]["AMOUNT"])),
                   ])));
     }
   }
@@ -248,40 +300,43 @@ class _Food_CameraState extends State<Food_Camera> {
           backgroundColor: Colors.blueAccent[100],
           centerTitle: true,
         ),
-        body: SingleChildScrollView(
-          child: Center(
-            child: Column(
-              children: [
-                _imageView(),
-                _foodTable(),
-                !_canShowButton
-                    ? const SizedBox.shrink()
-                    : ElevatedButton(
-                        style:
-                            ElevatedButton.styleFrom(fixedSize: Size(150, 20)),
-                        onPressed: () {
-                          _showDialog(context);
-                          hideWidget();
-                        },
-                        child: Text('Select Image')),
-                _canShowButton
-                    ? const SizedBox.shrink()
-                    : ElevatedButton(
-                        style:
-                            ElevatedButton.styleFrom(fixedSize: Size(150, 20)),
-                        onPressed: () {
-                          // getFoodInfo();
-                          // Navigator.of(context).push(MaterialPageRoute(
-                          //     builder: (context) => JsonTable()));
-                        },
-                        child: Text('Send')),
+        body: Center(
+          child: SingleChildScrollView(
+            child: Container(
+              alignment: Alignment.center,
+              child: Column(
+                children: [
+                  _imageView(),
+                  _foodTable(),
+                  !_canShowButton
+                      ? const SizedBox.shrink()
+                      : ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              fixedSize: Size(150, 20)),
+                          onPressed: () {
+                            _showDialog(context);
+                            hideWidget();
+                          },
+                          child: Text('Select Image')),
+                  _canShowButton
+                      ? const SizedBox.shrink()
+                      : ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              fixedSize: Size(150, 20)),
+                          onPressed: () {
+                            getFoodInfo();
+                            // Navigator.of(context).push(MaterialPageRoute(
+                            //     builder: (context) => ReportChart()));
+                          },
+                          child: Text('Send')),
 
-                // ElevatedButton(
-                //     onPressed: () {
-                //       getHttp();
-                //     },
-                //     child: Text('ㄱㄱ')),
-              ],
+                  // ElevatedButton(
+                  //     onPressed: () {
+                  //       getHttp();
+                  //     },
+                  //     child: Text('ㄱㄱ')),
+                ],
+              ),
             ),
           ),
         ));

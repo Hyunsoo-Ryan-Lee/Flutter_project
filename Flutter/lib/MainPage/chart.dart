@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class chart extends StatelessWidget {
+class ReportChart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;

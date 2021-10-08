@@ -40,7 +40,7 @@ dependencies:
   tflite:
   provider:
   data_table_2: ^2.1.1
-  convert: ^3.0.1
+  convert:
 
 dev_dependencies:
   flutter_test:

@@ -69,7 +69,7 @@ class myPage extends StatelessWidget {
           color: Colors.redAccent,
         ),
         onTap: () {
-          Navigator.of(context).pop(context);
+          // Navigator.of(context).pop(context);
         },
       );
 }

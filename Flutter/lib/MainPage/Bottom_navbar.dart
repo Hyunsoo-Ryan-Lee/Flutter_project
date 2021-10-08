@@ -20,7 +20,13 @@ class _BottomNavigatorState extends State<BottomNavigator> {
       child: Scaffold(
         body: IndexedStack(
           index: _selectedidx,
-          children: [Calendar(), myDiet(), chart(), trainMain(), myPage()],
+          children: [
+            Calendar(),
+            myDiet(),
+            ReportChart(),
+            trainMain(),
+            myPage()
+          ],
         ),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,

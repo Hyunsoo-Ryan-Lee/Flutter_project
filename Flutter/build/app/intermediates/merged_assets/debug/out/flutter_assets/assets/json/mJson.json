@@ -1,0 +1,36 @@
+{
+  "items":[
+  {
+    "FNAME":"치킨",
+    "CAL":"300",
+    "CARBOH":"50",
+    "PROTEIN":"56",
+    "FAT":"43",
+    "AMOUNT":"1000"
+  },
+  {
+    "FNAME":"피자",
+    "CAL":"250",
+    "CARBOH":"40",
+    "PROTEIN":"30",
+    "FAT":"30",
+    "AMOUNT":"800"
+  },
+  {
+    "FNAME":"피자",
+    "CAL":"250",
+    "CARBOH":"40",
+    "PROTEIN":"30",
+    "FAT":"30",
+    "AMOUNT":"800"
+  },
+  {
+    "FNAME":"피자",
+    "CAL":"250",
+    "CARBOH":"40",
+    "PROTEIN":"30",
+    "FAT":"30",
+    "AMOUNT":"800"
+  }
+]
+}

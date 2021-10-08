@@ -134,7 +134,7 @@ class _CalendarState extends State<Calendar> {
                     OutlinedButton(
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => Food_Camera()));
+                            builder: (context) => FoodCamera()));
                       },
                       child: Text(
                         '오늘 식단 등록하기',
