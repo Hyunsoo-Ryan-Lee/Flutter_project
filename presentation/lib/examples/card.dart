@@ -13,23 +13,23 @@ class _cardState extends State<card> {
         title: Text("Flutter Card Example"),
       ),
       body: Container(
-        width: 200,
+        width: 250,
         child: Center(
           child: Card(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15.0),
             ),
-            color: Colors.pink,
+            color: Colors.brown,
             elevation: 10,
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 const ListTile(
                   leading: Icon(Icons.album, size: 70),
-                  title: Text('Heart Shaker',
-                      style: TextStyle(color: Colors.white)),
+                  title:
+                      Text('Desperado', style: TextStyle(color: Colors.white)),
                   subtitle:
-                      Text('TWICE', style: TextStyle(color: Colors.white)),
+                      Text('EAGLES', style: TextStyle(color: Colors.white)),
                 ),
                 ButtonTheme(
                   child: ButtonBar(

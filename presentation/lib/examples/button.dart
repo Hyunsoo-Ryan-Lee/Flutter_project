@@ -10,7 +10,7 @@ class _buttonsState extends State<buttons> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Flutter Row Example"),
+        title: Text("Flutter Button Example"),
       ),
       body: Center(
         child:
@@ -37,7 +37,7 @@ class _buttonsState extends State<buttons> {
           OutlinedButton(
             style: OutlinedButton.styleFrom(
               shape: StadiumBorder(),
-              side: BorderSide(width: 2, color: Colors.red),
+              side: BorderSide(width: 2, color: Colors.grey),
             ),
             onPressed: () {},
             child: Text('OutlinedButton'),
