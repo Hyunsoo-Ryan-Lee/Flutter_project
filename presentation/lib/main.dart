@@ -5,6 +5,7 @@ import 'package:presentation/examples/button.dart';
 import 'package:presentation/examples/card.dart';
 import 'package:presentation/examples/column.dart';
 import 'package:presentation/examples/gridview.dart';
+import 'package:presentation/examples/image.dart';
 import 'package:presentation/examples/listview.dart';
 import 'package:presentation/examples/row.dart';
 
@@ -159,8 +160,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   OutlinedButton(
                     onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => bottomnavbar()));
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => image()));
                     },
                     child: Text(
                       'Image',
