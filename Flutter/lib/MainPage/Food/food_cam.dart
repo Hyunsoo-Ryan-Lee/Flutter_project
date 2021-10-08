@@ -8,9 +8,9 @@ import 'package:image_cropper/image_cropper.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async' show Future;
-// import 'package:flutter/services.dart' as rootBundle;
 import 'package:data_table_2/data_table_2.dart';
 import 'package:path_provider/path_provider.dart';
+// import 'package:flutter/services.dart' as rootBundle;
 
 class FoodCamera extends StatefulWidget {
   @override
