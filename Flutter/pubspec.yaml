@@ -37,10 +37,12 @@ dependencies:
   dio: ^4.0.0
   http:
   camera:
-  tflite:
+  tflite: ^1.1.2
   provider:
   data_table_2: ^2.1.1
   convert:
+  syncfusion_flutter_charts: ^19.3.44+1
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:

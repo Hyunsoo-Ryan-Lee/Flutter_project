@@ -4,6 +4,7 @@ import 'package:data_table_2/data_table_2.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_auth/MainPage/Bottom_navbar.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:http_parser/http_parser.dart';
@@ -85,13 +86,6 @@ class _FoodCameraState extends State<FoodCamera> {
             filename: filename, contentType: MediaType('image', 'png')),
         'type': 'image/png'
       });
-      // Response response = await dio.post(address,
-      //     data: formdata,
-      //     options: Options(headers: {
-      //       'accept': '*/*',
-      //       'Authorization': 'Bearer accesstoken',
-      //       'Content Type': 'multipart/form.data'
-      //     }));
     } catch (e) {
       print(e);
     }
@@ -124,7 +118,6 @@ class _FoodCameraState extends State<FoodCamera> {
         setState(() => this._image = photoTemp);
         Navigator.of(context).pop();
         uploadImage();
-        // getFoodInfo();
       }
     } on PlatformException catch (e) {
       print('Failed to pick image: $e');
@@ -244,12 +237,6 @@ class _FoodCameraState extends State<FoodCamera> {
                     DataCell(Text("$fcarboh")),
                     DataCell(Text("$fprotein")),
                     DataCell(Text("$ffat")),
-                    // DataCell(Text(_items[index]["FNAME"])),
-                    // DataCell(Text(_items[index]["CAL"])),
-                    // DataCell(Text(_items[index]["CARBOH"])),
-                    // DataCell(Text(_items[index]["PROTEIN"])),
-                    // DataCell(Text(_items[index]["FAT"])),
-                    // DataCell(Text(_items[index]["AMOUNT"])),
                   ])));
     }
   }
@@ -289,17 +276,10 @@ class _FoodCameraState extends State<FoodCamera> {
                           style: ElevatedButton.styleFrom(
                               fixedSize: Size(150, 20)),
                           onPressed: () {
-                            getFoodInfo();
-                            // Navigator.of(context).push(MaterialPageRoute(
-                            //     builder: (context) => ReportChart()));
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => BottomNavigator()));
                           },
                           child: Text('Send')),
-
-                  // ElevatedButton(
-                  //     onPressed: () {
-                  //       getHttp();
-                  //     },
-                  //     child: Text('ㄱㄱ')),
                 ],
               ),
             ),

@@ -8,7 +8,7 @@ class myDiet extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          '나의 식단 ',
+          'My Diet ',
           style: TextStyle(color: Colors.black),
         ),
         elevation: 0.0,

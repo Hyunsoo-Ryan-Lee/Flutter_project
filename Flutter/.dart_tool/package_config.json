@@ -440,8 +440,14 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "syncfusion_flutter_charts",
+      "rootUri": "file:///C:/Users/YEIN/Desktop/python/00.sw/flutter/.pub-cache/hosted/pub.dartlang.org/syncfusion_flutter_charts-19.3.44+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "syncfusion_flutter_core",
-      "rootUri": "file:///C:/Users/YEIN/Desktop/python/00.sw/flutter/.pub-cache/hosted/pub.dartlang.org/syncfusion_flutter_core-19.2.62",
+      "rootUri": "file:///C:/Users/YEIN/Desktop/python/00.sw/flutter/.pub-cache/hosted/pub.dartlang.org/syncfusion_flutter_core-19.3.44",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -518,7 +524,7 @@
       "languageVersion": "2.2"
     }
   ],
-  "generated": "2021-10-06T01:39:41.579538Z",
+  "generated": "2021-10-10T14:00:40.227467Z",
   "generator": "pub",
   "generatorVersion": "2.14.3"
 }

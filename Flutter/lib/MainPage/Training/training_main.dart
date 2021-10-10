@@ -17,7 +17,7 @@ class trainMain extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          '트레이닝',
+          'Training',
           style: TextStyle(color: Colors.black),
         ),
         elevation: 0.0,
