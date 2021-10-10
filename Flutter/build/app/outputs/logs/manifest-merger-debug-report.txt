@@ -63,8 +63,9 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\YEIN\.gr
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\4eb2545edba999a1b05a6b8713e0a146\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\4b43e7807aecede8646db8ac616d7164\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\b6d2b79fcca140a0cbbc2f825b871ceb\print-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [org.tensorflow:tensorflow-lite:2.6.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\852fa38d48c725c604f4921bc1e89666\tensorflow-lite-2.6.0\AndroidManifest.xml:2:1-12:12
-MERGED from [org.tensorflow:tensorflow-lite-gpu:2.6.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\43a3012d3793ea6fb2cfe0c64feb2c0c\tensorflow-lite-gpu-2.6.0\AndroidManifest.xml:2:1-12:12
+MERGED from [org.tensorflow:tensorflow-lite:2.7.0-rc0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\d44235c0a93488b742a6b326b1a6cec3\tensorflow-lite-2.7.0-rc0\AndroidManifest.xml:2:1-12:12
+MERGED from [org.tensorflow:tensorflow-lite-gpu:2.7.0-rc0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\3516fffd63efabd746d6d5fb9dce613f\tensorflow-lite-gpu-2.7.0-rc0\AndroidManifest.xml:2:1-12:12
+MERGED from [org.tensorflow:tensorflow-lite-api:2.7.0-rc0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\6cd3eb8edb5275db38e67641dea5373b\tensorflow-lite-api-2.7.0-rc0\AndroidManifest.xml:2:1-12:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\bc230fa764f947f20ba40b6340c2dce1\annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
 INJECTED from D:\Flutter_Project\Flutter\android\app\src\debug\AndroidManifest.xml:1:1-7:12
 INJECTED from D:\Flutter_Project\Flutter\android\app\src\debug\AndroidManifest.xml:1:1-7:12
@@ -115,10 +116,12 @@ MERGED from [androidx.core:core:1.5.0] C:\Users\YEIN\.gradle\caches\transforms-2
 MERGED from [androidx.core:core:1.5.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\bf22273e1cbbff169f8c0939ba66a0d0\core-1.5.0\AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\a513307b6152e35ed25726b735ea2cbd\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\a513307b6152e35ed25726b735ea2cbd\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
-MERGED from [org.tensorflow:tensorflow-lite:2.6.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\852fa38d48c725c604f4921bc1e89666\tensorflow-lite-2.6.0\AndroidManifest.xml:10:5-20
-MERGED from [org.tensorflow:tensorflow-lite:2.6.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\852fa38d48c725c604f4921bc1e89666\tensorflow-lite-2.6.0\AndroidManifest.xml:10:5-20
-MERGED from [org.tensorflow:tensorflow-lite-gpu:2.6.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\43a3012d3793ea6fb2cfe0c64feb2c0c\tensorflow-lite-gpu-2.6.0\AndroidManifest.xml:10:5-20
-MERGED from [org.tensorflow:tensorflow-lite-gpu:2.6.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\43a3012d3793ea6fb2cfe0c64feb2c0c\tensorflow-lite-gpu-2.6.0\AndroidManifest.xml:10:5-20
+MERGED from [org.tensorflow:tensorflow-lite:2.7.0-rc0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\d44235c0a93488b742a6b326b1a6cec3\tensorflow-lite-2.7.0-rc0\AndroidManifest.xml:10:5-20
+MERGED from [org.tensorflow:tensorflow-lite:2.7.0-rc0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\d44235c0a93488b742a6b326b1a6cec3\tensorflow-lite-2.7.0-rc0\AndroidManifest.xml:10:5-20
+MERGED from [org.tensorflow:tensorflow-lite-gpu:2.7.0-rc0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\3516fffd63efabd746d6d5fb9dce613f\tensorflow-lite-gpu-2.7.0-rc0\AndroidManifest.xml:10:5-20
+MERGED from [org.tensorflow:tensorflow-lite-gpu:2.7.0-rc0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\3516fffd63efabd746d6d5fb9dce613f\tensorflow-lite-gpu-2.7.0-rc0\AndroidManifest.xml:10:5-20
+MERGED from [org.tensorflow:tensorflow-lite-api:2.7.0-rc0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\6cd3eb8edb5275db38e67641dea5373b\tensorflow-lite-api-2.7.0-rc0\AndroidManifest.xml:10:5-20
+MERGED from [org.tensorflow:tensorflow-lite-api:2.7.0-rc0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\6cd3eb8edb5275db38e67641dea5373b\tensorflow-lite-api-2.7.0-rc0\AndroidManifest.xml:10:5-20
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.5.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\bf22273e1cbbff169f8c0939ba66a0d0\core-1.5.0\AndroidManifest.xml:24:18-86
 	android:label
@@ -287,10 +290,12 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\YEIN\.gradle\cac
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\4b43e7807aecede8646db8ac616d7164\documentfile-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\b6d2b79fcca140a0cbbc2f825b871ceb\print-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\b6d2b79fcca140a0cbbc2f825b871ceb\print-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [org.tensorflow:tensorflow-lite:2.6.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\852fa38d48c725c604f4921bc1e89666\tensorflow-lite-2.6.0\AndroidManifest.xml:7:5-8:41
-MERGED from [org.tensorflow:tensorflow-lite:2.6.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\852fa38d48c725c604f4921bc1e89666\tensorflow-lite-2.6.0\AndroidManifest.xml:7:5-8:41
-MERGED from [org.tensorflow:tensorflow-lite-gpu:2.6.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\43a3012d3793ea6fb2cfe0c64feb2c0c\tensorflow-lite-gpu-2.6.0\AndroidManifest.xml:7:5-8:41
-MERGED from [org.tensorflow:tensorflow-lite-gpu:2.6.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\43a3012d3793ea6fb2cfe0c64feb2c0c\tensorflow-lite-gpu-2.6.0\AndroidManifest.xml:7:5-8:41
+MERGED from [org.tensorflow:tensorflow-lite:2.7.0-rc0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\d44235c0a93488b742a6b326b1a6cec3\tensorflow-lite-2.7.0-rc0\AndroidManifest.xml:7:5-8:41
+MERGED from [org.tensorflow:tensorflow-lite:2.7.0-rc0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\d44235c0a93488b742a6b326b1a6cec3\tensorflow-lite-2.7.0-rc0\AndroidManifest.xml:7:5-8:41
+MERGED from [org.tensorflow:tensorflow-lite-gpu:2.7.0-rc0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\3516fffd63efabd746d6d5fb9dce613f\tensorflow-lite-gpu-2.7.0-rc0\AndroidManifest.xml:7:5-8:41
+MERGED from [org.tensorflow:tensorflow-lite-gpu:2.7.0-rc0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\3516fffd63efabd746d6d5fb9dce613f\tensorflow-lite-gpu-2.7.0-rc0\AndroidManifest.xml:7:5-8:41
+MERGED from [org.tensorflow:tensorflow-lite-api:2.7.0-rc0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\6cd3eb8edb5275db38e67641dea5373b\tensorflow-lite-api-2.7.0-rc0\AndroidManifest.xml:7:5-8:41
+MERGED from [org.tensorflow:tensorflow-lite-api:2.7.0-rc0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\6cd3eb8edb5275db38e67641dea5373b\tensorflow-lite-api-2.7.0-rc0\AndroidManifest.xml:7:5-8:41
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\bc230fa764f947f20ba40b6340c2dce1\annotation-experimental-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\bc230fa764f947f20ba40b6340c2dce1\annotation-experimental-1.0.0\AndroidManifest.xml:20:5-22:41
 INJECTED from D:\Flutter_Project\Flutter\android\app\src\debug\AndroidManifest.xml
@@ -302,6 +307,7 @@ INJECTED from D:\Flutter_Project\Flutter\android\app\src\debug\AndroidManifest.x
 		INJECTED from D:\Flutter_Project\Flutter\android\app\src\debug\AndroidManifest.xml
 	android:minSdkVersion
 		INJECTED from D:\Flutter_Project\Flutter\android\app\src\main\AndroidManifest.xml
+		MERGED from D:\Flutter_Project\Flutter\android\app\src\debug\AndroidManifest.xml
 		MERGED from D:\Flutter_Project\Flutter\android\app\src\debug\AndroidManifest.xml
 		MERGED from D:\Flutter_Project\Flutter\android\app\src\debug\AndroidManifest.xml
 		INJECTED from D:\Flutter_Project\Flutter\android\app\src\debug\AndroidManifest.xml
