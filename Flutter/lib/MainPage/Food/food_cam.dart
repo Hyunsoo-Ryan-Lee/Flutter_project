@@ -5,6 +5,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_auth/MainPage/Bottom_navbar.dart';
+import 'package:flutter_auth/MainPage/Food/chart/chart_main.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:http_parser/http_parser.dart';
@@ -22,7 +23,7 @@ class _FoodCameraState extends State<FoodCamera> {
   final _picker = ImagePicker();
   File _image;
   String message = '';
-  String address = 'https://24f8-112-154-191-206.ngrok.io/foodselect';
+  String address = 'https://b788-112-154-191-206.ngrok.io/foodselect';
   Dio dio = new Dio();
   bool _canShowButton = true;
 
@@ -276,8 +277,13 @@ class _FoodCameraState extends State<FoodCamera> {
                           style: ElevatedButton.styleFrom(
                               fixedSize: Size(150, 20)),
                           onPressed: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => BottomNavigator()));
+                            var route = new MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    new ReportChart(
+                                        data: [fcal, fcarboh, fprotein, ffat]));
+                            Navigator.of(context).push(route);
+                            // Navigator.of(context).push(MaterialPageRoute(
+                            //     builder: (context) => BottomNavigator()));
                           },
                           child: Text('Send')),
                 ],

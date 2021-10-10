@@ -1,123 +1,21 @@
+// import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
 
-class ReportChart extends StatefulWidget {
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title = '';
-
-  @override
-  _ReportChartState createState() => _ReportChartState();
-}
-
-class _ReportChartState extends State<ReportChart> {
-  List<ExpenseData> _chartData;
-  TooltipBehavior _tooltipBehavior;
-
-  @override
-  void initState() {
-    _chartData = getChartData();
-    _tooltipBehavior = TooltipBehavior(enable: true);
-    super.initState();
-  }
-
+class ChartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
       appBar: AppBar(
         title: Text(
-          'REPORT',
+          'Chart Page',
           style: TextStyle(color: Colors.black),
         ),
         elevation: 0.0,
         backgroundColor: Colors.blueAccent[100],
         centerTitle: true,
       ),
-      body: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Container(
-              height: size.height * 0.7,
-              width: size.width * 0.85,
-              child: SfCartesianChart(
-                title: ChartTitle(
-                    text: '영양정보',
-                    textStyle: TextStyle(fontWeight: FontWeight.bold)),
-                legend: Legend(isVisible: true),
-                tooltipBehavior: _tooltipBehavior,
-                series: <ChartSeries>[
-                  StackedColumnSeries<ExpenseData, String>(
-                      dataSource: _chartData,
-                      xValueMapper: (ExpenseData exp, _) => exp.expenseCategory,
-                      yValueMapper: (ExpenseData exp, _) => exp.father,
-                      name: '탄수화물',
-                      markerSettings: MarkerSettings(
-                        isVisible: true,
-                      )),
-                  StackedColumnSeries<ExpenseData, String>(
-                      dataSource: _chartData,
-                      xValueMapper: (ExpenseData exp, _) => exp.expenseCategory,
-                      yValueMapper: (ExpenseData exp, _) => exp.mother,
-                      name: '단백질',
-                      markerSettings: MarkerSettings(
-                        isVisible: true,
-                      )),
-                  StackedColumnSeries<ExpenseData, String>(
-                      dataSource: _chartData,
-                      xValueMapper: (ExpenseData exp, _) => exp.expenseCategory,
-                      yValueMapper: (ExpenseData exp, _) => exp.daughter,
-                      name: '지방',
-                      markerSettings: MarkerSettings(
-                        isVisible: true,
-                      )),
-                ],
-                primaryXAxis: CategoryAxis(),
-              ),
-            ),
-          ],
-        ),
-      ),
-    ));
+    );
   }
-
-  List<ExpenseData> getChartData() {
-    var now = new DateTime.now();
-    var formatter = new DateFormat('MM-dd');
-    String yesyes = formatter.format(now.subtract(Duration(days: 2)));
-    String yesterday = formatter.format(now.subtract(Duration(days: 1)));
-    String today = formatter.format(now);
-    String tommorrow = formatter.format(now.add(Duration(days: 1)));
-    String tommtomm = formatter.format(now.add(Duration(days: 1)));
-    print(today); // 2016-01-25
-    final List<ExpenseData> chartData = [
-      ExpenseData('$yesyes', 23, 54, 33),
-      ExpenseData('$yesterday', 33, 45, 54),
-      ExpenseData('$today', 43, 23, 20),
-      ExpenseData('$tommorrow', 32, 54, 23),
-      ExpenseData('$tommtomm', 56, 18, 43),
-    ];
-    return chartData;
-  }
-}
-
-class ExpenseData {
-  ExpenseData(this.expenseCategory, this.father, this.mother, this.daughter);
-  final String expenseCategory;
-  final num father;
-  final num mother;
-  final num daughter;
 }

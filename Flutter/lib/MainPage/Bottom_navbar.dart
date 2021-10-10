@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/MainPage/Calendar/calendar.dart';
+import 'package:flutter_auth/MainPage/Food/chart/chart_main.dart';
 import 'package:flutter_auth/MainPage/Food/my_diet.dart';
+import 'package:flutter_auth/MainPage/Mypage/mypage_main.dart';
 import 'package:flutter_auth/MainPage/Training/training_main.dart';
 import 'package:flutter_auth/MainPage/chart.dart';
-import 'package:flutter_auth/MainPage/Mypage/mypage_main.dart';
 
 class BottomNavigator extends StatefulWidget {
   @override
@@ -20,13 +21,7 @@ class _BottomNavigatorState extends State<BottomNavigator> {
       child: Scaffold(
         body: IndexedStack(
           index: _selectedidx,
-          children: [
-            Calendar(),
-            myDiet(),
-            ReportChart(),
-            trainMain(),
-            myPage()
-          ],
+          children: [Calendar(), myDiet(), ChartPage(), trainMain(), myPage()],
         ),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
