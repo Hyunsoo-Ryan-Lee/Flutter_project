@@ -7,6 +7,7 @@ import 'package:presentation/examples/column.dart';
 import 'package:presentation/examples/gridview.dart';
 import 'package:presentation/examples/image.dart';
 import 'package:presentation/examples/listview.dart';
+import 'package:presentation/examples/persistent.dart';
 import 'package:presentation/examples/row.dart';
 
 void main() {
@@ -165,6 +166,19 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                     child: Text(
                       'Image',
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
+                    style: OutlinedButton.styleFrom(
+                        fixedSize: Size(200, 10),
+                        backgroundColor: Colors.black54),
+                  ),
+                  OutlinedButton(
+                    onPressed: () {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => navbar()));
+                    },
+                    child: Text(
+                      '네비게이션 바',
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
                     style: OutlinedButton.styleFrom(

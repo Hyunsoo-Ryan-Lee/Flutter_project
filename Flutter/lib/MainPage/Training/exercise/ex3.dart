@@ -1,26 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Ex_3 extends StatelessWidget {
+class Ex_3 extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        resizeToAvoidBottomInset: false,
-        body: Center(
-          child: Exercise_3(),
-        ),
-      ),
-    );
-  }
+  _Ex_3State createState() => _Ex_3State();
 }
 
-class Exercise_3 extends StatefulWidget {
-  @override
-  _Exercise_3State createState() => _Exercise_3State();
-}
-
-class _Exercise_3State extends State<Exercise_3> {
+class _Ex_3State extends State<Ex_3> {
   TextEditingController _passwordController;
 
   bool isPasswordValid = false;
@@ -84,6 +69,15 @@ class _Exercise_3State extends State<Exercise_3> {
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
+        appBar: AppBar(
+          title: Text(
+            'ex3',
+            style: TextStyle(color: Colors.black),
+          ),
+          elevation: 0.0,
+          backgroundColor: Colors.blueAccent[100],
+          centerTitle: true,
+        ),
         body: Padding(
           padding: const EdgeInsets.only(top: 110),
           child: Column(

@@ -18,7 +18,11 @@ class _ReportChartState extends State<ReportChart> {
 
   @override
   void initState() {
-    _chartData = getChartData();
+    if (widget.data == null) {
+      _chartData = chartDefault();
+    } else {
+      _chartData = getChartData();
+    }
     _tooltipBehavior = TooltipBehavior(enable: true);
     super.initState();
   }
@@ -109,6 +113,29 @@ class _ReportChartState extends State<ReportChart> {
     ];
     return chartData;
   }
+
+  List<ExpenseData> chartDefault() {
+    var now = new DateTime.now();
+    var formatter = new DateFormat('MM-dd');
+    String yesyes = formatter.format(now.subtract(Duration(days: 2)));
+    String yesterday = formatter.format(now.subtract(Duration(days: 1)));
+    String today = formatter.format(now);
+    String tommorrow = formatter.format(now.add(Duration(days: 1)));
+    String tommtomm = formatter.format(now.add(Duration(days: 1)));
+
+    final List<ExpenseData> chartData = [
+      ExpenseData('$yesyes', 0, 0, 0),
+      ExpenseData('$yesterday', 0, 0, 0),
+      ExpenseData('$today', 0, 0, 0),
+      ExpenseData('$tommorrow', 0, 0, 0),
+      ExpenseData('$tommtomm', 0, 0, 0),
+    ];
+    return chartData;
+  }
+
+  // Widget tt() {
+  //   if (widget.data == null)
+  // }
 }
 
 class ExpenseData {

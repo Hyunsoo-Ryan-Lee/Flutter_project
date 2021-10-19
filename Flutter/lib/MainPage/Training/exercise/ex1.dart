@@ -2,31 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_auth/MainPage/Training/Instruction/ex1_instruction.dart';
 
-class Ex_1 extends StatelessWidget {
+// class Ex_1 extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     // SystemChrome.setPreferredOrientations([
+//     //   DeviceOrientation.portraitDown,
+//     //   DeviceOrientation.portraitUp,
+//     // ]);
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: Scaffold(
+//         resizeToAvoidBottomInset: false,
+//         body: Center(
+//           child: Exercise_1(),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+class Ex_1 extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    // SystemChrome.setPreferredOrientations([
-    //   DeviceOrientation.portraitDown,
-    //   DeviceOrientation.portraitUp,
-    // ]);
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        resizeToAvoidBottomInset: false,
-        body: Center(
-          child: Exercise_1(),
-        ),
-      ),
-    );
-  }
+  _Ex_1State createState() => _Ex_1State();
 }
 
-class Exercise_1 extends StatefulWidget {
-  @override
-  _Exercise_1State createState() => _Exercise_1State();
-}
-
-class _Exercise_1State extends State<Exercise_1> {
+class _Ex_1State extends State<Ex_1> {
   TextEditingController _passwordController;
 
   bool isPasswordValid = false;
@@ -101,6 +101,15 @@ class _Exercise_1State extends State<Exercise_1> {
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
+        appBar: AppBar(
+          title: Text(
+            'ex1',
+            style: TextStyle(color: Colors.black),
+          ),
+          elevation: 0.0,
+          backgroundColor: Colors.blueAccent[100],
+          centerTitle: true,
+        ),
         body: Padding(
           padding: const EdgeInsets.only(top: 110),
           child: Column(

@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_auth/MainPage/Bottom_navbar.dart';
 import 'package:flutter_auth/MainPage/Food/chart/chart_main.dart';
+import 'package:flutter_auth/MainPage/Food/my_diet.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:http_parser/http_parser.dart';
@@ -23,7 +24,7 @@ class _FoodCameraState extends State<FoodCamera> {
   final _picker = ImagePicker();
   File _image;
   String message = '';
-  String address = 'https://b788-112-154-191-206.ngrok.io/foodselect';
+  String address = 'https://a490-112-154-191-206.ngrok.io/foodselect';
   Dio dio = new Dio();
   bool _canShowButton = true;
 
@@ -244,52 +245,60 @@ class _FoodCameraState extends State<FoodCamera> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            '식단 사진',
-            style: TextStyle(color: Colors.black),
+    return SafeArea(
+      child: Scaffold(
+          appBar: AppBar(
+            title: Text(
+              '식단 사진',
+              style: TextStyle(color: Colors.black),
+            ),
+            backgroundColor: Colors.blueAccent[100],
+            centerTitle: true,
           ),
-          backgroundColor: Colors.blueAccent[100],
-          centerTitle: true,
-        ),
-        body: Center(
-          child: SingleChildScrollView(
-            child: Container(
-              alignment: Alignment.center,
-              child: Column(
-                children: [
-                  _imageView(),
-                  _foodTable(),
-                  !_canShowButton
-                      ? const SizedBox.shrink()
-                      : ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              fixedSize: Size(150, 20)),
-                          onPressed: () {
-                            _showDialog(context);
-                            hideWidget();
-                          },
-                          child: Text('Select Image')),
-                  _canShowButton
-                      ? const SizedBox.shrink()
-                      : ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              fixedSize: Size(150, 20)),
-                          onPressed: () {
-                            var route = new MaterialPageRoute(
-                                builder: (BuildContext context) =>
-                                    new ReportChart(
-                                        data: [fcal, fcarboh, fprotein, ffat]));
-                            Navigator.of(context).push(route);
-                            // Navigator.of(context).push(MaterialPageRoute(
-                            //     builder: (context) => BottomNavigator()));
-                          },
-                          child: Text('Send')),
-                ],
+          body: Center(
+            child: SingleChildScrollView(
+              child: Container(
+                alignment: Alignment.center,
+                child: Column(
+                  children: [
+                    _imageView(),
+                    _foodTable(),
+                    !_canShowButton
+                        ? const SizedBox.shrink()
+                        : ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                fixedSize: Size(150, 20)),
+                            onPressed: () {
+                              _showDialog(context);
+                              hideWidget();
+                            },
+                            child: Text('Select Image')),
+                    _canShowButton
+                        ? const SizedBox.shrink()
+                        : ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                fixedSize: Size(150, 20)),
+                            onPressed: () {
+                              var routeChart = MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      ReportChart(data: [
+                                        fcal,
+                                        fcarboh,
+                                        fprotein,
+                                        ffat
+                                      ]));
+                              var routeDiet = MaterialPageRoute(
+                                  builder: (BuildContext context) => myDiet(
+                                      data: [fcal, fcarboh, fprotein, ffat]));
+                              Navigator.of(context).pushReplacement(routeChart);
+                              Navigator.of(context).pushReplacement(routeDiet);
+                            },
+                            child: Text('Send')),
+                  ],
+                ),
               ),
             ),
-          ),
-        ));
+          )),
+    );
   }
 }
