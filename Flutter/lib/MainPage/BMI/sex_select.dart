@@ -55,7 +55,7 @@ class _selectSexState extends State<selectSex> {
                     builder: (BuildContext context) =>
                         new BMIwomen(txt: widget.txt),
                   );
-                  Navigator.of(context).push(route);
+                  Navigator.of(context).pushReplacement(route);
                   // Navigator.of(context).push(
                   //     MaterialPageRoute(builder: (context) => BMIwomen()));
                 },

@@ -30,7 +30,7 @@ class _BMIwomenState extends State<BMIwomen> {
   TextEditingController _heightcontroller = TextEditingController();
   TextEditingController _weightcontroller = TextEditingController();
   TextEditingController _agecontroller = TextEditingController();
-  String address = '';
+  String address = 'https://59aa-119-192-202-235.ngrok.io/member/register';
 
   @override
   Widget build(BuildContext context) {
@@ -250,15 +250,15 @@ class _BMIwomenState extends State<BMIwomen> {
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
-      body: jsonEncode(<String, String>{
-        'UUID': widget.txt[0],
-        'UPW': widget.txt[1],
-        'USEX': '여',
-        'UAGE': title[0],
-        'UHEIGHT': title[1],
-        'UWEIGHT': title[2],
-        'UACT': title[3],
-        'URDC': result
+      body: jsonEncode({
+        'uuid': widget.txt[0],
+        'upw': widget.txt[1],
+        'usex': 'F',
+        'uage': title[0],
+        'uheight': title[1],
+        'uweight': title[2],
+        'uact': title[3],
+        'urdc': result
       }),
     );
   }

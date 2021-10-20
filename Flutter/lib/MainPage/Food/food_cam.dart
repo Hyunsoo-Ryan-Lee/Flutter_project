@@ -1,12 +1,11 @@
 import 'dart:convert';
+import 'dart:ffi';
 import 'dart:io';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:dio/dio.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_auth/MainPage/Bottom_navbar.dart';
-import 'package:flutter_auth/MainPage/Food/chart/chart_main.dart';
-import 'package:flutter_auth/MainPage/Food/my_diet.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:http_parser/http_parser.dart';
@@ -21,13 +20,29 @@ class FoodCamera extends StatefulWidget {
 }
 
 class _FoodCameraState extends State<FoodCamera> {
+  final FirebaseAuth auth = FirebaseAuth.instance;
   final _picker = ImagePicker();
   File _image;
   String message = '';
   // String address = 'https://a4f9-119-192-202-235.ngrok.io/foodselect';
-  String address = 'https://4ff8-119-192-202-251.ngrok.io/repository/predict/';
+  String address = 'https://0750-119-192-202-235.ngrok.io/repository/predict';
+  String diet_address =
+      'https://0750-119-192-202-235.ngrok.io/repository/dietsave';
   Dio dio = new Dio();
   bool _canShowButton = true;
+  final _valuelist = [
+    '아침',
+    '점심',
+    '저녁',
+  ];
+  String dropdownValue = '아침';
+  String holder = '';
+
+  String uuid = '';
+  void GetUserId() {
+    final User user = auth.currentUser;
+    uuid = user.email;
+  }
 
   void hideWidget() {
     setState(() {
@@ -130,6 +145,7 @@ class _FoodCameraState extends State<FoodCamera> {
   var rawstring = '';
   var cutstring = '';
   var array = '';
+  var fid = '';
   var fname = '';
   int famount;
   double fcal;
@@ -147,6 +163,7 @@ class _FoodCameraState extends State<FoodCamera> {
     http.Response res = await http.Response.fromStream(response);
     final resJson = jsonDecode(res.body);
     if (response.statusCode == 200) {
+      fid = resJson['fid'];
       fname = resJson['fname'];
       famount = resJson['famount'];
       fcal = resJson['fcal'];
@@ -244,6 +261,36 @@ class _FoodCameraState extends State<FoodCamera> {
     }
   }
 
+  Widget _DayTime() {
+    if (_image == null) {
+      return Text('');
+    } else {
+      return DropdownButton(
+        value: dropdownValue,
+        onChanged: (String newValue) {
+          getDropDownItem();
+          setState(() {
+            dropdownValue = newValue;
+          });
+        },
+        items: _valuelist.map<DropdownMenuItem<String>>((String value) {
+          return DropdownMenuItem<String>(
+            value: value,
+            child: Text(value),
+          );
+        }).toList(),
+        elevation: 4,
+        icon: const Icon(Icons.arrow_drop_down_rounded),
+      );
+    }
+  }
+
+  void getDropDownItem() {
+    setState(() {
+      holder = dropdownValue;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -264,6 +311,13 @@ class _FoodCameraState extends State<FoodCamera> {
                   children: [
                     _imageView(),
                     _foodTable(),
+                    SizedBox(
+                      height: 3,
+                    ),
+                    _DayTime(),
+                    SizedBox(
+                      height: 10,
+                    ),
                     !_canShowButton
                         ? const SizedBox.shrink()
                         : ElevatedButton(
@@ -272,6 +326,7 @@ class _FoodCameraState extends State<FoodCamera> {
                             onPressed: () {
                               _showDialog(context);
                               hideWidget();
+                              GetUserId();
                             },
                             child: Text('Select Image')),
                     _canShowButton
@@ -280,17 +335,32 @@ class _FoodCameraState extends State<FoodCamera> {
                             style: ElevatedButton.styleFrom(
                                 fixedSize: Size(150, 20)),
                             onPressed: () {
-                              var routeChart = MaterialPageRoute(
-                                  builder: (BuildContext context) =>
-                                      ReportChart(data: [
-                                        fcal,
-                                        fcarboh,
-                                        fprotein,
-                                        ffat
-                                      ]));
-                              var routeDiet = MaterialPageRoute(
-                                  builder: (BuildContext context) => myDiet(
-                                      data: [fcal, fcarboh, fprotein, ffat]));
+                              sendFoodData([
+                                uuid,
+                                fid,
+                                dropdownValue,
+                                fname,
+                                famount,
+                                fcal,
+                                fcarboh,
+                                fprotein,
+                                ffat
+                              ]);
+                              print(uuid);
+
+                              // Navigator.of(context).pop();
+
+                              // var routeChart = MaterialPageRoute(
+                              //     builder: (BuildContext context) =>
+                              //         ReportChart(data: [
+                              //           fcal,
+                              //           fcarboh,
+                              //           fprotein,
+                              //           ffat
+                              //         ]));
+                              // var routeDiet = MaterialPageRoute(
+                              //     builder: (BuildContext context) => myDiet(
+                              //         data: [fcal, fcarboh, fprotein, ffat]));
                               // Navigator.of(context).pushReplacement(routeChart);
                               // Navigator.of(context).pushReplacement(routeDiet);
                             },
@@ -300,6 +370,26 @@ class _FoodCameraState extends State<FoodCamera> {
               ),
             ),
           )),
+    );
+  }
+
+  Future<http.Response> sendFoodData(List diet) {
+    return http.post(
+      Uri.parse(diet_address),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode({
+        'uuid': diet[0],
+        'fid': diet[1],
+        'meal': diet[2],
+        'fname': diet[3],
+        'amount': diet[4],
+        'cal': diet[5],
+        'carboh': diet[6],
+        'protein': diet[7],
+        'fat': diet[8]
+      }),
     );
   }
 }
