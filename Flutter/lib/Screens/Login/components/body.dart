@@ -86,12 +86,6 @@ class Login extends StatelessWidget {
                 },
               ),
             ),
-            //   hintText: "Your Email",
-            //   onChanged: (value) {},
-            // ),
-            // RoundedPasswordField(
-            //   onChanged: (value) {},
-            // ),
             Container(
               height: 10.0,
             ),

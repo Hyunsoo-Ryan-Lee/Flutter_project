@@ -24,7 +24,8 @@ class _FoodCameraState extends State<FoodCamera> {
   final _picker = ImagePicker();
   File _image;
   String message = '';
-  String address = 'https://a490-112-154-191-206.ngrok.io/foodselect';
+  // String address = 'https://a4f9-119-192-202-235.ngrok.io/foodselect';
+  String address = 'https://4ff8-119-192-202-251.ngrok.io/repository/predict/';
   Dio dio = new Dio();
   bool _canShowButton = true;
 
@@ -130,11 +131,11 @@ class _FoodCameraState extends State<FoodCamera> {
   var cutstring = '';
   var array = '';
   var fname = '';
-  var famount = '';
-  var fcal = '';
-  var fcarboh = '';
-  var fprotein = '';
-  var ffat = '';
+  int famount;
+  double fcal;
+  double fcarboh;
+  double fprotein;
+  double ffat;
   uploadImage() async {
     final request = http.MultipartRequest('POST', Uri.parse(address));
     final headers = {'Content-Type': 'application/json; charset=UTF-8'};
@@ -290,8 +291,8 @@ class _FoodCameraState extends State<FoodCamera> {
                               var routeDiet = MaterialPageRoute(
                                   builder: (BuildContext context) => myDiet(
                                       data: [fcal, fcarboh, fprotein, ffat]));
-                              Navigator.of(context).pushReplacement(routeChart);
-                              Navigator.of(context).pushReplacement(routeDiet);
+                              // Navigator.of(context).pushReplacement(routeChart);
+                              // Navigator.of(context).pushReplacement(routeDiet);
                             },
                             child: Text('Send')),
                   ],

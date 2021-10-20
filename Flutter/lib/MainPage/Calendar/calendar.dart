@@ -36,10 +36,6 @@ class _CalendarState extends State<Calendar> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    // SystemChrome.setPreferredOrientations([
-    //   DeviceOrientation.portraitDown,
-    //   DeviceOrientation.portraitUp,
-    // ]);
 
     return Scaffold(
         appBar: AppBar(
@@ -55,69 +51,66 @@ class _CalendarState extends State<Calendar> {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  height: size.height * 0.62,
-                  child: TableCalendar(
-                    focusedDay: selectedDay,
-                    firstDay: DateTime(1990),
-                    lastDay: DateTime(2050),
-                    calendarFormat: format,
-                    onFormatChanged: (CalendarFormat _format) {
-                      setState(() {
-                        format = _format;
-                      });
-                    },
-                    startingDayOfWeek: StartingDayOfWeek.sunday,
-                    daysOfWeekVisible: true,
+                TableCalendar(
+                  focusedDay: selectedDay,
+                  firstDay: DateTime(1990),
+                  lastDay: DateTime(2050),
+                  calendarFormat: format,
+                  onFormatChanged: (CalendarFormat _format) {
+                    setState(() {
+                      format = _format;
+                    });
+                  },
+                  startingDayOfWeek: StartingDayOfWeek.sunday,
+                  daysOfWeekVisible: true,
 
-                    //Day Changed
-                    onDaySelected: (DateTime selectDay, DateTime focusDay) {
-                      setState(() {
-                        selectedDay = selectDay;
-                        focusedDay = focusDay;
-                      });
-                      print(focusedDay);
-                    },
-                    selectedDayPredicate: (DateTime date) {
-                      return isSameDay(selectedDay, date);
-                    },
+                  //Day Changed
+                  onDaySelected: (DateTime selectDay, DateTime focusDay) {
+                    setState(() {
+                      selectedDay = selectDay;
+                      focusedDay = focusDay;
+                    });
+                    print(focusedDay);
+                  },
+                  selectedDayPredicate: (DateTime date) {
+                    return isSameDay(selectedDay, date);
+                  },
 
-                    eventLoader: _getEventsfromDay,
+                  eventLoader: _getEventsfromDay,
 
-                    //To style the Calendar
-                    calendarStyle: CalendarStyle(
-                      isTodayHighlighted: true,
-                      selectedDecoration: BoxDecoration(
-                        color: Colors.blue,
-                        shape: BoxShape.rectangle,
-                        borderRadius: BorderRadius.circular(5.0),
-                      ),
-                      selectedTextStyle: TextStyle(color: Colors.white),
-                      todayDecoration: BoxDecoration(
-                        color: Colors.purpleAccent,
-                        shape: BoxShape.rectangle,
-                        borderRadius: BorderRadius.circular(5.0),
-                      ),
-                      defaultDecoration: BoxDecoration(
-                        shape: BoxShape.rectangle,
-                        borderRadius: BorderRadius.circular(5.0),
-                      ),
-                      weekendDecoration: BoxDecoration(
-                        shape: BoxShape.rectangle,
-                        borderRadius: BorderRadius.circular(5.0),
-                      ),
+                  //To style the Calendar
+                  calendarStyle: CalendarStyle(
+                    isTodayHighlighted: true,
+                    selectedDecoration: BoxDecoration(
+                      color: Colors.blue,
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.circular(5.0),
                     ),
-                    headerStyle: HeaderStyle(
-                      formatButtonVisible: true,
-                      titleCentered: true,
-                      formatButtonShowsNext: false,
-                      formatButtonDecoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(5.0),
-                      ),
-                      formatButtonTextStyle: TextStyle(
-                        color: Colors.white,
-                      ),
+                    selectedTextStyle: TextStyle(color: Colors.white),
+                    todayDecoration: BoxDecoration(
+                      color: Colors.purpleAccent,
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.circular(5.0),
+                    ),
+                    defaultDecoration: BoxDecoration(
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.circular(5.0),
+                    ),
+                    weekendDecoration: BoxDecoration(
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.circular(5.0),
+                    ),
+                  ),
+                  headerStyle: HeaderStyle(
+                    formatButtonVisible: true,
+                    titleCentered: true,
+                    formatButtonShowsNext: false,
+                    formatButtonDecoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(5.0),
+                    ),
+                    formatButtonTextStyle: TextStyle(
+                      color: Colors.white,
                     ),
                   ),
                 ),
