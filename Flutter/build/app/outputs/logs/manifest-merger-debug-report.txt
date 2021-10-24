@@ -14,8 +14,9 @@ MERGED from [:camera] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\
 MERGED from [:flutter_plugin_android_lifecycle] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:shared_preferences] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\shared_preferences\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:path_provider] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\path_provider\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
-MERGED from [:flutter_image_compress] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\flutter_image_compress\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:image_cropper] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\image_cropper\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:url_launcher] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-14:12
+MERGED from [:flutter_image_compress] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\flutter_image_compress\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\Playdata\.gradle\caches\transforms-2\files-2.1\da2544393404562f7e37f5a284d0ee06\jetified-firebase-auth-21.0.1\AndroidManifest.xml:17:1-83:12
 MERGED from [com.google.firebase:firebase-storage:20.0.0] C:\Users\Playdata\.gradle\caches\transforms-2\files-2.1\a1b1dfa5c4510737e1c0d2859d99b019\firebase-storage-20.0.0\AndroidManifest.xml:15:1-39:12
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\Playdata\.gradle\caches\transforms-2\files-2.1\c63b69c442441269b2139437ff1ed4fb\jetified-firebase-auth-interop-20.0.0\AndroidManifest.xml:2:1-10:12
@@ -94,6 +95,8 @@ MERGED from [:firebase_core] C:\Users\Playdata\Documents\Flutter_Project_Final\F
 MERGED from [:firebase_core] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:image_picker] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-17:19
 MERGED from [:image_picker] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-17:19
+MERGED from [:url_launcher] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-12:19
+MERGED from [:url_launcher] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-12:19
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\Playdata\.gradle\caches\transforms-2\files-2.1\da2544393404562f7e37f5a284d0ee06\jetified-firebase-auth-21.0.1\AndroidManifest.xml:26:5-81:19
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\Playdata\.gradle\caches\transforms-2\files-2.1\da2544393404562f7e37f5a284d0ee06\jetified-firebase-auth-21.0.1\AndroidManifest.xml:26:5-81:19
 MERGED from [com.google.firebase:firebase-storage:20.0.0] C:\Users\Playdata\.gradle\caches\transforms-2\files-2.1\a1b1dfa5c4510737e1c0d2859d99b019\firebase-storage-20.0.0\AndroidManifest.xml:29:5-37:19
@@ -192,10 +195,12 @@ MERGED from [:shared_preferences] C:\Users\Playdata\Documents\Flutter_Project_Fi
 MERGED from [:shared_preferences] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\shared_preferences\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\path_provider\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\path_provider\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:flutter_image_compress] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\flutter_image_compress\intermediates\library_manifest\debug\AndroidManifest.xml:6:5-9:55
-MERGED from [:flutter_image_compress] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\flutter_image_compress\intermediates\library_manifest\debug\AndroidManifest.xml:6:5-9:55
 MERGED from [:image_cropper] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\image_cropper\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:image_cropper] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\image_cropper\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_image_compress] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\flutter_image_compress\intermediates\library_manifest\debug\AndroidManifest.xml:6:5-9:55
+MERGED from [:flutter_image_compress] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\flutter_image_compress\intermediates\library_manifest\debug\AndroidManifest.xml:6:5-9:55
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\Playdata\.gradle\caches\transforms-2\files-2.1\da2544393404562f7e37f5a284d0ee06\jetified-firebase-auth-21.0.1\AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\Playdata\.gradle\caches\transforms-2\files-2.1\da2544393404562f7e37f5a284d0ee06\jetified-firebase-auth-21.0.1\AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-storage:20.0.0] C:\Users\Playdata\.gradle\caches\transforms-2\files-2.1\a1b1dfa5c4510737e1c0d2859d99b019\firebase-storage-20.0.0\AndroidManifest.xml:20:5-22:41
@@ -381,6 +386,14 @@ uses-permission#android.permission.RECORD_AUDIO
 ADDED from [:camera] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\camera\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-71
 	android:name
 		ADDED from [:camera] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\camera\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-68
+activity#io.flutter.plugins.urllauncher.WebViewActivity
+ADDED from [:url_launcher] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-11:74
+	android:exported
+		ADDED from [:url_launcher] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-37
+	android:theme
+		ADDED from [:url_launcher] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-71
+	android:name
+		ADDED from [:url_launcher] C:\Users\Playdata\Documents\Flutter_Project_Final\Flutter\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-74
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\Playdata\.gradle\caches\transforms-2\files-2.1\da2544393404562f7e37f5a284d0ee06\jetified-firebase-auth-21.0.1\AndroidManifest.xml:24:5-79
 MERGED from [com.google.firebase:firebase-storage:20.0.0] C:\Users\Playdata\.gradle\caches\transforms-2\files-2.1\a1b1dfa5c4510737e1c0d2859d99b019\firebase-storage-20.0.0\AndroidManifest.xml:26:5-79

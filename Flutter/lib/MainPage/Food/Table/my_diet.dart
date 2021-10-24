@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/MainPage/Food/Table/dietTable.dart';
 import 'package:http/http.dart' as http;
 
 class myDiet extends StatefulWidget {
@@ -36,7 +37,7 @@ class _myDietState extends State<myDiet> {
                   SelectDate(context);
                 },
                 child: Text('조회')),
-            _dietTable()
+            // _dietTable()
           ],
         ),
       ),
@@ -52,7 +53,6 @@ class _myDietState extends State<myDiet> {
   List fat = [];
   int period = 0;
   sendFoodData() async {
-    print('음식데이터 전송 시작');
     http.Response response = await http.post(
       Uri.parse(address),
       headers: <String, String>{
@@ -80,43 +80,86 @@ class _myDietState extends State<myDiet> {
     setState(() {});
   }
 
-  Widget _dataList() {
-    return ListView(
-        padding: const EdgeInsets.all(8),
-        children: [for (int i = 0; i < date.length; i++) Text(date[i])]);
-  }
-
-  Widget _dietTable() {
-    return Table(border: TableBorder.all(color: Colors.black), columnWidths: {
-      0: FixedColumnWidth(80.0),
-      1: FixedColumnWidth(36.0),
-      2: FixedColumnWidth(50.0),
-      3: FixedColumnWidth(36.0),
-      4: FixedColumnWidth(36.0),
-      5: FixedColumnWidth(36.0),
-      6: FixedColumnWidth(36.0)
-    }, children: [
-      TableRow(children: [
-        Text('날짜'),
-        Text('시간'),
-        Text('음식명'),
-        Text('칼로리'),
-        Text('탄수화물'),
-        Text('단백질'),
-        Text('지방'),
-      ]),
-      for (int i = 0; i < date.length; i++)
-        TableRow(children: [
-          Text(date[i]),
-          Text(meal[i]),
-          Text(fname[i]),
-          Text(cal[i].toString()),
-          Text(carboh[i].toString()),
-          Text(protein[i].toString()),
-          Text(fat[i].toString()),
-        ])
-    ]);
-  }
+  // Widget _dietTable() {
+  //   return Table(border: TableBorder.all(color: Colors.black), columnWidths: {
+  //     0: FixedColumnWidth(70.0),
+  //     1: FixedColumnWidth(36.0),
+  //     2: FixedColumnWidth(70.0),
+  //     3: FixedColumnWidth(40.0),
+  //     4: FixedColumnWidth(60.0),
+  //     5: FixedColumnWidth(40.0),
+  //     6: FixedColumnWidth(40.0)
+  //   }, children: [
+  //     TableRow(children: [
+  //       Text(
+  //         '날짜',
+  //         textAlign: TextAlign.center,
+  //         style: TextStyle(fontWeight: FontWeight.bold),
+  //       ),
+  //       Text(
+  //         '시간',
+  //         textAlign: TextAlign.center,
+  //         style: TextStyle(fontWeight: FontWeight.bold),
+  //       ),
+  //       Text(
+  //         '음식명',
+  //         textAlign: TextAlign.center,
+  //         style: TextStyle(fontWeight: FontWeight.bold),
+  //       ),
+  //       Text(
+  //         '칼로리',
+  //         textAlign: TextAlign.center,
+  //         style: TextStyle(fontWeight: FontWeight.bold),
+  //       ),
+  //       Text(
+  //         '탄수화물',
+  //         textAlign: TextAlign.center,
+  //         style: TextStyle(fontWeight: FontWeight.bold),
+  //       ),
+  //       Text(
+  //         '단백질',
+  //         textAlign: TextAlign.center,
+  //         style: TextStyle(fontWeight: FontWeight.bold),
+  //       ),
+  //       Text(
+  //         '지방',
+  //         textAlign: TextAlign.center,
+  //         style: TextStyle(fontWeight: FontWeight.bold),
+  //       ),
+  //     ]),
+  //     for (int i = 0; i < date.length; i++)
+  //       TableRow(children: [
+  //         Text(
+  //           date[i],
+  //           textAlign: TextAlign.center,
+  //         ),
+  //         Text(
+  //           meal[i],
+  //           textAlign: TextAlign.center,
+  //         ),
+  //         Text(
+  //           fname[i],
+  //           textAlign: TextAlign.center,
+  //         ),
+  //         Text(
+  //           cal[i].toString(),
+  //           textAlign: TextAlign.center,
+  //         ),
+  //         Text(
+  //           carboh[i].toString(),
+  //           textAlign: TextAlign.center,
+  //         ),
+  //         Text(
+  //           protein[i].toString(),
+  //           textAlign: TextAlign.center,
+  //         ),
+  //         Text(
+  //           fat[i].toString(),
+  //           textAlign: TextAlign.center,
+  //         ),
+  //       ])
+  //   ]);
+  // }
 
   Future<void> SelectDate(BuildContext context) {
     return showDialog(
@@ -133,7 +176,17 @@ class _myDietState extends State<myDiet> {
                     onTap: () {
                       period = 1;
                       sendFoodData();
-                      Navigator.of(context).pop();
+                      var routeChart = MaterialPageRoute(
+                          builder: (BuildContext context) => DietTable(data: [
+                                date,
+                                meal,
+                                fname,
+                                cal,
+                                carboh,
+                                protein,
+                                fat
+                              ]));
+                      Navigator.of(context).pushReplacement(routeChart);
                     },
                   ),
                   Padding(padding: EdgeInsets.all(12.0)),

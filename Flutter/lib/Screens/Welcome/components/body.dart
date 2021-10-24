@@ -16,8 +16,8 @@ class WelcomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              "WELCOME TO APP",
-              style: TextStyle(fontWeight: FontWeight.bold),
+              "WELCOME TO HAILAB",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
             ),
             SizedBox(height: size.height * 0.05),
             SvgPicture.asset(

@@ -1,40 +1,24 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:flutter_auth/MainPage/Food/chart/visual.dart';
+import 'package:http/http.dart' as http;
 
-class ReportChart extends StatefulWidget {
-  var data;
-  ReportChart({Key mykey, this.data}) : super(key: mykey);
-
-  final String title = '';
+class VisualData extends StatefulWidget {
+  final List data;
+  const VisualData({Key mykey, this.data}) : super(key: mykey);
 
   @override
-  _ReportChartState createState() => _ReportChartState();
+  State<VisualData> createState() => _VisualDataState();
 }
 
-class _ReportChartState extends State<ReportChart> {
-  List<ExpenseData> _chartData;
-  TooltipBehavior _tooltipBehavior;
-
-  @override
-  void initState() {
-    if (widget.data == null) {
-      _chartData = chartDefault();
-    } else {
-      _chartData = getChartData();
-    }
-    _tooltipBehavior = TooltipBehavior(enable: true);
-    super.initState();
-  }
-
+class _VisualDataState extends State<VisualData> {
+  String address = 'http://8bef-121-128-108-65.ngrok.io/repository/dietselect';
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
       appBar: AppBar(
         title: Text(
-          'REPORT',
+          'Report ',
           style: TextStyle(color: Colors.black),
         ),
         elevation: 0.0,
@@ -43,105 +27,247 @@ class _ReportChartState extends State<ReportChart> {
       ),
       body: Center(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('${widget.data}'),
-            Container(
-              height: size.height * 0.7,
-              width: size.width * 0.85,
-              child: SfCartesianChart(
-                title: ChartTitle(
-                    text: '영양정보',
-                    textStyle: TextStyle(fontWeight: FontWeight.bold)),
-                legend: Legend(isVisible: true),
-                tooltipBehavior: _tooltipBehavior,
-                series: <ChartSeries>[
-                  StackedColumnSeries<ExpenseData, String>(
-                      dataSource: _chartData,
-                      xValueMapper: (ExpenseData exp, _) => exp.expenseCategory,
-                      yValueMapper: (ExpenseData exp, _) => exp.father,
-                      name: '탄수화물',
-                      markerSettings: MarkerSettings(
-                        isVisible: true,
-                      )),
-                  StackedColumnSeries<ExpenseData, String>(
-                      dataSource: _chartData,
-                      xValueMapper: (ExpenseData exp, _) => exp.expenseCategory,
-                      yValueMapper: (ExpenseData exp, _) => exp.mother,
-                      name: '단백질',
-                      markerSettings: MarkerSettings(
-                        isVisible: true,
-                      )),
-                  StackedColumnSeries<ExpenseData, String>(
-                      dataSource: _chartData,
-                      xValueMapper: (ExpenseData exp, _) => exp.expenseCategory,
-                      yValueMapper: (ExpenseData exp, _) => exp.daughter,
-                      name: '지방',
-                      markerSettings: MarkerSettings(
-                        isVisible: true,
-                      )),
-                ],
-                primaryXAxis: CategoryAxis(),
-              ),
-            ),
+            OutlinedButton(
+                onPressed: () {
+                  SelectDate(context);
+                },
+                child: Text('조회')),
           ],
         ),
       ),
-    ));
+    );
   }
 
-  List<ExpenseData> getChartData() {
-    var now = new DateTime.now();
-    var formatter = new DateFormat('MM-dd');
-    String yesyes = formatter.format(now.subtract(Duration(days: 2)));
-    String yesterday = formatter.format(now.subtract(Duration(days: 1)));
-    String today = formatter.format(now);
-    String tommorrow = formatter.format(now.add(Duration(days: 1)));
-    String tommtomm = formatter.format(now.add(Duration(days: 1)));
-    var fcal = int.parse('${widget.data[0]}');
-    var fcarboh = int.parse('${widget.data[1]}');
-    var fprotein = int.parse('${widget.data[2]}');
-    var ffat = int.parse('${widget.data[3]}');
-    final List<ExpenseData> chartData = [
-      ExpenseData('$yesyes', 50, 54, 33),
-      ExpenseData('$yesterday', 33, 45, 54),
-      ExpenseData('$today', fcarboh, fprotein, ffat),
-      ExpenseData('$tommorrow', 32, 54, 23),
-      ExpenseData('$tommtomm', 56, 18, 43),
-    ];
-    return chartData;
+  List date = [];
+  List meal = [];
+  List fname = [];
+  List cal = [];
+  List carboh = [];
+  List protein = [];
+  List fat = [];
+  int period = 0;
+  double calsum = 0;
+  double carbohsum = 0;
+  double proteinsum = 0;
+  double fatsum = 0;
+  sendFoodData() async {
+    print('데이터 전송 시작');
+    http.Response response = await http.post(
+      Uri.parse(address),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode({'uuid': 'good@gmail.com', 'period': period}),
+    );
+    final resJson = jsonDecode(response.body);
+    if (response.statusCode == 200) {
+      date = resJson['diet_datetime'];
+      meal = resJson['meal'];
+      fname = resJson['fname'];
+      cal = resJson['cal'];
+      carboh = resJson['carboh'];
+      protein = resJson['protein'];
+      fat = resJson['fat'];
+      calsum = cal.reduce((value, element) => value + element);
+      carbohsum = carboh.reduce((value, element) => value + element);
+      proteinsum = protein.reduce((value, element) => value + element);
+      fatsum = fat.reduce((value, element) => value + element);
+      print(calsum.floor());
+      print(carbohsum.floor());
+      print(proteinsum.floor());
+      print(fatsum.floor());
+    }
+    setState(() {});
   }
 
-  List<ExpenseData> chartDefault() {
-    var now = new DateTime.now();
-    var formatter = new DateFormat('MM-dd');
-    String yesyes = formatter.format(now.subtract(Duration(days: 2)));
-    String yesterday = formatter.format(now.subtract(Duration(days: 1)));
-    String today = formatter.format(now);
-    String tommorrow = formatter.format(now.add(Duration(days: 1)));
-    String tommtomm = formatter.format(now.add(Duration(days: 1)));
-
-    final List<ExpenseData> chartData = [
-      ExpenseData('$yesyes', 0, 0, 0),
-      ExpenseData('$yesterday', 0, 0, 0),
-      ExpenseData('$today', 0, 0, 0),
-      ExpenseData('$tommorrow', 0, 0, 0),
-      ExpenseData('$tommtomm', 0, 0, 0),
-    ];
-    return chartData;
-  }
-
-  // Widget tt() {
-  //   if (widget.data == null)
+  // Widget _dietTable() {
+  //   return Table(border: TableBorder.all(color: Colors.black), columnWidths: {
+  //     0: FixedColumnWidth(70.0),
+  //     1: FixedColumnWidth(36.0),
+  //     2: FixedColumnWidth(70.0),
+  //     3: FixedColumnWidth(40.0),
+  //     4: FixedColumnWidth(60.0),
+  //     5: FixedColumnWidth(40.0),
+  //     6: FixedColumnWidth(40.0)
+  //   }, children: [
+  //     TableRow(children: [
+  //       Text(
+  //         '날짜',
+  //         textAlign: TextAlign.center,
+  //         style: TextStyle(fontWeight: FontWeight.bold),
+  //       ),
+  //       Text(
+  //         '시간',
+  //         textAlign: TextAlign.center,
+  //         style: TextStyle(fontWeight: FontWeight.bold),
+  //       ),
+  //       Text(
+  //         '음식명',
+  //         textAlign: TextAlign.center,
+  //         style: TextStyle(fontWeight: FontWeight.bold),
+  //       ),
+  //       Text(
+  //         '칼로리',
+  //         textAlign: TextAlign.center,
+  //         style: TextStyle(fontWeight: FontWeight.bold),
+  //       ),
+  //       Text(
+  //         '탄수화물',
+  //         textAlign: TextAlign.center,
+  //         style: TextStyle(fontWeight: FontWeight.bold),
+  //       ),
+  //       Text(
+  //         '단백질',
+  //         textAlign: TextAlign.center,
+  //         style: TextStyle(fontWeight: FontWeight.bold),
+  //       ),
+  //       Text(
+  //         '지방',
+  //         textAlign: TextAlign.center,
+  //         style: TextStyle(fontWeight: FontWeight.bold),
+  //       ),
+  //     ]),
+  //     for (int i = 0; i < date.length; i++)
+  //       TableRow(children: [
+  //         Text(
+  //           date[i],
+  //           textAlign: TextAlign.center,
+  //         ),
+  //         Text(
+  //           meal[i],
+  //           textAlign: TextAlign.center,
+  //         ),
+  //         Text(
+  //           fname[i],
+  //           textAlign: TextAlign.center,
+  //         ),
+  //         Text(
+  //           cal[i].toString(),
+  //           textAlign: TextAlign.center,
+  //         ),
+  //         Text(
+  //           carboh[i].toString(),
+  //           textAlign: TextAlign.center,
+  //         ),
+  //         Text(
+  //           protein[i].toString(),
+  //           textAlign: TextAlign.center,
+  //         ),
+  //         Text(
+  //           fat[i].toString(),
+  //           textAlign: TextAlign.center,
+  //         ),
+  //       ])
+  //   ]);
   // }
-}
 
-class ExpenseData {
-  ExpenseData(this.expenseCategory, this.father, this.mother, this.daughter);
-  final String expenseCategory;
-  final num father;
-  final num mother;
-  final num daughter;
+  Future<void> SelectDate(BuildContext context) {
+    return showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('식단 보기'),
+            content: SingleChildScrollView(
+              child: ListBody(
+                children: [
+                  Padding(padding: EdgeInsets.all(10.0)),
+                  GestureDetector(
+                    child: Text('하루'),
+                    onTap: () {
+                      period = 1;
+                      sendFoodData();
+                      var routeChart = MaterialPageRoute(
+                          builder: (BuildContext context) => ReportChart(data: [
+                                // date,
+                                calsum.floor(),
+                                carbohsum.floor(),
+                                proteinsum.floor(),
+                                fatsum.floor()
+                              ]));
+                      Navigator.of(context).pushReplacement(routeChart);
+                      // Navigator.of(context).pop();
+                    },
+                  ),
+                  Padding(padding: EdgeInsets.all(12.0)),
+                  GestureDetector(
+                    child: Text('3일'),
+                    onTap: () {
+                      period = 3;
+                      sendFoodData();
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                  Padding(padding: EdgeInsets.all(12.0)),
+                  GestureDetector(
+                    child: Text('7일'),
+                    onTap: () {
+                      period = 7;
+                      sendFoodData();
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                  Padding(padding: EdgeInsets.all(12.0)),
+                  GestureDetector(
+                    child: Text('15일'),
+                    onTap: () {
+                      period = 15;
+                      sendFoodData();
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                  Padding(padding: EdgeInsets.all(12.0)),
+                  GestureDetector(
+                    child: Text('한 달'),
+                    onTap: () {
+                      period = 30;
+                      sendFoodData();
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                  Padding(padding: EdgeInsets.all(12.0)),
+                  GestureDetector(
+                    child: Text('기타'),
+                    onTap: () {
+                      Navigator.of(context).pop();
+                      OtherDate(context);
+                    },
+                  ),
+                ],
+              ),
+            ),
+          );
+        });
+  }
+
+  Future<void> OtherDate(BuildContext context) {
+    return showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text(
+              '조회할 일 수',
+              textAlign: TextAlign.center,
+            ),
+            content: SingleChildScrollView(
+              child: ListBody(
+                children: [
+                  GestureDetector(
+                    child: TextField(
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Text('조회'))
+                ],
+              ),
+            ),
+          );
+        });
+  }
 }

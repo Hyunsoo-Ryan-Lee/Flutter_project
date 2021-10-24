@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/MainPage/Mypage/EachPage/github.dart';
+import 'package:flutter_auth/Screens/Welcome/components/body.dart';
 import 'package:flutter_settings_screens/flutter_settings_screens.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class myPage extends StatelessWidget {
   @override
@@ -22,7 +25,7 @@ class myPage extends StatelessWidget {
           children: [
             SettingsGroup(title: '설정', children: [
               myInfo(),
-              introduction(),
+              introduction(context),
               sendFeedback(),
               buildLogout(context)
             ])
@@ -42,14 +45,17 @@ class myPage extends StatelessWidget {
         onTap: () {},
       );
 
-  Widget introduction() => SimpleSettingsTile(
+  Widget introduction(BuildContext context) => SimpleSettingsTile(
         title: '개발진 소개',
         subtitle: '',
         leading: Icon(
           Icons.groups,
           color: Colors.blueAccent,
         ),
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => Github()));
+        },
       );
 
   Widget sendFeedback() => SimpleSettingsTile(
@@ -59,7 +65,17 @@ class myPage extends StatelessWidget {
           Icons.mail,
           color: Colors.blueAccent,
         ),
-        onTap: () {},
+        onTap: () async {
+          _launchEmail();
+          // final toEmail = 'hyunsoo@gmail.com';
+          // final subject = 'hello';
+          // final message = 'good';
+          // final url =
+          //     'mailto:$toEmail?subject=${Uri.encodeFull(subject)}&body=${Uri.encodeFull(message)}';
+          // if (await canLaunch(url)) {
+          //   await launch(url);
+          // }
+        },
       );
   Widget buildLogout(BuildContext context) => SimpleSettingsTile(
         title: 'Logout',
@@ -69,7 +85,19 @@ class myPage extends StatelessWidget {
           color: Colors.redAccent,
         ),
         onTap: () {
-          // Navigator.of(context).pop(context);
+          // Navigator.of(context)
+          //     .pushReplacement(MaterialPageRoute(builder: (context) => WelcomePage()));
         },
       );
+
+  _launchEmail() {
+    final Uri emailLaunchUri =
+        Uri(scheme: 'mailto', path: 'smith@example.com', query: 'good'
+            // query: encodeQueryParameters(<String, String>{
+            //   'subject': 'Example Subject & Symbols are allowed!'
+            // }
+            );
+
+    launch(emailLaunchUri.toString());
+  }
 }
