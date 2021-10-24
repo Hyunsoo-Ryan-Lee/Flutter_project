@@ -16,7 +16,7 @@ class SignUp extends StatelessWidget {
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  String address = 'https://872b-119-192-202-235.ngrok.io/member/register';
+  String address = 'http://3.38.2.230:8000/member/register';
 
   @override
   Widget build(BuildContext context) {

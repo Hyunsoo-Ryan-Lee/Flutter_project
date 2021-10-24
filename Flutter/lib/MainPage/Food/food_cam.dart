@@ -25,9 +25,9 @@ class _FoodCameraState extends State<FoodCamera> {
   File _image;
   String message = '';
   // String address = 'https://a4f9-119-192-202-235.ngrok.io/foodselect';
-  String address = 'https://0750-119-192-202-235.ngrok.io/repository/predict';
+  String address = 'http://8bef-121-128-108-65.ngrok.io/repository/predict';
   String diet_address =
-      'https://0750-119-192-202-235.ngrok.io/repository/dietsave';
+      'http://8bef-121-128-108-65.ngrok.io/repository/dietsave';
   Dio dio = new Dio();
   bool _canShowButton = true;
   final _valuelist = [
@@ -159,6 +159,7 @@ class _FoodCameraState extends State<FoodCamera> {
         'image', _image.readAsBytes().asStream(), _image.lengthSync(),
         filename: _image.path.split('/').last));
     request.headers.addAll(headers);
+
     final response = await request.send();
     http.Response res = await http.Response.fromStream(response);
     final resJson = jsonDecode(res.body);
@@ -348,7 +349,7 @@ class _FoodCameraState extends State<FoodCamera> {
                               ]);
                               print(uuid);
 
-                              // Navigator.of(context).pop();
+                              Navigator.of(context).pop();
 
                               // var routeChart = MaterialPageRoute(
                               //     builder: (BuildContext context) =>

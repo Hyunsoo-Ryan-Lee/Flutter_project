@@ -30,7 +30,7 @@ class _BMImenState extends State<BMImen> {
   TextEditingController _heightcontroller = TextEditingController();
   TextEditingController _weightcontroller = TextEditingController();
   TextEditingController _agecontroller = TextEditingController();
-  String address = 'https://59aa-119-192-202-235.ngrok.io/member/register';
+  String address = 'http://3.38.2.230:8000/member/register';
 
   @override
   Widget build(BuildContext context) {

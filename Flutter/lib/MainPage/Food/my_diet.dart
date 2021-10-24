@@ -1,39 +1,8 @@
 import 'dart:convert';
 
+import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-
-// class myDiet extends StatefulWidget {
-//   var data;
-//   myDiet({Key mykey, this.data}) : super(key: mykey);
-
-//   @override
-//   _myDietState createState() => _myDietState();
-// }
-
-// class _myDietState extends State<myDiet> {
-//   @override
-//   Widget build(BuildContext context) {
-//     Size size = MediaQuery.of(context).size;
-
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text(
-//           'My Diet ',
-//           style: TextStyle(color: Colors.black),
-//         ),
-//         elevation: 0.0,
-//         backgroundColor: Colors.blueAccent[100],
-//         centerTitle: true,
-//       ),
-//       body: Column(
-//         children: [
-//           Text('${widget.data}'),
-//         ],
-//       ),
-//     );
-//   }
-// }
 
 class myDiet extends StatefulWidget {
   final List data;
@@ -44,8 +13,8 @@ class myDiet extends StatefulWidget {
 }
 
 class _myDietState extends State<myDiet> {
-  TextEditingController _heightcontroller = TextEditingController();
-  String address = '';
+  TextEditingController _datePeriod = TextEditingController();
+  String address = 'http://8bef-121-128-108-65.ngrok.io/repository/dietselect';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,70 +35,88 @@ class _myDietState extends State<myDiet> {
                 onPressed: () {
                   SelectDate(context);
                 },
-                child: Text('조회'))
+                child: Text('조회')),
+            _dietTable()
           ],
         ),
       ),
     );
   }
 
-  var rawstring = '';
-
-  var cutstring = '';
-
-  var array = '';
-
-  var fname = '';
-
-  int famount;
-
-  double fcal;
-
-  double fcarboh;
-
-  double fprotein;
-
-  double ffat;
-
-  Future<http.Response> sendFoodData(List diet) {
-    return http.post(
+  List date = [];
+  List meal = [];
+  List fname = [];
+  List cal = [];
+  List carboh = [];
+  List protein = [];
+  List fat = [];
+  int period = 0;
+  sendFoodData() async {
+    print('음식데이터 전송 시작');
+    http.Response response = await http.post(
       Uri.parse(address),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
-      body: jsonEncode({
-        'uuid': diet[0],
-        'meal': diet[1],
-        'fname': diet[2],
-        'famount': diet[3],
-        'fcal': diet[4],
-        'fcarboh': diet[5],
-        'fprotein': diet[5],
-        'ffat': diet[7]
-      }),
+      body: jsonEncode({'uuid': 'good@gmail.com', 'period': period}),
     );
+    final resJson = jsonDecode(response.body);
+    if (response.statusCode == 200) {
+      date = resJson['diet_datetime'];
+      meal = resJson['meal'];
+      fname = resJson['fname'];
+      cal = resJson['cal'];
+      carboh = resJson['carboh'];
+      protein = resJson['protein'];
+      fat = resJson['fat'];
+      // print(date);
+      // print(meal);
+      // print(fname);
+      // print(cal);
+      // print(carboh);
+      // print(protein);
+      // print(fat);
+    }
+    setState(() {});
   }
 
-  // uploadImage() async {
-  //   final request = http.MultipartRequest('POST', Uri.parse(address));
-  //   final headers = {'Content-Type': 'application/json; charset=UTF-8'};
-  //   request.files.add(http.MultipartFile(
-  //       'image', _image.readAsBytes().asStream(), _image.lengthSync(),
-  //       filename: _image.path.split('/').last));
-  //   request.headers.addAll(headers);
-  //   final response = await request.send();
-  //   http.Response res = await http.Response.fromStream(response);
-  //   final resJson = jsonDecode(res.body);
-  //   if (response.statusCode == 200) {
-  //     fname = resJson['fname'];
-  //     famount = resJson['famount'];
-  //     fcal = resJson['fcal'];
-  //     fcarboh = resJson['fcarboh'];
-  //     fprotein = resJson['fprotein'];
-  //     ffat = resJson['ffat'];
-  //   }
-  //   setState(() {});
-  // }
+  Widget _dataList() {
+    return ListView(
+        padding: const EdgeInsets.all(8),
+        children: [for (int i = 0; i < date.length; i++) Text(date[i])]);
+  }
+
+  Widget _dietTable() {
+    return Table(border: TableBorder.all(color: Colors.black), columnWidths: {
+      0: FixedColumnWidth(80.0),
+      1: FixedColumnWidth(36.0),
+      2: FixedColumnWidth(50.0),
+      3: FixedColumnWidth(36.0),
+      4: FixedColumnWidth(36.0),
+      5: FixedColumnWidth(36.0),
+      6: FixedColumnWidth(36.0)
+    }, children: [
+      TableRow(children: [
+        Text('날짜'),
+        Text('시간'),
+        Text('음식명'),
+        Text('칼로리'),
+        Text('탄수화물'),
+        Text('단백질'),
+        Text('지방'),
+      ]),
+      for (int i = 0; i < date.length; i++)
+        TableRow(children: [
+          Text(date[i]),
+          Text(meal[i]),
+          Text(fname[i]),
+          Text(cal[i].toString()),
+          Text(carboh[i].toString()),
+          Text(protein[i].toString()),
+          Text(fat[i].toString()),
+        ])
+    ]);
+  }
 
   Future<void> SelectDate(BuildContext context) {
     return showDialog(
@@ -144,7 +131,8 @@ class _myDietState extends State<myDiet> {
                   GestureDetector(
                     child: Text('하루'),
                     onTap: () {
-                      print('하루');
+                      period = 1;
+                      sendFoodData();
                       Navigator.of(context).pop();
                     },
                   ),
@@ -152,6 +140,8 @@ class _myDietState extends State<myDiet> {
                   GestureDetector(
                     child: Text('3일'),
                     onTap: () {
+                      period = 3;
+                      sendFoodData();
                       Navigator.of(context).pop();
                     },
                   ),
@@ -159,6 +149,8 @@ class _myDietState extends State<myDiet> {
                   GestureDetector(
                     child: Text('7일'),
                     onTap: () {
+                      period = 7;
+                      sendFoodData();
                       Navigator.of(context).pop();
                     },
                   ),
@@ -166,6 +158,8 @@ class _myDietState extends State<myDiet> {
                   GestureDetector(
                     child: Text('15일'),
                     onTap: () {
+                      period = 15;
+                      sendFoodData();
                       Navigator.of(context).pop();
                     },
                   ),
@@ -173,6 +167,8 @@ class _myDietState extends State<myDiet> {
                   GestureDetector(
                     child: Text('한 달'),
                     onTap: () {
+                      period = 30;
+                      sendFoodData();
                       Navigator.of(context).pop();
                     },
                   ),
