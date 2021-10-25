@@ -71,7 +71,7 @@ class _Ex_3State extends State<Ex_3> {
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: Text(
-            'ex3',
+            'LUNGE',
             style: TextStyle(color: Colors.black),
           ),
           elevation: 0.0,

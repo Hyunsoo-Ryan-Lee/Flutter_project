@@ -39,7 +39,7 @@ class trainMain extends StatelessWidget {
                         height: size.height * 0.2,
                         decoration: BoxDecoration(
                             image: DecorationImage(
-                                image: AssetImage('assets/icons/situp.png'),
+                                image: AssetImage('assets/icons/jumpsquat.jpg'),
                                 fit: BoxFit.contain)),
                       ),
                       OutlinedButton(
@@ -48,12 +48,12 @@ class trainMain extends StatelessWidget {
                                 builder: (context) => Ex_1()));
                           },
                           child: Text(
-                            'SIT-UP  >',
+                            'JUMP-SQUAT  >',
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 14),
                           ),
                           style: OutlinedButton.styleFrom(
-                            fixedSize: Size(120, 15),
+                            fixedSize: Size(140, 15),
                             primary: Colors.black,
                             side: BorderSide(width: 1, color: Colors.black),
                           ))
@@ -79,7 +79,7 @@ class trainMain extends StatelessWidget {
                                 fontWeight: FontWeight.bold, fontSize: 14),
                           ),
                           style: OutlinedButton.styleFrom(
-                            fixedSize: Size(120, 15),
+                            fixedSize: Size(140, 15),
                             primary: Colors.black,
                             side: BorderSide(width: 1, color: Colors.black),
                           ))
@@ -98,7 +98,7 @@ class trainMain extends StatelessWidget {
                         height: size.height * 0.2,
                         decoration: BoxDecoration(
                             image: DecorationImage(
-                                image: AssetImage('assets/icons/pushup.png'),
+                                image: AssetImage('assets/icons/shoulder.png'),
                                 fit: BoxFit.contain)),
                       ),
                       OutlinedButton(
@@ -107,12 +107,12 @@ class trainMain extends StatelessWidget {
                                 builder: (context) => Ex_2()));
                           },
                           child: Text(
-                            'PUSH-UP  >',
+                            'ARM-PRESS  >',
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 14),
                           ),
                           style: OutlinedButton.styleFrom(
-                            fixedSize: Size(120, 15),
+                            fixedSize: Size(140, 15),
                             primary: Colors.black,
                             side: BorderSide(width: 1, color: Colors.black),
                           ))
@@ -138,7 +138,7 @@ class trainMain extends StatelessWidget {
                                 fontWeight: FontWeight.bold, fontSize: 14),
                           ),
                           style: OutlinedButton.styleFrom(
-                            fixedSize: Size(120, 15),
+                            fixedSize: Size(140, 15),
                             primary: Colors.black,
                             side: BorderSide(width: 1, color: Colors.black),
                           ))

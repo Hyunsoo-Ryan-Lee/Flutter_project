@@ -103,7 +103,7 @@ class _Ex_1State extends State<Ex_1> {
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: Text(
-            'ex1',
+            'JUMP SQUAT',
             style: TextStyle(color: Colors.black),
           ),
           elevation: 0.0,
@@ -120,7 +120,7 @@ class _Ex_1State extends State<Ex_1> {
                     height: size.height * 0.2,
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage('assets/icons/situp.png'),
+                            image: AssetImage('assets/icons/jumpsquat.jpg'),
                             fit: BoxFit.contain)),
                   ),
                   SizedBox(

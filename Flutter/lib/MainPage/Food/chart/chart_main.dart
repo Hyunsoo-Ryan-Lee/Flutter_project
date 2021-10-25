@@ -12,7 +12,7 @@ class VisualData extends StatefulWidget {
 }
 
 class _VisualDataState extends State<VisualData> {
-  String address = 'http://8bef-121-128-108-65.ngrok.io/repository/dietselect';
+  String address = 'http://c679-119-192-202-235.ngrok.io/repository/dietvis';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,17 +41,11 @@ class _VisualDataState extends State<VisualData> {
   }
 
   List date = [];
-  List meal = [];
-  List fname = [];
   List cal = [];
   List carboh = [];
   List protein = [];
   List fat = [];
   int period = 0;
-  double calsum = 0;
-  double carbohsum = 0;
-  double proteinsum = 0;
-  double fatsum = 0;
   sendFoodData() async {
     print('데이터 전송 시작');
     http.Response response = await http.post(
@@ -64,22 +58,26 @@ class _VisualDataState extends State<VisualData> {
     final resJson = jsonDecode(response.body);
     if (response.statusCode == 200) {
       date = resJson['diet_datetime'];
-      meal = resJson['meal'];
-      fname = resJson['fname'];
       cal = resJson['cal'];
       carboh = resJson['carboh'];
       protein = resJson['protein'];
       fat = resJson['fat'];
-      calsum = cal.reduce((value, element) => value + element);
-      carbohsum = carboh.reduce((value, element) => value + element);
-      proteinsum = protein.reduce((value, element) => value + element);
-      fatsum = fat.reduce((value, element) => value + element);
-      print(calsum.floor());
-      print(carbohsum.floor());
-      print(proteinsum.floor());
-      print(fatsum.floor());
+      // calsum = cal.reduce((value, element) => value + element);
+      // carbohsum = carboh.reduce((value, element) => value + element);
+      // proteinsum = protein.reduce((value, element) => value + element);
+      // fatsum = fat.reduce((value, element) => value + element);
+      print(resJson);
     }
     setState(() {});
+  }
+
+  _navigatetograph() async {
+    await Future.delayed(Duration(milliseconds: 2000), () {});
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) =>
+                ReportChart(data: [date, cal, carboh, protein, fat])));
   }
 
   // Widget _dietTable() {
@@ -178,16 +176,8 @@ class _VisualDataState extends State<VisualData> {
                     onTap: () {
                       period = 1;
                       sendFoodData();
-                      var routeChart = MaterialPageRoute(
-                          builder: (BuildContext context) => ReportChart(data: [
-                                // date,
-                                calsum.floor(),
-                                carbohsum.floor(),
-                                proteinsum.floor(),
-                                fatsum.floor()
-                              ]));
-                      Navigator.of(context).pushReplacement(routeChart);
-                      // Navigator.of(context).pop();
+                      Navigator.of(context).pop();
+                      _navigatetograph();
                     },
                   ),
                   Padding(padding: EdgeInsets.all(12.0)),
@@ -197,6 +187,7 @@ class _VisualDataState extends State<VisualData> {
                       period = 3;
                       sendFoodData();
                       Navigator.of(context).pop();
+                      _navigatetograph();
                     },
                   ),
                   Padding(padding: EdgeInsets.all(12.0)),
@@ -206,6 +197,7 @@ class _VisualDataState extends State<VisualData> {
                       period = 7;
                       sendFoodData();
                       Navigator.of(context).pop();
+                      _navigatetograph();
                     },
                   ),
                   Padding(padding: EdgeInsets.all(12.0)),
@@ -215,6 +207,7 @@ class _VisualDataState extends State<VisualData> {
                       period = 15;
                       sendFoodData();
                       Navigator.of(context).pop();
+                      _navigatetograph();
                     },
                   ),
                   Padding(padding: EdgeInsets.all(12.0)),
@@ -224,6 +217,7 @@ class _VisualDataState extends State<VisualData> {
                       period = 30;
                       sendFoodData();
                       Navigator.of(context).pop();
+                      _navigatetograph();
                     },
                   ),
                   Padding(padding: EdgeInsets.all(12.0)),

@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class RenderDataArmPress extends StatefulWidget {
   final List<dynamic> data;
@@ -151,6 +154,26 @@ class _RenderDataArmPressState extends State<RenderDataArmPress> {
       _counter++;
     });
   }
+
+  // Future<http.Response> sendMenInfo(List title) {
+  //   if(_counter == ){
+  //   return http.post(
+  //     Uri.parse(address),
+  //     headers: <String, String>{
+  //       'Content-Type': 'application/json; charset=UTF-8',
+  //     },
+  //     body: jsonEncode({
+  //       'uuid': widget.txt[0],
+  //       'upw': widget.txt[1],
+  //       'usex': 'M',
+  //       'uage': title[0],
+  //       'uheight': title[1],
+  //       'uweight': title[2],
+  //       'uact': title[3],
+  //       'urdc': result
+  //     }),
+  //   );}
+  // }
 
   @override
   Widget build(BuildContext context) {

@@ -71,7 +71,7 @@ class _Ex_4State extends State<Ex_4> {
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: Text(
-            'ex4',
+            'SQUAT',
             style: TextStyle(color: Colors.black),
           ),
           elevation: 0.0,

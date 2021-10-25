@@ -25,9 +25,9 @@ class _FoodCameraState extends State<FoodCamera> {
   File _image;
   String message = '';
   // String address = 'https://d8be-112-154-191-206.ngrok.io/foodselect';
-  String address = 'http://8bef-121-128-108-65.ngrok.io/repository/predict';
+  String address = 'http://c679-119-192-202-235.ngrok.io/repository/predict';
   String diet_address =
-      'http://8bef-121-128-108-65.ngrok.io/repository/dietsave';
+      'http://c679-119-192-202-235.ngrok.io/repository/dietsave';
   Dio dio = new Dio();
   bool _canShowButton = true;
   final _valuelist = [

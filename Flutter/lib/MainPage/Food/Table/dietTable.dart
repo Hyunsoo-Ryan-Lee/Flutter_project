@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/MainPage/Bottom_navbar.dart';
 
 class DietTable extends StatefulWidget {
   final List data;
@@ -111,7 +112,7 @@ class _DietTableState extends State<DietTable> {
                         ),
                       ])
                   ]),
-            )
+            ),
           ],
         ),
       ),

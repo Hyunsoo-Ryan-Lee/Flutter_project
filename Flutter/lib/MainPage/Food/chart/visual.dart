@@ -47,7 +47,7 @@ class _ReportChartState extends State<ReportChart> {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Text('${widget.data}'),
+            // Text('${widget.data}'),
             Container(
               height: size.height * 0.7,
               width: size.width * 0.85,
@@ -93,23 +93,9 @@ class _ReportChartState extends State<ReportChart> {
   }
 
   List<ExpenseData> getChartData() {
-    var now = new DateTime.now();
-    var formatter = new DateFormat('MM-dd');
-    String yesyes = formatter.format(now.subtract(Duration(days: 2)));
-    String yesterday = formatter.format(now.subtract(Duration(days: 1)));
-    String today = formatter.format(now);
-    String tommorrow = formatter.format(now.add(Duration(days: 1)));
-    String tommtomm = formatter.format(now.add(Duration(days: 1)));
-    var fcal = int.parse('${widget.data[0]}');
-    var fcarboh = int.parse('${widget.data[1]}');
-    var fprotein = int.parse('${widget.data[2]}');
-    var ffat = int.parse('${widget.data[3]}');
     final List<ExpenseData> chartData = [
-      ExpenseData('$yesyes', 50, 54, 33),
-      ExpenseData('$yesterday', 33, 45, 54),
-      ExpenseData('$today', fcarboh, fprotein, ffat),
-      ExpenseData('$tommorrow', 32, 54, 23),
-      ExpenseData('$tommtomm', 56, 18, 43),
+      for (int i = 0; i < widget.data[0].length; i++)
+        ExpenseData('${widget.data[0][i]}', widget.data[2][i], 54, 33),
     ];
     return chartData;
   }

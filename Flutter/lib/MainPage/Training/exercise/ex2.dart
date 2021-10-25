@@ -71,7 +71,7 @@ class _Ex_2State extends State<Ex_2> {
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: Text(
-            'ex2',
+            'ARM PRESS',
             style: TextStyle(color: Colors.black),
           ),
           elevation: 0.0,
@@ -88,7 +88,7 @@ class _Ex_2State extends State<Ex_2> {
                     height: size.height * 0.2,
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage('assets/icons/pushup.png'),
+                            image: AssetImage('assets/icons/shoulder.png'),
                             fit: BoxFit.contain)),
                   ),
                   SizedBox(
