@@ -1,7 +1,4 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
 class RenderDataArmPress extends StatefulWidget {
   final List<dynamic> data;
@@ -78,8 +75,9 @@ class _RenderDataArmPressState extends State<RenderDataArmPress> {
       kneeLY = poses['leftKnee'][1];
       kneeRY = poses['rightKnee'][1];
     });
-    if (excercise == 'arm_press') {
+    if (excercise == '암 프레스') {
       if (squatUp) {
+        // squatup -> true임
         return wristLX > 280 &&
             elbowLX > 280 &&
             wristRX < 95 &&
@@ -89,7 +87,7 @@ class _RenderDataArmPressState extends State<RenderDataArmPress> {
             wristRY < 240 &&
             wristRY > 200;
       } else {
-        return wristLY < 125 && wristRY < 125;
+        return wristLY < 150 && wristRY < 150;
       }
     }
   }
@@ -152,28 +150,11 @@ class _RenderDataArmPressState extends State<RenderDataArmPress> {
   void incrementCounter() {
     setState(() {
       _counter++;
+      if (_counter == 1) {
+        Navigator.popUntil(context, ModalRoute.withName("/"));
+      }
     });
   }
-
-  // Future<http.Response> sendMenInfo(List title) {
-  //   if(_counter == ){
-  //   return http.post(
-  //     Uri.parse(address),
-  //     headers: <String, String>{
-  //       'Content-Type': 'application/json; charset=UTF-8',
-  //     },
-  //     body: jsonEncode({
-  //       'uuid': widget.txt[0],
-  //       'upw': widget.txt[1],
-  //       'usex': 'M',
-  //       'uage': title[0],
-  //       'uheight': title[1],
-  //       'uweight': title[2],
-  //       'uact': title[3],
-  //       'urdc': result
-  //     }),
-  //   );}
-  // }
 
   @override
   Widget build(BuildContext context) {

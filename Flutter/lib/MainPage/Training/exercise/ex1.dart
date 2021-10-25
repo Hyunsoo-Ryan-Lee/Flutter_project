@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_auth/MainPage/Training/Instruction/ex1_instruction.dart';
 
 // class Ex_1 extends StatelessWidget {
@@ -53,13 +52,6 @@ class _Ex_1State extends State<Ex_1> {
     });
   }
 
-  void _portraitModeOnly() {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);
-  }
-
   UnderlineInputBorder borderMaker(Color color) {
     return UnderlineInputBorder(
       borderRadius: BorderRadius.all(
@@ -79,7 +71,7 @@ class _Ex_1State extends State<Ex_1> {
         _validatePassword();
       },
       onSubmitted: (String value) {
-        print("password: $value");
+        // print("password: $value");
         _validatePassword();
       },
       // onEditingComplete: () {
@@ -170,7 +162,7 @@ class _Ex_1State extends State<Ex_1> {
                   OutlinedButton(
                       onPressed: () {
                         // _portraitModeOnly();
-                        Navigator.of(context).push(MaterialPageRoute(
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
                             builder: (context) => Instruction_1()));
                       },
                       child: Text(

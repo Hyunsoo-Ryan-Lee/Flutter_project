@@ -12,6 +12,9 @@ class VisualData extends StatefulWidget {
 }
 
 class _VisualDataState extends State<VisualData> {
+  TextEditingController _datePeriod = TextEditingController();
+  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+
   String address = 'http://c679-119-192-202-235.ngrok.io/repository/dietvis';
   @override
   Widget build(BuildContext context) {
@@ -33,7 +36,11 @@ class _VisualDataState extends State<VisualData> {
                 onPressed: () {
                   SelectDate(context);
                 },
-                child: Text('조회')),
+                child: Text('영상소 비율 조회',
+                    style: TextStyle(
+                      color: Colors.black87,
+                      fontSize: 30,
+                    ))),
           ],
         ),
       ),
@@ -166,7 +173,7 @@ class _VisualDataState extends State<VisualData> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text('식단 보기'),
+            title: Text('영상소 비율 보기'),
             content: SingleChildScrollView(
               child: ListBody(
                 children: [
@@ -248,14 +255,31 @@ class _VisualDataState extends State<VisualData> {
               child: ListBody(
                 children: [
                   GestureDetector(
-                    child: TextField(
-                      textAlign: TextAlign.center,
+                    child: Form(
+                      key: _formkey,
+                      child: TextFormField(
+                        textAlign: TextAlign.center,
+                        controller: _datePeriod,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please input correct Email';
+                          }
+                          return null;
+                        },
+                      ),
                     ),
                   ),
                   SizedBox(height: 10),
                   TextButton(
                       onPressed: () {
-                        Navigator.of(context).pop();
+                        if (_formkey.currentState.validate()) {
+                          period = int.parse(_datePeriod.text);
+                          sendFoodData();
+                          Navigator.of(context).pop();
+                          _datePeriod.clear();
+                          print(period);
+                          _navigatetograph();
+                        }
                       },
                       child: Text('조회'))
                 ],

@@ -42,7 +42,7 @@ class _Pose_armpressState extends State<Pose_armpress> {
 
   loadModel() async {
     return await Tflite.loadModel(
-        model: "assets/posenet_mv1_075_float_from_checkpoints.tflite");
+        model: "assets/json/posenet_mv1_075_float_from_checkpoints.tflite");
   }
 
   @override
@@ -70,5 +70,10 @@ class _Pose_armpressState extends State<Pose_armpress> {
         ],
       ),
     );
+  }
+
+  void dispose() {
+    Tflite.close();
+    super.dispose();
   }
 }

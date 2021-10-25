@@ -92,7 +92,7 @@ class myPage extends StatelessWidget {
 
   _launchEmail() {
     final Uri emailLaunchUri =
-        Uri(scheme: 'mailto', path: 'smith@example.com', query: 'good'
+        Uri(scheme: 'mailto', path: 'haiapp@encore.com', query: 'good'
             // query: encodeQueryParameters(<String, String>{
             //   'subject': 'Example Subject & Symbols are allowed!'
             // }

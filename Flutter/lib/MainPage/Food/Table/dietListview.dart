@@ -26,7 +26,6 @@ class _DietListviewState extends State<DietListview> {
             body: ListView(
               padding: const EdgeInsets.all(8),
               children: [
-                // Text('${widget.data}'),
                 for (int i = widget.data[0].length - 1; i >= 0; i--)
                   ListTile(
                     title:
@@ -55,6 +54,8 @@ class _DietListviewState extends State<DietListview> {
                             );
                           });
                     },
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0)),
                   ),
               ],
             )));

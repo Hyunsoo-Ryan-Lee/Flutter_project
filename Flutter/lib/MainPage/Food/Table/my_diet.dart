@@ -16,6 +16,8 @@ class myDiet extends StatefulWidget {
 
 class _myDietState extends State<myDiet> {
   TextEditingController _datePeriod = TextEditingController();
+  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+
   String address = 'http://c679-119-192-202-235.ngrok.io/repository/dietselect';
   @override
   Widget build(BuildContext context) {
@@ -37,8 +39,11 @@ class _myDietState extends State<myDiet> {
                 onPressed: () {
                   SelectDate(context);
                 },
-                child: Text('조회')),
-            // _dietTable()
+                child: Text('날짜별 식단 조회',
+                    style: TextStyle(
+                      color: Colors.blueAccent,
+                      fontSize: 30,
+                    )))
           ],
         ),
       ),
@@ -280,14 +285,31 @@ class _myDietState extends State<myDiet> {
               child: ListBody(
                 children: [
                   GestureDetector(
-                    child: TextField(
-                      textAlign: TextAlign.center,
+                    child: Form(
+                      key: _formkey,
+                      child: TextFormField(
+                        textAlign: TextAlign.center,
+                        controller: _datePeriod,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please input correct Email';
+                          }
+                          return null;
+                        },
+                      ),
                     ),
                   ),
                   SizedBox(height: 10),
                   TextButton(
                       onPressed: () {
-                        Navigator.of(context).pop();
+                        if (_formkey.currentState.validate()) {
+                          period = int.parse(_datePeriod.text);
+                          sendFoodData();
+                          Navigator.of(context).pop();
+                          _datePeriod.clear();
+                          print(period);
+                          _navigatetolist();
+                        }
                       },
                       child: Text('조회'))
                 ],
