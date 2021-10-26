@@ -182,7 +182,7 @@ class _myDietState extends State<myDiet> {
         context,
         MaterialPageRoute(
             builder: (context) => DietListview(
-                data: [date, meal, fname, cal, carboh, protein, fat])));
+                data: [date, meal, fname, cal, carboh, protein, fat, period])));
   }
 
   Future<void> SelectDate(BuildContext context) {

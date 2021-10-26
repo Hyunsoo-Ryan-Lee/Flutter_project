@@ -16,7 +16,7 @@ class _DietListviewState extends State<DietListview> {
         child: Scaffold(
             appBar: AppBar(
               title: Text(
-                'Diet Listview',
+                '${widget.data[7]} 일치 식단',
                 style: TextStyle(color: Colors.black),
               ),
               elevation: 0.0,

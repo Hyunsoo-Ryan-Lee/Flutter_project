@@ -347,25 +347,15 @@ class _FoodCameraState extends State<FoodCamera> {
                                 fprotein,
                                 ffat
                               ]);
-                              print(uuid);
+                              final snackBar = SnackBar(
+                                content: const Text("영양소 정보 저장이 완료되었습니다."),
+                              );
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(snackBar);
 
                               Navigator.of(context).pop();
-
-                              // var routeChart = MaterialPageRoute(
-                              //     builder: (BuildContext context) =>
-                              //         ReportChart(data: [
-                              //           fcal,
-                              //           fcarboh,
-                              //           fprotein,
-                              //           ffat
-                              //         ]));
-                              // var routeDiet = MaterialPageRoute(
-                              //     builder: (BuildContext context) => myDiet(
-                              //         data: [fcal, fcarboh, fprotein, ffat]));
-                              // Navigator.of(context).pushReplacement(routeChart);
-                              // Navigator.of(context).pushReplacement(routeDiet);
                             },
-                            child: Text('Send')),
+                            child: Text('Save')),
                   ],
                 ),
               ),
