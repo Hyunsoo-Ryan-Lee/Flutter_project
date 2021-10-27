@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:ffi';
 import 'dart:io';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:dio/dio.dart';
@@ -11,8 +10,6 @@ import 'package:image_cropper/image_cropper.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async' show Future;
-import 'package:path_provider/path_provider.dart';
-// import 'package:flutter/services.dart' as rootBundle;
 
 class FoodCamera extends StatefulWidget {
   @override
@@ -20,7 +17,6 @@ class FoodCamera extends StatefulWidget {
 }
 
 class _FoodCameraState extends State<FoodCamera> {
-  final FirebaseAuth auth = FirebaseAuth.instance;
   final _picker = ImagePicker();
   File _image;
   String message = '';
@@ -38,6 +34,7 @@ class _FoodCameraState extends State<FoodCamera> {
   String dropdownValue = '아침';
   String holder = '';
 
+  FirebaseAuth auth = FirebaseAuth.instance;
   String uuid = '';
   void GetUserId() {
     final User user = auth.currentUser;

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/MainPage/Training/Instruction/ex2_instruction.dart';
 
 class Ex_2 extends StatefulWidget {
   @override
@@ -68,31 +69,30 @@ class _Ex_2State extends State<Ex_2> {
 
     return SafeArea(
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: Text(
-            'ARM PRESS',
+            'JUMP SQUAT',
             style: TextStyle(color: Colors.black),
           ),
           elevation: 0.0,
           backgroundColor: Colors.blueAccent[100],
           centerTitle: true,
         ),
-        body: Padding(
-          padding: const EdgeInsets.only(top: 110),
-          child: Column(
-            children: [
-              Expanded(
+        resizeToAvoidBottomInset: false,
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Center(
+              child: Container(
                 child: Column(children: [
-                  Container(
-                    height: size.height * 0.2,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage('assets/icons/shoulder.png'),
-                            fit: BoxFit.contain)),
-                  ),
                   SizedBox(
                     height: size.height * 0.1,
+                  ),
+                  Container(
+                    height: size.height * 0.3,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage('assets/icons/jumpsquat.jpg'),
+                            fit: BoxFit.contain)),
                   ),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -119,7 +119,15 @@ class _Ex_2State extends State<Ex_2> {
                     height: size.height * 0.05,
                   ),
                   OutlinedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        // if (_passwordController.text.length >= 1) {
+                        //   Navigator.of(context).pushReplacement(
+                        //       MaterialPageRoute(
+                        //           builder: (context) => Instruction_2(
+                        //               count: int.parse(
+                        //                   _passwordController.text))));
+                        // } else {}
+                      },
                       child: Text(
                         'START  >',
                         style: TextStyle(
@@ -132,7 +140,7 @@ class _Ex_2State extends State<Ex_2> {
                       ))
                 ]),
               ),
-            ],
+            ),
           ),
         ),
       ),

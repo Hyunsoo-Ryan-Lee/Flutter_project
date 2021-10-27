@@ -1,11 +1,22 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/MainPage/Mypage/EachPage/userInfoPage.dart';
 import 'package:flutter_auth/MainPage/Mypage/EachPage/github.dart';
 import 'package:flutter_auth/Screens/Welcome/components/body.dart';
 import 'package:flutter_settings_screens/flutter_settings_screens.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:http/http.dart' as http;
 
-class myPage extends StatelessWidget {
+class myPage extends StatefulWidget {
   @override
+  State<myPage> createState() => _myPageState();
+}
+
+class _myPageState extends State<myPage> {
+  String address = 'http://c679-119-192-202-235.ngrok.io/member/select';
+
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
@@ -24,7 +35,7 @@ class myPage extends StatelessWidget {
           padding: EdgeInsets.all(24),
           children: [
             SettingsGroup(title: '설정', children: [
-              myInfo(),
+              myInfo(context),
               introduction(context),
               sendFeedback(),
               buildLogout(context)
@@ -35,14 +46,62 @@ class myPage extends StatelessWidget {
     );
   }
 
-  Widget myInfo() => SimpleSettingsTile(
+  FirebaseAuth auth = FirebaseAuth.instance;
+  String uuid = '';
+  void GetUserId() {
+    final User user = auth.currentUser;
+    uuid = user.email;
+  }
+
+  _navigatetoUserManage() async {
+    await Future.delayed(Duration(milliseconds: 1000), () {});
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => UserInfoPage(
+                userdata: [uuid, age, height, weight, activity, urdc])));
+  }
+
+  int age;
+  double height;
+  double weight;
+  String activity;
+  double urdc;
+  sendUserInfo() async {
+    http.Response response = await http.post(
+      Uri.parse(address),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode({'uuid': uuid}),
+    );
+    final resJson = jsonDecode(response.body);
+    if (response.statusCode == 200) {
+      age = resJson['uage'];
+      height = resJson['uheight'];
+      weight = resJson['uweight'];
+      activity = resJson['uact'];
+      urdc = resJson['urdc'];
+    }
+    setState(() {});
+  }
+
+  Widget myInfo(BuildContext context) => SimpleSettingsTile(
         title: '내 정보 관리',
         subtitle: '',
         leading: Icon(
           Icons.person,
           color: Colors.black,
         ),
-        onTap: () {},
+        onTap: () {
+          GetUserId();
+          sendUserInfo();
+          print(age);
+          _navigatetoUserManage();
+          // Navigator.of(context).push(MaterialPageRoute(
+          //     builder: (context) => UserInfoPage(
+          //         userdata: [uuid, age, height, weight, activity, urdc])));
+        },
       );
 
   Widget introduction(BuildContext context) => SimpleSettingsTile(
@@ -77,6 +136,7 @@ class myPage extends StatelessWidget {
           // }
         },
       );
+
   Widget buildLogout(BuildContext context) => SimpleSettingsTile(
         title: 'Logout',
         subtitle: '',

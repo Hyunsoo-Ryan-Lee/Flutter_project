@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/MainPage/Training/AIModel/Pose_Model.dart';
+import 'package:flutter_auth/MainPage/Training/AIModel/Pose_ArmPress.dart';
+import 'package:flutter_auth/MainPage/Training/AIModel/Render_armPress.dart';
 import 'package:flutter_auth/main.dart';
 
-class Instruction_1 extends StatelessWidget {
+class Instruction_1 extends StatefulWidget {
+  int count;
+  Instruction_1({Key mykey, this.count}) : super(key: mykey);
+  @override
+  State<Instruction_1> createState() => _Instruction_1State();
+}
+
+class _Instruction_1State extends State<Instruction_1> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -50,8 +58,14 @@ class Instruction_1 extends StatelessWidget {
                   ),
                 )),
                 OutlinedButton(
-                    onPressed: () =>
-                        onSelectA(context: context, modelName: 'posenet'),
+                    onPressed: () {
+                      print(widget.count);
+
+                      onSelectA(
+                        context: context,
+                        modelName: 'posenet',
+                      );
+                    },
                     child: Text(
                       'GO!!   >',
                       style:
@@ -72,7 +86,7 @@ class Instruction_1 extends StatelessWidget {
   }
 
   void onSelectA({BuildContext context, String modelName}) async {
-    Navigator.push(
+    Navigator.pushReplacement(
       context,
       MaterialPageRoute(
         builder: (context) => Pose_armpress(

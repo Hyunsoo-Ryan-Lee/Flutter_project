@@ -68,7 +68,6 @@ class _Ex_3State extends State<Ex_3> {
 
     return SafeArea(
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: Text(
             'LUNGE',
@@ -78,21 +77,21 @@ class _Ex_3State extends State<Ex_3> {
           backgroundColor: Colors.blueAccent[100],
           centerTitle: true,
         ),
-        body: Padding(
-          padding: const EdgeInsets.only(top: 110),
-          child: Column(
-            children: [
-              Expanded(
+        resizeToAvoidBottomInset: false,
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Center(
+              child: Container(
                 child: Column(children: [
+                  SizedBox(
+                    height: size.height * 0.1,
+                  ),
                   Container(
-                    height: size.height * 0.2,
+                    height: size.height * 0.3,
                     decoration: BoxDecoration(
                         image: DecorationImage(
                             image: AssetImage('assets/icons/lunge.png'),
                             fit: BoxFit.contain)),
-                  ),
-                  SizedBox(
-                    height: size.height * 0.1,
                   ),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -119,7 +118,15 @@ class _Ex_3State extends State<Ex_3> {
                     height: size.height * 0.05,
                   ),
                   OutlinedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        if (_passwordController.text.length >= 1) {
+                          // Navigator.of(context).pushReplacement(
+                          //     MaterialPageRoute(
+                          //         builder: (context) => Instruction_2(
+                          //             count: int.parse(
+                          //                 _passwordController.text))));
+                        } else {}
+                      },
                       child: Text(
                         'START  >',
                         style: TextStyle(
@@ -132,7 +139,7 @@ class _Ex_3State extends State<Ex_3> {
                       ))
                 ]),
               ),
-            ],
+            ),
           ),
         ),
       ),

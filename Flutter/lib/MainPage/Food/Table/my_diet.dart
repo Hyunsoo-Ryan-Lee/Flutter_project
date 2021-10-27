@@ -292,7 +292,7 @@ class _myDietState extends State<myDiet> {
                         controller: _datePeriod,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Please input correct Email';
+                            return '일 수를 입력해주세요';
                           }
                           return null;
                         },

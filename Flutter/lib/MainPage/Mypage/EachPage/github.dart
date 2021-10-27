@@ -20,6 +20,7 @@ class _GithubState extends State<Github> {
         backgroundColor: Colors.blueAccent[100],
         centerTitle: true,
       ),
+      resizeToAvoidBottomInset: false,
       body: Center(
         child: Container(
           // height: 200,
@@ -73,6 +74,7 @@ class _GithubState extends State<Github> {
         forceWebView: true,
       );
     } else {
+      print("Can\'t Launch Url");
       print("Can\'t Launch Url");
     }
   }

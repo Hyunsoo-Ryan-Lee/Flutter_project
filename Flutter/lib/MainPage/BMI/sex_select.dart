@@ -13,10 +13,6 @@ class selectSex extends StatefulWidget {
 class _selectSexState extends State<selectSex> {
   @override
   Widget build(BuildContext context) {
-    // SystemChrome.setPreferredOrientations([
-    //   DeviceOrientation.portraitDown,
-    //   DeviceOrientation.portraitUp,
-    // ]);
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(

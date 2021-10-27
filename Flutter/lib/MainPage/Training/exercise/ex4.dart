@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/MainPage/Training/Instruction/ex4_instruction.dart';
 
 class Ex_4 extends StatefulWidget {
   @override
@@ -78,21 +79,20 @@ class _Ex_4State extends State<Ex_4> {
           backgroundColor: Colors.blueAccent[100],
           centerTitle: true,
         ),
-        body: Padding(
-          padding: const EdgeInsets.only(top: 110),
-          child: Column(
-            children: [
-              Expanded(
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Center(
+              child: Container(
                 child: Column(children: [
+                  SizedBox(
+                    height: size.height * 0.1,
+                  ),
                   Container(
-                    height: size.height * 0.2,
+                    height: size.height * 0.3,
                     decoration: BoxDecoration(
                         image: DecorationImage(
                             image: AssetImage('assets/icons/squat.jpg'),
                             fit: BoxFit.contain)),
-                  ),
-                  SizedBox(
-                    height: size.height * 0.1,
                   ),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -119,7 +119,15 @@ class _Ex_4State extends State<Ex_4> {
                     height: size.height * 0.05,
                   ),
                   OutlinedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        // if (_passwordController.text.length >= 1) {
+                        //   Navigator.of(context).pushReplacement(
+                        //       MaterialPageRoute(
+                        //           builder: (context) => Instruction_4(
+                        //               count: int.parse(
+                        //                   _passwordController.text))));
+                        // } else {}
+                      },
                       child: Text(
                         'START  >',
                         style: TextStyle(
@@ -132,7 +140,7 @@ class _Ex_4State extends State<Ex_4> {
                       ))
                 ]),
               ),
-            ],
+            ),
           ),
         ),
       ),

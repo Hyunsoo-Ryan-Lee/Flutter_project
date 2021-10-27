@@ -1,25 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/MainPage/Training/Instruction/ex1_instruction.dart';
 
-// class Ex_1 extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     // SystemChrome.setPreferredOrientations([
-//     //   DeviceOrientation.portraitDown,
-//     //   DeviceOrientation.portraitUp,
-//     // ]);
-//     return MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       home: Scaffold(
-//         resizeToAvoidBottomInset: false,
-//         body: Center(
-//           child: Exercise_1(),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 class Ex_1 extends StatefulWidget {
   @override
   _Ex_1State createState() => _Ex_1State();
@@ -92,31 +73,30 @@ class _Ex_1State extends State<Ex_1> {
 
     return SafeArea(
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: Text(
-            'JUMP SQUAT',
+            'ARM PRESS',
             style: TextStyle(color: Colors.black),
           ),
           elevation: 0.0,
           backgroundColor: Colors.blueAccent[100],
           centerTitle: true,
         ),
-        body: Padding(
-          padding: const EdgeInsets.only(top: 110),
-          child: Column(
-            children: [
-              Expanded(
+        resizeToAvoidBottomInset: false,
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Center(
+              child: Container(
                 child: Column(children: [
-                  Container(
-                    height: size.height * 0.2,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage('assets/icons/jumpsquat.jpg'),
-                            fit: BoxFit.contain)),
-                  ),
                   SizedBox(
                     height: size.height * 0.1,
+                  ),
+                  Container(
+                    height: size.height * 0.3,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage('assets/icons/shoulder.png'),
+                            fit: BoxFit.contain)),
                   ),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -127,23 +107,6 @@ class _Ex_1State extends State<Ex_1> {
                         child: SizedBox(
                           width: size.width * 0.35,
                           child: _buildPasswordTextField(),
-                          // TextField(
-                          //   controller: _ex1controller,
-                          //   onChanged: (_) {
-                          //     _validateEx1();
-                          //   },
-                          //   onSubmitted: (String value) {
-                          //     print('password: $value');
-                          //     _validateEx1();
-                          //   },
-                          //   textAlign: TextAlign.center,
-                          //   decoration: InputDecoration(
-                          //     labelText: isInputValid ? null : '횟수를 입력하세요',
-                          //     focusedBorder: UnderlineInputBorder(),
-                          //     fillColor: Colors.grey[200],
-                          //     // errorText: isInputValid ? '횟수를 입력해주세요' : null
-                          //   ),
-                          // ),
                         ),
                       ),
                       Padding(
@@ -161,9 +124,12 @@ class _Ex_1State extends State<Ex_1> {
                   ),
                   OutlinedButton(
                       onPressed: () {
-                        // _portraitModeOnly();
-                        Navigator.of(context).pushReplacement(MaterialPageRoute(
-                            builder: (context) => Instruction_1()));
+                        if (_passwordController.text.length >= 1) {
+                          print('ok');
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => Instruction_1(
+                                  count: int.parse(_passwordController.text))));
+                        } else {}
                       },
                       child: Text(
                         'START  >',
@@ -177,7 +143,7 @@ class _Ex_1State extends State<Ex_1> {
                       ))
                 ]),
               ),
-            ],
+            ),
           ),
         ),
       ),

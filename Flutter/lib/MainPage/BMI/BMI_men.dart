@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/MainPage/Bottom_navbar.dart';
+import 'package:flutter_auth/MainPage/Mypage/EachPage/userInfoPage.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
@@ -218,6 +219,7 @@ class _BMImenState extends State<BMImen> {
                             weight = double.parse(_weightcontroller.value.text);
                           });
                           calculateBmi(age, height, weight);
+
                           sendMenInfo([
                             _agecontroller.value.text,
                             _heightcontroller.value.text,
