@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/MainPage/Food/Table/TrainListview.dart';
 import 'package:flutter_auth/MainPage/Food/Table/dietListview.dart';
 import 'package:flutter_auth/MainPage/Food/Table/dietTable.dart';
 import 'package:flutter_auth/main.dart';
@@ -20,6 +21,7 @@ class myDiet extends StatefulWidget {
 class _myDietState extends State<myDiet> {
   TextEditingController _datePeriod = TextEditingController();
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+  String check;
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +41,7 @@ class _myDietState extends State<myDiet> {
           children: [
             InkWell(
                 onTap: () {
+                  check = 'food';
                   SelectDate(context);
                 },
                 child: ClipRect(
@@ -47,6 +50,7 @@ class _myDietState extends State<myDiet> {
                 )),
             InkWell(
                 onTap: () {
+                  check = 'train';
                   SelectDate(context);
                 },
                 child: ClipRect(
@@ -95,16 +99,35 @@ class _myDietState extends State<myDiet> {
     setState(() {});
   }
 
-  _navigatetotable() async {
-    await Future.delayed(Duration(milliseconds: 2000), () {});
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => DietTable(
-                data: [date, meal, fname, cal, carboh, protein, fat])));
+  List count;
+  List tname;
+  sendTrainData() async {
+    var queryParams = {'uuid': uuid, 'period': period};
+    final uri = Uri.http(address, '/repository/train', queryParams);
+    final headers = {
+      HttpHeaders.contentTypeHeader: 'application/json; charset=UTF-8'
+    };
+    final response = await http.get(uri, headers: headers);
+    final resJson = jsonDecode(response.body);
+    if (response.statusCode == 200) {
+      print(resJson);
+      date = resJson['train_date'];
+      tname = resJson['eid'];
+      count = resJson['count'];
+    }
+    setState(() {});
   }
 
-  _navigatetolist() async {
+  // _navigatetotable() async {
+  //   await Future.delayed(Duration(milliseconds: 2000), () {});
+  //   Navigator.push(
+  //       context,
+  //       MaterialPageRoute(
+  //           builder: (context) => DietTable(
+  //               data: [date, meal, fname, cal, carboh, protein, fat])));
+  // }
+
+  _NavigateDietList() async {
     await Future.delayed(Duration(milliseconds: 2000), () {});
     Navigator.push(
         context,
@@ -113,12 +136,21 @@ class _myDietState extends State<myDiet> {
                 data: [date, meal, fname, cal, carboh, protein, fat, period])));
   }
 
+  _NavigateTrainList() async {
+    await Future.delayed(Duration(milliseconds: 2000), () {});
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) =>
+                TrainListview(data: [date, tname, count, period])));
+  }
+
   Future<void> SelectDate(BuildContext context) {
     return showDialog(
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text('식단 보기'),
+            title: Text('기간 조회'),
             content: SingleChildScrollView(
               child: ListBody(
                 children: [
@@ -128,9 +160,15 @@ class _myDietState extends State<myDiet> {
                     onTap: () {
                       period = '1';
                       GetUserId();
-                      sendFoodData();
-                      Navigator.of(context).pop();
-                      _navigatetolist();
+                      if (check == 'food') {
+                        sendFoodData();
+                        Navigator.of(context).pop();
+                        _NavigateDietList();
+                      } else {
+                        sendTrainData();
+                        Navigator.of(context).pop();
+                        _NavigateTrainList();
+                      }
                     },
                   ),
                   Padding(padding: EdgeInsets.all(12.0)),
@@ -139,9 +177,15 @@ class _myDietState extends State<myDiet> {
                     onTap: () {
                       period = '3';
                       GetUserId();
-                      sendFoodData();
-                      Navigator.of(context).pop();
-                      _navigatetolist();
+                      if (check == 'food') {
+                        sendFoodData();
+                        Navigator.of(context).pop();
+                        _NavigateDietList();
+                      } else {
+                        sendTrainData();
+                        Navigator.of(context).pop();
+                        _NavigateTrainList();
+                      }
                     },
                   ),
                   Padding(padding: EdgeInsets.all(12.0)),
@@ -150,9 +194,15 @@ class _myDietState extends State<myDiet> {
                     onTap: () {
                       period = '7';
                       GetUserId();
-                      sendFoodData();
-                      Navigator.of(context).pop();
-                      _navigatetolist();
+                      if (check == 'food') {
+                        sendFoodData();
+                        Navigator.of(context).pop();
+                        _NavigateDietList();
+                      } else {
+                        sendTrainData();
+                        Navigator.of(context).pop();
+                        _NavigateTrainList();
+                      }
                     },
                   ),
                   Padding(padding: EdgeInsets.all(12.0)),
@@ -161,9 +211,15 @@ class _myDietState extends State<myDiet> {
                     onTap: () {
                       period = '15';
                       GetUserId();
-                      sendFoodData();
-                      Navigator.of(context).pop();
-                      _navigatetolist();
+                      if (check == 'food') {
+                        sendFoodData();
+                        Navigator.of(context).pop();
+                        _NavigateDietList();
+                      } else {
+                        sendTrainData();
+                        Navigator.of(context).pop();
+                        _NavigateTrainList();
+                      }
                     },
                   ),
                   Padding(padding: EdgeInsets.all(12.0)),
@@ -172,9 +228,15 @@ class _myDietState extends State<myDiet> {
                     onTap: () {
                       period = '30';
                       GetUserId();
-                      sendFoodData();
-                      Navigator.of(context).pop();
-                      _navigatetolist();
+                      if (check == 'food') {
+                        sendFoodData();
+                        Navigator.of(context).pop();
+                        _NavigateDietList();
+                      } else {
+                        sendTrainData();
+                        Navigator.of(context).pop();
+                        _NavigateTrainList();
+                      }
                     },
                   ),
                   Padding(padding: EdgeInsets.all(12.0)),
@@ -225,10 +287,14 @@ class _myDietState extends State<myDiet> {
                         if (_formkey.currentState.validate()) {
                           period = _datePeriod.text;
                           GetUserId();
-                          sendFoodData();
-                          Navigator.of(context).pop();
-                          _datePeriod.clear();
-                          _navigatetolist();
+                          if (check == 'food') {
+                            sendFoodData();
+                            Navigator.of(context).pop();
+                            _NavigateDietList();
+                          } else {
+                            sendTrainData();
+                            Navigator.of(context).pop();
+                          }
                         }
                       },
                       child: Text('조회'))
