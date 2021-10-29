@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/MainPage/Training/ResultPage/Res_ArmPress.dart';
 import 'package:http/http.dart' as http;
 
 class RenderDataArmPress extends StatefulWidget {
@@ -183,7 +184,9 @@ class _RenderDataArmPressState extends State<RenderDataArmPress> {
       _counter++;
       if (_counter == widget.count) {
         // sendFitData();
-        Navigator.of(context).pop();
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => ResultArmPress()));
+        // Navigator.of(context).pop();
         print(uuid);
         final snackBar = SnackBar(
           content: const Text("운동을 완료하였습니다!"),
@@ -388,12 +391,12 @@ class _RenderDataArmPressState extends State<RenderDataArmPress> {
             ),
           ),
         ),
-        // ElevatedButton(
-        //     onPressed: () {
-        //       print(widget.count);
-        //       incrementCounter();
-        //     },
-        //     child: Text('버튼 : $_counter')),
+        ElevatedButton(
+            onPressed: () {
+              print(widget.count);
+              incrementCounter();
+            },
+            child: Text('버튼 : $_counter')),
       ],
     );
   }

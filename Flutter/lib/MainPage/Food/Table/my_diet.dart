@@ -1,6 +1,8 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:data_table_2/data_table_2.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/MainPage/Food/Table/dietListview.dart';
 import 'package:flutter_auth/MainPage/Food/Table/dietTable.dart';
@@ -18,7 +20,7 @@ class _myDietState extends State<myDiet> {
   TextEditingController _datePeriod = TextEditingController();
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
 
-  String address = 'http://c679-119-192-202-235.ngrok.io/repository/dietselect';
+  // String address = 'http://c679-119-192-202-235.ngrok.io/repository/dietselect';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,6 +52,13 @@ class _myDietState extends State<myDiet> {
     );
   }
 
+  FirebaseAuth auth = FirebaseAuth.instance;
+  String uuid = '';
+  void GetUserId() {
+    final User user = auth.currentUser;
+    uuid = user.email;
+  }
+
   List date = [];
   List meal = [];
   List fname = [];
@@ -57,15 +66,22 @@ class _myDietState extends State<myDiet> {
   List carboh = [];
   List protein = [];
   List fat = [];
-  int period = 0;
+  String period = '';
   sendFoodData() async {
-    http.Response response = await http.post(
-      Uri.parse(address),
-      headers: <String, String>{
-        'Content-Type': 'application/json; charset=UTF-8',
-      },
-      body: jsonEncode({'uuid': 'good@gmail.com', 'period': period}),
-    );
+    var queryParams = {'uuid': uuid, 'period': period};
+    final uri = Uri.http(
+        'c679-119-192-202-235.ngrok.io', '/repository/diet', queryParams);
+    final headers = {
+      HttpHeaders.contentTypeHeader: 'application/json; charset=UTF-8'
+    };
+    final response = await http.get(uri, headers: headers);
+    // http.Response response = await http.post(
+    //   Uri.parse(address),
+    //   headers: <String, String>{
+    //     'Content-Type': 'application/json; charset=UTF-8',
+    //   },
+    //   body: jsonEncode({'uuid': 'good@gmail.com', 'period': period}),
+    // );
     final resJson = jsonDecode(response.body);
     if (response.statusCode == 200) {
       date = resJson['diet_datetime'];
@@ -198,7 +214,8 @@ class _myDietState extends State<myDiet> {
                   GestureDetector(
                     child: Text('하루'),
                     onTap: () {
-                      period = 1;
+                      period = '1';
+                      GetUserId();
                       sendFoodData();
                       Navigator.of(context).pop();
                       _navigatetolist();
@@ -221,7 +238,8 @@ class _myDietState extends State<myDiet> {
                   GestureDetector(
                     child: Text('3일'),
                     onTap: () {
-                      period = 3;
+                      period = '3';
+                      GetUserId();
                       sendFoodData();
                       Navigator.of(context).pop();
                       _navigatetolist();
@@ -231,7 +249,8 @@ class _myDietState extends State<myDiet> {
                   GestureDetector(
                     child: Text('7일'),
                     onTap: () {
-                      period = 7;
+                      period = '7';
+                      GetUserId();
                       sendFoodData();
                       Navigator.of(context).pop();
                       _navigatetolist();
@@ -241,7 +260,8 @@ class _myDietState extends State<myDiet> {
                   GestureDetector(
                     child: Text('15일'),
                     onTap: () {
-                      period = 15;
+                      period = '15';
+                      GetUserId();
                       sendFoodData();
                       Navigator.of(context).pop();
                       _navigatetolist();
@@ -251,7 +271,8 @@ class _myDietState extends State<myDiet> {
                   GestureDetector(
                     child: Text('한 달'),
                     onTap: () {
-                      period = 30;
+                      period = '30';
+                      GetUserId();
                       sendFoodData();
                       Navigator.of(context).pop();
                       _navigatetolist();
@@ -303,7 +324,8 @@ class _myDietState extends State<myDiet> {
                   TextButton(
                       onPressed: () {
                         if (_formkey.currentState.validate()) {
-                          period = int.parse(_datePeriod.text);
+                          period = _datePeriod.text;
+                          GetUserId();
                           sendFoodData();
                           Navigator.of(context).pop();
                           _datePeriod.clear();

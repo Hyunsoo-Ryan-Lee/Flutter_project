@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/MainPage/Training/ResultPage/Res_Squat.dart';
 
 class RenderDataSquat extends StatefulWidget {
   final List<dynamic> data;
@@ -150,11 +151,12 @@ class _RenderDataSquatState extends State<RenderDataSquat> {
     setState(() {
       _counter++;
       if (_counter == widget.count) {
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => ResultSquat()));
         final snackBar = SnackBar(
           content: const Text("운동을 완료하였습니다!"),
         );
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
-        Navigator.of(context).pop();
       }
     });
   }

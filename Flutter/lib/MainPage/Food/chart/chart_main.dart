@@ -36,7 +36,7 @@ class _VisualDataState extends State<VisualData> {
                 onPressed: () {
                   SelectDate(context);
                 },
-                child: Text('영상소 비율 조회',
+                child: Text('영양소 비율 조회',
                     style: TextStyle(
                       color: Colors.black87,
                       fontSize: 30,
