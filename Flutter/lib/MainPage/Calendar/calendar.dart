@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_auth/MainPage/Calendar/event.dart';
 import 'package:flutter_auth/MainPage/Food/food_cam.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -70,7 +69,8 @@ class _CalendarState extends State<Calendar> {
                       selectedDay = selectDay;
                       focusedDay = focusDay;
                     });
-                    print(focusedDay);
+                    print(focusedDay.month);
+                    print(focusedDay.day);
                   },
                   selectedDayPredicate: (DateTime date) {
                     return isSameDay(selectedDay, date);
