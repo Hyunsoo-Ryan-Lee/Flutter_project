@@ -120,13 +120,13 @@ class _Ex_4State extends State<Ex_4> {
                   ),
                   OutlinedButton(
                       onPressed: () {
-                        // if (_passwordController.text.length >= 1) {
-                        //   Navigator.of(context).pushReplacement(
-                        //       MaterialPageRoute(
-                        //           builder: (context) => Instruction_4(
-                        //               count: int.parse(
-                        //                   _passwordController.text))));
-                        // } else {}
+                        if (_passwordController.text.length >= 1) {
+                          Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                  builder: (context) => Instruction_4(
+                                      count: int.parse(
+                                          _passwordController.text))));
+                        } else {}
                       },
                       child: Text(
                         'START  >',

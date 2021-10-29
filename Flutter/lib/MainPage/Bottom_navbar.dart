@@ -58,7 +58,7 @@ class _BottomNavigatorState extends State<BottomNavigator> {
             return CupertinoTabView(
               builder: (context) {
                 return CupertinoPageScaffold(
-                  child: trainMain(),
+                  child: TrainMain(),
                 );
               },
             );

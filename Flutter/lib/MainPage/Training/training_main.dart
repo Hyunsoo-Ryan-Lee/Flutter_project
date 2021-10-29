@@ -4,14 +4,9 @@ import 'package:flutter_auth/MainPage/Training/exercise/ex2.dart';
 import 'package:flutter_auth/MainPage/Training/exercise/ex3.dart';
 import 'package:flutter_auth/MainPage/Training/exercise/ex4.dart';
 
-// ignore: camel_case_types
-class trainMain extends StatelessWidget {
+class TrainMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // SystemChrome.setPreferredOrientations([
-    //   DeviceOrientation.portraitDown,
-    //   DeviceOrientation.portraitUp,
-    // ]);
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
@@ -26,127 +21,147 @@ class trainMain extends StatelessWidget {
       ),
       resizeToAvoidBottomInset: false,
       body: SafeArea(
-        child: Center(
-          child: Container(
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: <Widget>[
-                      Expanded(
-                        child: Column(children: [
-                          Container(
-                            height: size.height * 0.2,
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image:
-                                        AssetImage('assets/icons/shoulder.png'),
-                                    fit: BoxFit.contain)),
-                          ),
-                          OutlinedButton(
-                              onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => Ex_1()));
-                              },
-                              child: Text(
-                                'ARM-PRESS  >',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 14),
-                              ),
-                              style: OutlinedButton.styleFrom(
-                                fixedSize: Size(140, 15),
-                                primary: Colors.black,
-                                side: BorderSide(width: 1, color: Colors.black),
-                              ))
-                        ]),
-                      ),
-                      Expanded(
-                        child: Column(children: [
-                          Container(
-                            height: size.height * 0.2,
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage('assets/icons/lunge.png'),
-                                    fit: BoxFit.contain)),
-                          ),
-                          OutlinedButton(
-                              onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => Ex_3()));
-                              },
-                              child: Text(
-                                'LUNGE  >',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 14),
-                              ),
-                              style: OutlinedButton.styleFrom(
-                                fixedSize: Size(140, 15),
-                                primary: Colors.black,
-                                side: BorderSide(width: 1, color: Colors.black),
-                              ))
-                        ]),
-                      ),
-                    ],
-                  ),
+        child: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: size.height * 0.07,
                 ),
-                Expanded(
-                  child: Column(
+                Container(
+                  height: size.height * 0.8,
+                  child: Row(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
-                      Expanded(
-                        child: Column(children: [
-                          Container(
-                            height: size.height * 0.2,
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage(
-                                        'assets/icons/jumpsquat.jpg'),
-                                    fit: BoxFit.contain)),
-                          ),
-                          OutlinedButton(
-                              onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => Ex_2()));
-                              },
-                              child: Text(
-                                'JUMP-SQUAT  >',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 14),
+                      Flexible(
+                        child: Column(
+                          children: <Widget>[
+                            Column(children: [
+                              Container(
+                                height: size.height * 0.2,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            'assets/icons/shoulder.png'),
+                                        fit: BoxFit.contain)),
                               ),
-                              style: OutlinedButton.styleFrom(
-                                fixedSize: Size(140, 15),
-                                primary: Colors.black,
-                                side: BorderSide(width: 1, color: Colors.black),
-                              ))
-                        ]),
+                              OutlinedButton(
+                                  onPressed: () {
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) => Ex_1()));
+                                  },
+                                  child: Text(
+                                    'ARM-PRESS  >',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 14),
+                                  ),
+                                  style: OutlinedButton.styleFrom(
+                                    fixedSize: Size(140, 15),
+                                    primary: Colors.black,
+                                    side: BorderSide(
+                                        width: 1, color: Colors.black),
+                                  ))
+                            ]),
+                            SizedBox(
+                              height: size.height * 0.05,
+                            ),
+                            Column(children: [
+                              Container(
+                                height: size.height * 0.2,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            'assets/icons/lunge.png'),
+                                        fit: BoxFit.contain)),
+                              ),
+                              OutlinedButton(
+                                  onPressed: () {
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) => Ex_3()));
+                                  },
+                                  child: Text(
+                                    'LUNGE  >',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 14),
+                                  ),
+                                  style: OutlinedButton.styleFrom(
+                                    fixedSize: Size(140, 15),
+                                    primary: Colors.black,
+                                    side: BorderSide(
+                                        width: 1, color: Colors.black),
+                                  ))
+                            ]),
+                          ],
+                        ),
                       ),
-                      Expanded(
-                        child: Column(children: [
-                          Container(
-                            height: size.height * 0.2,
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage('assets/icons/squat.jpg'),
-                                    fit: BoxFit.contain)),
-                          ),
-                          OutlinedButton(
-                              onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => Ex_4()));
-                              },
-                              child: Text(
-                                'SQUAT  >',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 14),
+                      Flexible(
+                        child: Column(
+                          children: <Widget>[
+                            Column(children: [
+                              Container(
+                                height: size.height * 0.2,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            'assets/icons/jumpsquat.jpg'),
+                                        fit: BoxFit.contain)),
                               ),
-                              style: OutlinedButton.styleFrom(
-                                fixedSize: Size(140, 15),
-                                primary: Colors.black,
-                                side: BorderSide(width: 1, color: Colors.black),
-                              ))
-                        ]),
+                              OutlinedButton(
+                                  onPressed: () {
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) => Ex_2()));
+                                  },
+                                  child: Text(
+                                    'JUMP-SQUAT  >',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 14),
+                                  ),
+                                  style: OutlinedButton.styleFrom(
+                                    fixedSize: Size(140, 15),
+                                    primary: Colors.black,
+                                    side: BorderSide(
+                                        width: 1, color: Colors.black),
+                                  ))
+                            ]),
+                            SizedBox(
+                              height: size.height * 0.05,
+                            ),
+                            Column(children: [
+                              Container(
+                                height: size.height * 0.2,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            'assets/icons/squat.jpg'),
+                                        fit: BoxFit.contain)),
+                              ),
+                              OutlinedButton(
+                                  onPressed: () {
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) => Ex_4()));
+                                  },
+                                  child: Text(
+                                    'SQUAT  >',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 14),
+                                  ),
+                                  style: OutlinedButton.styleFrom(
+                                    fixedSize: Size(140, 15),
+                                    primary: Colors.black,
+                                    side: BorderSide(
+                                        width: 1, color: Colors.black),
+                                  ))
+                            ]),
+                          ],
+                        ),
                       ),
                     ],
                   ),

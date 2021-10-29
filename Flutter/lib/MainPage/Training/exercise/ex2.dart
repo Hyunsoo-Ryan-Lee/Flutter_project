@@ -52,7 +52,6 @@ class _Ex_2State extends State<Ex_2> {
         _validatePassword();
       },
       onSubmitted: (String value) {
-        print("password: $value");
         _validatePassword();
       },
       decoration: InputDecoration(
@@ -120,13 +119,14 @@ class _Ex_2State extends State<Ex_2> {
                   ),
                   OutlinedButton(
                       onPressed: () {
-                        // if (_passwordController.text.length >= 1) {
-                        //   Navigator.of(context).pushReplacement(
-                        //       MaterialPageRoute(
-                        //           builder: (context) => Instruction_2(
-                        //               count: int.parse(
-                        //                   _passwordController.text))));
-                        // } else {}
+                        if (_passwordController.text.length >= 1) {
+                          print('ok');
+                          Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                  builder: (context) => Instruction_2(
+                                      count: int.parse(
+                                          _passwordController.text))));
+                        } else {}
                       },
                       child: Text(
                         'START  >',

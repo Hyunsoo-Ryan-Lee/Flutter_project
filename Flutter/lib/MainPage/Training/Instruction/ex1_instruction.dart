@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/MainPage/Training/AIModel/Pose_ArmPress.dart';
-import 'package:flutter_auth/MainPage/Training/AIModel/Render_armPress.dart';
+import 'package:flutter_auth/MainPage/Training/AIModel/pose/Pose_ArmPress.dart';
 import 'package:flutter_auth/main.dart';
 
 class Instruction_1 extends StatefulWidget {
@@ -33,7 +32,7 @@ class _Instruction_1State extends State<Instruction_1> {
                     child: Container(
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage('assets/gif/situp.gif'))),
+                          image: AssetImage('assets/gif/armpress.gif'))),
                 )),
                 Expanded(
                     child: Padding(
@@ -59,11 +58,10 @@ class _Instruction_1State extends State<Instruction_1> {
                 )),
                 OutlinedButton(
                     onPressed: () {
-                      print(widget.count);
-
                       onSelectA(
                         context: context,
                         modelName: 'posenet',
+                        count: widget.count,
                       );
                     },
                     child: Text(
@@ -85,13 +83,14 @@ class _Instruction_1State extends State<Instruction_1> {
         ]));
   }
 
-  void onSelectA({BuildContext context, String modelName}) async {
+  void onSelectA({BuildContext context, String modelName, int count}) async {
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
-        builder: (context) => Pose_armpress(
+        builder: (context) => PoseArmPress(
           cameras: cameras,
           title: modelName,
+          count: count,
         ),
       ),
     );

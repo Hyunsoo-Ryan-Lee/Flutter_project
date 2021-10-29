@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/MainPage/Training/Instruction/ex3_instruction.dart';
 
 class Ex_3 extends StatefulWidget {
   @override
@@ -120,11 +121,11 @@ class _Ex_3State extends State<Ex_3> {
                   OutlinedButton(
                       onPressed: () {
                         if (_passwordController.text.length >= 1) {
-                          // Navigator.of(context).pushReplacement(
-                          //     MaterialPageRoute(
-                          //         builder: (context) => Instruction_2(
-                          //             count: int.parse(
-                          //                 _passwordController.text))));
+                          Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                  builder: (context) => Instruction_3(
+                                      count: int.parse(
+                                          _passwordController.text))));
                         } else {}
                       },
                       child: Text(

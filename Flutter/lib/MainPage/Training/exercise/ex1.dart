@@ -126,9 +126,11 @@ class _Ex_1State extends State<Ex_1> {
                       onPressed: () {
                         if (_passwordController.text.length >= 1) {
                           print('ok');
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => Instruction_1(
-                                  count: int.parse(_passwordController.text))));
+                          Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                  builder: (context) => Instruction_1(
+                                      count: int.parse(
+                                          _passwordController.text))));
                         } else {}
                       },
                       child: Text(

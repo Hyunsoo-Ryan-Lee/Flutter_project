@@ -5,17 +5,17 @@ import 'dart:math' as math;
 
 typedef void Callback(List<dynamic> list, int h, int w);
 
-class AI_Camera extends StatefulWidget {
+class PoseDetectCamera extends StatefulWidget {
   final List<CameraDescription> cameras;
   final Callback setRecognitions;
 
-  AI_Camera({this.cameras, this.setRecognitions});
+  PoseDetectCamera({this.cameras, this.setRecognitions});
 
   @override
-  _AI_CameraState createState() => new _AI_CameraState();
+  _PoseDetectCameraState createState() => new _PoseDetectCameraState();
 }
 
-class _AI_CameraState extends State<AI_Camera> {
+class _PoseDetectCameraState extends State<PoseDetectCamera> {
   CameraController controller;
   bool isDetecting = false;
 
@@ -28,7 +28,7 @@ class _AI_CameraState extends State<AI_Camera> {
     } else {
       controller = new CameraController(
         widget.cameras[1],
-        ResolutionPreset.high,
+        ResolutionPreset.medium,
       );
       controller.initialize().then((_) {
         if (!mounted) {
