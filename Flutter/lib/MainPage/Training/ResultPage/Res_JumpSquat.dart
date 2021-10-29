@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
-class ResultArmPress extends StatefulWidget {
-  // const ResultArmPress({ Key? key }) : super(key: key);
+class ResultJumpSquat extends StatefulWidget {
+  String fitname;
+  int count;
+  ResultJumpSquat({this.fitname, this.count});
 
   @override
-  _ResultArmPressState createState() => _ResultArmPressState();
+  _ResultJumpSquatState createState() => _ResultJumpSquatState();
 }
 
-class _ResultArmPressState extends State<ResultArmPress> {
+class _ResultJumpSquatState extends State<ResultJumpSquat> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

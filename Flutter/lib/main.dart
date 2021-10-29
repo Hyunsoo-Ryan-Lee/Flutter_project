@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Screens/Welcome/components/body.dart';
 import 'package:flutter_auth/Screens/Welcome/welcome_screen.dart';
@@ -7,6 +8,13 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:camera/camera.dart';
 
 List<CameraDescription> cameras;
+String address = 'c679-119-192-202-235.ngrok.io';
+FirebaseAuth auth = FirebaseAuth.instance;
+String uuid = '';
+void GetUserId() {
+  final User user = auth.currentUser;
+  uuid = user.email;
+}
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

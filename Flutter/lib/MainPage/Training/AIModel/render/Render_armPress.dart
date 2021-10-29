@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/MainPage/Training/ResultPage/Res_ArmPress.dart';
+import 'package:flutter_auth/main.dart';
 import 'package:http/http.dart' as http;
 
 class RenderDataArmPress extends StatefulWidget {
@@ -71,12 +72,12 @@ class _RenderDataArmPressState extends State<RenderDataArmPress> {
     super.initState();
   }
 
-  FirebaseAuth auth = FirebaseAuth.instance;
-  String uuid = '';
-  void GetUserId() {
-    final User user = auth.currentUser;
-    uuid = user.email;
-  }
+  // FirebaseAuth auth = FirebaseAuth.instance;
+  // String uuid = '';
+  // void GetUserId() {
+  //   final User user = auth.currentUser;
+  //   uuid = user.email;
+  // }
 
   bool _postureAccordingToExercise(Map<String, List<double>> poses) {
     setState(() {
@@ -185,13 +186,12 @@ class _RenderDataArmPressState extends State<RenderDataArmPress> {
       if (_counter == widget.count) {
         // sendFitData();
         Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => ResultArmPress()));
-        // Navigator.of(context).pop();
-        print(uuid);
-        final snackBar = SnackBar(
-          content: const Text("운동을 완료하였습니다!"),
-        );
-        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+            context,
+            MaterialPageRoute(
+                builder: (context) => ResultArmPress(
+                      fitname: 'Arm-Press',
+                      count: widget.count,
+                    )));
       }
     });
   }

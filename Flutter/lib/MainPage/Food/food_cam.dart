@@ -5,6 +5,7 @@ import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_auth/main.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:http_parser/http_parser.dart';
@@ -20,9 +21,6 @@ class _FoodCameraState extends State<FoodCamera> {
   final _picker = ImagePicker();
   File _image;
   String message = '';
-  // String address = 'https://d8be-112-154-191-206.ngrok.io/foodselect';
-  String address = 'http://c679-119-192-202-235.ngrok.io/repository/predict';
-  String diet_address = 'http://c679-119-192-202-235.ngrok.io/repository/diet';
   Dio dio = new Dio();
   bool _canShowButton = true;
   final _valuelist = [
@@ -48,7 +46,8 @@ class _FoodCameraState extends State<FoodCamera> {
 
   getFoodInfo() async {
     try {
-      var response = await Dio().get(address);
+      var response =
+          await Dio().get('http://' + address + '/repository/predict');
       print(response);
     } catch (e) {
       print(e);
@@ -149,7 +148,8 @@ class _FoodCameraState extends State<FoodCamera> {
   double fprotein;
   double ffat;
   uploadImage() async {
-    final request = http.MultipartRequest('POST', Uri.parse(address));
+    final request = http.MultipartRequest(
+        'POST', Uri.parse('http://' + address + '/repository/predict'));
     final headers = {'Content-Type': 'application/json; charset=UTF-8'};
     request.files.add(http.MultipartFile(
         'image', _image.readAsBytes().asStream(), _image.lengthSync(),
@@ -330,7 +330,7 @@ class _FoodCameraState extends State<FoodCamera> {
                         ? const SizedBox.shrink()
                         : ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                                fixedSize: Size(150, 20)),
+                                fixedSize: Size(200, 20)),
                             onPressed: () {
                               sendFoodData([
                                 uuid,
@@ -351,7 +351,7 @@ class _FoodCameraState extends State<FoodCamera> {
 
                               Navigator.of(context).pop();
                             },
-                            child: Text('Save')),
+                            child: Text('SAVE FOOD DATA')),
                   ],
                 ),
               ),
@@ -362,7 +362,7 @@ class _FoodCameraState extends State<FoodCamera> {
 
   Future<http.Response> sendFoodData(List diet) {
     return http.post(
-      Uri.parse(diet_address),
+      Uri.parse('http://' + address + '/repository/diet'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/MainPage/Training/ResultPage/Res_Lunge.dart';
 
 class RenderDataLunge extends StatefulWidget {
   final List<dynamic> data;
@@ -150,11 +151,12 @@ class _RenderDataLungeState extends State<RenderDataLunge> {
     setState(() {
       _counter++;
       if (_counter == widget.count) {
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => ResultLunge()));
         final snackBar = SnackBar(
           content: const Text("운동을 완료하였습니다!"),
         );
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
-        Navigator.of(context).pop();
       }
     });
   }

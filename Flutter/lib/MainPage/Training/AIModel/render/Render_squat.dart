@@ -153,10 +153,6 @@ class _RenderDataSquatState extends State<RenderDataSquat> {
       if (_counter == widget.count) {
         Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (context) => ResultSquat()));
-        final snackBar = SnackBar(
-          content: const Text("운동을 완료하였습니다!"),
-        );
-        ScaffoldMessenger.of(context).showSnackBar(snackBar);
       }
     });
   }

@@ -1,9 +1,11 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/MainPage/Mypage/EachPage/userInfoPage.dart';
 import 'package:flutter_auth/MainPage/Mypage/EachPage/github.dart';
 import 'package:flutter_auth/Screens/Welcome/components/body.dart';
+import 'package:flutter_auth/main.dart';
 import 'package:flutter_settings_screens/flutter_settings_screens.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -15,8 +17,6 @@ class myPage extends StatefulWidget {
 }
 
 class _myPageState extends State<myPage> {
-  String address = 'http://c679-119-192-202-235.ngrok.io/member/select';
-
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
@@ -68,13 +68,19 @@ class _myPageState extends State<myPage> {
   String activity;
   double urdc;
   sendUserInfo() async {
-    http.Response response = await http.post(
-      Uri.parse(address),
-      headers: <String, String>{
-        'Content-Type': 'application/json; charset=UTF-8',
-      },
-      body: jsonEncode({'uuid': uuid}),
-    );
+    var queryParams = {'uuid': uuid};
+    final uri = Uri.http(address, '/member/userinfo', queryParams);
+    final headers = {
+      HttpHeaders.contentTypeHeader: 'application/json; charset=UTF-8'
+    };
+    final response = await http.get(uri, headers: headers);
+    // http.Response response = await http.post(
+    //   Uri.parse(address),
+    //   headers: <String, String>{
+    //     'Content-Type': 'application/json; charset=UTF-8',
+    //   },
+    //   body: jsonEncode({'uuid': uuid}),
+    // );
     final resJson = jsonDecode(response.body);
     if (response.statusCode == 200) {
       age = resJson['uage'];

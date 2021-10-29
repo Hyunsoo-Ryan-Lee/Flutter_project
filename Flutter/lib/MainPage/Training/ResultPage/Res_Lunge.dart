@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ResultArmPress extends StatefulWidget {
-  // const ResultArmPress({ Key? key }) : super(key: key);
+class ResultLunge extends StatefulWidget {
+  // const ResultLunge({ Key? key }) : super(key: key);
 
   @override
-  _ResultArmPressState createState() => _ResultArmPressState();
+  _ResultLungeState createState() => _ResultLungeState();
 }
 
-class _ResultArmPressState extends State<ResultArmPress> {
+class _ResultLungeState extends State<ResultLunge> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

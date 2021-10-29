@@ -6,6 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/MainPage/Food/Table/dietListview.dart';
 import 'package:flutter_auth/MainPage/Food/Table/dietTable.dart';
+import 'package:flutter_auth/main.dart';
 import 'package:http/http.dart' as http;
 
 class myDiet extends StatefulWidget {
@@ -20,7 +21,6 @@ class _myDietState extends State<myDiet> {
   TextEditingController _datePeriod = TextEditingController();
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
 
-  // String address = 'http://c679-119-192-202-235.ngrok.io/repository/dietselect';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,8 +69,7 @@ class _myDietState extends State<myDiet> {
   String period = '';
   sendFoodData() async {
     var queryParams = {'uuid': uuid, 'period': period};
-    final uri = Uri.http(
-        'c679-119-192-202-235.ngrok.io', '/repository/diet', queryParams);
+    final uri = Uri.http(address, '/repository/diet', queryParams);
     final headers = {
       HttpHeaders.contentTypeHeader: 'application/json; charset=UTF-8'
     };

@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/MainPage/Food/chart/visual.dart';
+import 'package:flutter_auth/main.dart';
 import 'package:http/http.dart' as http;
 
 class VisualData extends StatefulWidget {
@@ -15,7 +16,6 @@ class _VisualDataState extends State<VisualData> {
   TextEditingController _datePeriod = TextEditingController();
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
 
-  String address = 'http://c679-119-192-202-235.ngrok.io/repository/dietvis';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,11 +56,11 @@ class _VisualDataState extends State<VisualData> {
   sendFoodData() async {
     print('데이터 전송 시작');
     http.Response response = await http.post(
-      Uri.parse(address),
+      Uri.parse('http://' + address + '/repository/dietvis'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
-      body: jsonEncode({'uuid': 'good@gmail.com', 'period': period}),
+      body: jsonEncode({'uuid': uuid, 'period': period}),
     );
     final resJson = jsonDecode(response.body);
     if (response.statusCode == 200) {
@@ -183,6 +183,7 @@ class _VisualDataState extends State<VisualData> {
                     onTap: () {
                       period = 1;
                       sendFoodData();
+                      GetUserId();
                       Navigator.of(context).pop();
                       _navigatetograph();
                     },
@@ -193,6 +194,7 @@ class _VisualDataState extends State<VisualData> {
                     onTap: () {
                       period = 3;
                       sendFoodData();
+                      GetUserId();
                       Navigator.of(context).pop();
                       _navigatetograph();
                     },
@@ -203,6 +205,7 @@ class _VisualDataState extends State<VisualData> {
                     onTap: () {
                       period = 7;
                       sendFoodData();
+                      GetUserId();
                       Navigator.of(context).pop();
                       _navigatetograph();
                     },
@@ -213,6 +216,7 @@ class _VisualDataState extends State<VisualData> {
                     onTap: () {
                       period = 15;
                       sendFoodData();
+                      GetUserId();
                       Navigator.of(context).pop();
                       _navigatetograph();
                     },
@@ -223,6 +227,7 @@ class _VisualDataState extends State<VisualData> {
                     onTap: () {
                       period = 30;
                       sendFoodData();
+                      GetUserId();
                       Navigator.of(context).pop();
                       _navigatetograph();
                     },

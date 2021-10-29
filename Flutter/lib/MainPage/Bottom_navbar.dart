@@ -22,7 +22,7 @@ class _BottomNavigatorState extends State<BottomNavigator> {
         currentIndex: _selectedidx,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home)),
-          BottomNavigationBarItem(icon: Icon(Icons.food_bank_outlined)),
+          BottomNavigationBarItem(icon: Icon(Icons.date_range)),
           BottomNavigationBarItem(icon: Icon(Icons.bar_chart)),
           BottomNavigationBarItem(icon: Icon(Icons.directions_run_rounded)),
           BottomNavigationBarItem(icon: Icon(Icons.account_circle_outlined)),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/MainPage/Bottom_navbar.dart';
 import 'package:flutter_auth/MainPage/Mypage/EachPage/userInfoPage.dart';
+import 'package:flutter_auth/main.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
@@ -31,7 +32,6 @@ class _BMImenState extends State<BMImen> {
   TextEditingController _heightcontroller = TextEditingController();
   TextEditingController _weightcontroller = TextEditingController();
   TextEditingController _agecontroller = TextEditingController();
-  String address = 'http://3.38.2.230:8000/member/register';
 
   @override
   Widget build(BuildContext context) {
@@ -249,7 +249,7 @@ class _BMImenState extends State<BMImen> {
 
   Future<http.Response> sendMenInfo(List title) {
     return http.post(
-      Uri.parse(address),
+      Uri.parse('http://' + address + '/member/register'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
