@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/MainPage/Calendar/calendar.dart';
-import 'package:flutter_auth/MainPage/Food/Table/my_diet.dart';
+import 'package:flutter_auth/MainPage/Food/my_diet.dart';
 import 'package:flutter_auth/MainPage/Food/chart/chart_main.dart';
 import 'package:flutter_auth/MainPage/Mypage/mypage_main.dart';
 import 'package:flutter_auth/MainPage/Training/training_main.dart';

@@ -41,6 +41,14 @@ class _VisualDataState extends State<VisualData> {
                       height: 150,
                       child: Image.asset('assets/icons/chart.png')),
                 )),
+            Positioned.fill(
+                child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Text(
+                'Visualization',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ))
           ],
         ),
       ),

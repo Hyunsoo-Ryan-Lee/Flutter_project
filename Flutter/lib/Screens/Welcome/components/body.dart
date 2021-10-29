@@ -15,10 +15,11 @@ class WelcomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              "WELCOME TO HAILAB",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-            ),
+            // Text(
+            //   "WELCOME TO HAILAB",
+            //   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+            // ),
+            Image(image: AssetImage('assets/images/logo.png')),
             SizedBox(height: size.height * 0.05),
             // SvgPicture.asset(
             //   "assets/icons/chat.svg",
