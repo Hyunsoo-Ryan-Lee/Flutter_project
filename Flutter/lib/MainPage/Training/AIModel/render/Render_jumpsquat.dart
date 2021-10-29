@@ -150,12 +150,13 @@ class _RenderDataJumpSquatState extends State<RenderDataJumpSquat> {
     setState(() {
       _counter++;
       if (_counter == widget.count) {
-        Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => ResultJumpSquat()));
-        final snackBar = SnackBar(
-          content: const Text("운동을 완료하였습니다!"),
-        );
-        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (context) => ResultJumpSquat(
+                      fitname: 'Jump-Squat',
+                      count: widget.count,
+                    )));
       }
     });
   }

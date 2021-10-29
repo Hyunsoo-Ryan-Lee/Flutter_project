@@ -152,11 +152,12 @@ class _RenderDataLungeState extends State<RenderDataLunge> {
       _counter++;
       if (_counter == widget.count) {
         Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => ResultLunge()));
-        final snackBar = SnackBar(
-          content: const Text("운동을 완료하였습니다!"),
-        );
-        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+            context,
+            MaterialPageRoute(
+                builder: (context) => ResultLunge(
+                      fitname: 'Lunge',
+                      count: widget.count,
+                    )));
       }
     });
   }

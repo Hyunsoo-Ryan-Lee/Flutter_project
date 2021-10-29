@@ -152,7 +152,12 @@ class _RenderDataSquatState extends State<RenderDataSquat> {
       _counter++;
       if (_counter == widget.count) {
         Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => ResultSquat()));
+            context,
+            MaterialPageRoute(
+                builder: (context) => ResultSquat(
+                      fitname: 'Squat',
+                      count: widget.count,
+                    )));
       }
     });
   }

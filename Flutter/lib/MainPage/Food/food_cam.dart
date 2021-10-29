@@ -31,13 +31,6 @@ class _FoodCameraState extends State<FoodCamera> {
   String dropdownValue = '아침';
   String holder = '';
 
-  FirebaseAuth auth = FirebaseAuth.instance;
-  String uuid = '';
-  void GetUserId() {
-    final User user = auth.currentUser;
-    uuid = user.email;
-  }
-
   void hideWidget() {
     setState(() {
       _canShowButton = !_canShowButton;

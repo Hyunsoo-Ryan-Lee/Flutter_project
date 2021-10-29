@@ -52,7 +52,7 @@ class _ResultArmPressState extends State<ResultArmPress> {
                 onPressed: () {
                   sendTrainInfo();
                   final snackBar = SnackBar(
-                    content: const Text("운동을 완료하였습니다!"),
+                    content: const Text("운동 정보 저장이 완료되었습니다."),
                   );
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
                   Navigator.of(context).pop();

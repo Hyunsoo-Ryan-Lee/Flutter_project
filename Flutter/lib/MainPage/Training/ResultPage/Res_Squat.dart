@@ -80,7 +80,7 @@ class _ResultSquatState extends State<ResultSquat> {
       },
       body: jsonEncode({
         'uuid': uuid,
-        'eid': 'E1',
+        'eid': 'E4',
         'count': widget.count,
       }),
     );

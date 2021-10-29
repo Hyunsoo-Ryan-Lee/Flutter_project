@@ -32,15 +32,15 @@ class _VisualDataState extends State<VisualData> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            OutlinedButton(
-                onPressed: () {
+            InkWell(
+                onTap: () {
                   SelectDate(context);
                 },
-                child: Text('영양소 비율 조회',
-                    style: TextStyle(
-                      color: Colors.black87,
-                      fontSize: 30,
-                    ))),
+                child: ClipRect(
+                  child: Container(
+                      height: 150,
+                      child: Image.asset('assets/icons/chart.png')),
+                )),
           ],
         ),
       ),
@@ -70,9 +70,6 @@ class _VisualDataState extends State<VisualData> {
       protein = resJson['protein'];
       fat = resJson['fat'];
       // calsum = cal.reduce((value, element) => value + element);
-      // carbohsum = carboh.reduce((value, element) => value + element);
-      // proteinsum = protein.reduce((value, element) => value + element);
-      // fatsum = fat.reduce((value, element) => value + element);
       print(resJson);
     }
     setState(() {});
