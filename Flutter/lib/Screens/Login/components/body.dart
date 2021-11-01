@@ -24,7 +24,7 @@ class Login extends StatelessWidget {
           key: _formkey,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
+            children: [
               Container(
                 height: size.height * 0.05,
               ),
