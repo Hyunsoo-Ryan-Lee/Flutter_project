@@ -1,6 +1,11 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/MainPage/Food/chart/visual_Second.dart';
+import 'package:flutter_auth/main.dart';
 import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:http/http.dart' as http;
 
 class ReportChart extends StatefulWidget {
   var data;
@@ -15,6 +20,9 @@ class ReportChart extends StatefulWidget {
 class _ReportChartState extends State<ReportChart> {
   List<ExpenseData> _chartData;
   TooltipBehavior _tooltipBehavior;
+  final _valuelist = ['', '3일', '7일', '15일', '30일'];
+  String dropdownValue = '';
+  String holder = '';
 
   @override
   void initState() {
@@ -49,7 +57,10 @@ class _ReportChartState extends State<ReportChart> {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            // Text('${widget.data}'),
+            Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: Align(alignment: Alignment.topLeft, child: _DayTime()),
+            ),
             Container(
               height: size.height * 0.7,
               width: size.width * 0.85,
@@ -94,10 +105,89 @@ class _ReportChartState extends State<ReportChart> {
     ));
   }
 
+  List date = [];
+  List cal = [];
+  List carboh = [];
+  List protein = [];
+  List fat = [];
+  int period = 0;
+  sendFoodData() async {
+    print('데이터 전송 시작');
+    http.Response response = await http.post(
+      Uri.parse('http://' + address + '/repository/dietvis'),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode({'uuid': uuid, 'period': period}),
+    );
+    final resJson = jsonDecode(response.body);
+    if (response.statusCode == 200) {
+      date = resJson['diet_datetime'];
+      cal = resJson['cal'];
+      carboh = resJson['carboh'];
+      protein = resJson['protein'];
+      fat = resJson['fat'];
+      print(resJson);
+    }
+    setState(() {});
+  }
+
+  Widget _DayTime() {
+    return DropdownButton(
+      value: dropdownValue,
+      onChanged: (String newValue) {
+        setState(() {
+          dropdownValue = newValue;
+        });
+        if (dropdownValue == '') {
+          return '';
+        } else if (dropdownValue == '3일') {
+          period = 3;
+          sendFoodData();
+          GetUserId();
+          _navigatetograph();
+        } else if (dropdownValue == '7일') {
+          period = 7;
+          sendFoodData();
+          GetUserId();
+          _navigatetograph();
+        } else if (dropdownValue == '15일') {
+          period = 15;
+          sendFoodData();
+          GetUserId();
+          _navigatetograph();
+        } else {
+          period = 30;
+          sendFoodData();
+          GetUserId();
+          _navigatetograph();
+        }
+      },
+      items: _valuelist.map<DropdownMenuItem<String>>((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      }).toList(),
+      elevation: 4,
+      icon: const Icon(Icons.arrow_drop_down_rounded),
+    );
+  }
+
+  _navigatetograph() async {
+    await Future.delayed(Duration(milliseconds: 1500), () {});
+    Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+            builder: (context) => ReportChartSecond(
+                data: [date, cal, carboh, protein, fat, period])));
+  }
+
   List<ExpenseData> getChartData() {
     final List<ExpenseData> chartData = [
       for (int i = 0; i < widget.data[0].length; i++)
-        ExpenseData('${widget.data[0][i]}', widget.data[2][i], 54, 33),
+        ExpenseData('${widget.data[0][i]}', widget.data[2][i],
+            widget.data[3][i], widget.data[4][i]),
     ];
     return chartData;
   }
@@ -120,10 +210,6 @@ class _ReportChartState extends State<ReportChart> {
     ];
     return chartData;
   }
-
-  // Widget tt() {
-  //   if (widget.data == null)
-  // }
 }
 
 class ExpenseData {

@@ -75,7 +75,7 @@ class _Ex_4State extends State<Ex_4> {
             color: Colors.black,
           ),
           title: Text(
-            'SQUAT',
+            'Squat',
             style: TextStyle(color: Colors.black),
           ),
           backgroundColor: Colors.white,

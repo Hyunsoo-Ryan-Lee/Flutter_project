@@ -35,7 +35,7 @@ class _Instruction_3State extends State<Instruction_3> {
             FittedBox(
               fit: BoxFit.fitWidth,
               child: Text(
-                '>> 카메라를 전신이 들어오도록 위치시켜주세요 <<',
+                '>> 전신이 보이도록 카메라를 위치시켜주세요 <<',
                 style: TextStyle(
                     fontSize: 17,
                     fontWeight: FontWeight.bold,

@@ -19,7 +19,7 @@ class _Instruction_1State extends State<Instruction_1> {
           color: Colors.black,
         ),
         title: Text(
-          'INSTRUCTION',
+          'Instruction',
           style: TextStyle(color: Colors.black),
         ),
         backgroundColor: Colors.white,
@@ -34,7 +34,7 @@ class _Instruction_1State extends State<Instruction_1> {
             FittedBox(
               fit: BoxFit.fitWidth,
               child: Text(
-                '>> 카메라를 전신이 들어오도록 위치시켜주세요 <<',
+                '>> 전신이 보이도록 카메라를 위치시켜주세요 <<',
                 style: TextStyle(
                     fontSize: 17,
                     fontWeight: FontWeight.bold,
@@ -45,7 +45,7 @@ class _Instruction_1State extends State<Instruction_1> {
               height: size.height * 0.03,
             ),
             Container(
-              child: Image.asset('assets/gif/lunge.gif'),
+              child: Image.asset('assets/gif/armpress.gif'),
             ),
             SizedBox(
               height: size.height * 0.03,

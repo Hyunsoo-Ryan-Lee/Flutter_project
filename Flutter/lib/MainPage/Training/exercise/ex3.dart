@@ -74,7 +74,7 @@ class _Ex_3State extends State<Ex_3> {
             color: Colors.black,
           ),
           title: Text(
-            'LUNGE',
+            'Lunge',
             style: TextStyle(color: Colors.black),
           ),
           backgroundColor: Colors.white,

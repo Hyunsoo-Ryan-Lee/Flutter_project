@@ -22,7 +22,6 @@ class _FoodCameraState extends State<FoodCamera> {
   File _image;
   String message = '';
   Dio dio = new Dio();
-  bool _canShowButton = true;
   final _valuelist = [
     '아침',
     '점심',

@@ -19,7 +19,7 @@ class _Instruction_2State extends State<Instruction_2> {
           color: Colors.black,
         ),
         title: Text(
-          'INSTRUCTION',
+          'Instruction',
           style: TextStyle(color: Colors.black),
         ),
         backgroundColor: Colors.white,

@@ -78,7 +78,7 @@ class _Ex_1State extends State<Ex_1> {
             color: Colors.black,
           ),
           title: Text(
-            'ARM PRESS',
+            'Arm Press',
             style: TextStyle(color: Colors.black),
           ),
           backgroundColor: Colors.white,
