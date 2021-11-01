@@ -15,8 +15,7 @@ class TrainMain extends StatelessWidget {
           'Training',
           style: TextStyle(color: Colors.black),
         ),
-        elevation: 0.0,
-        backgroundColor: Colors.blueAccent[100],
+        backgroundColor: Colors.teal[200],
         centerTitle: true,
       ),
       resizeToAvoidBottomInset: false,
@@ -107,7 +106,7 @@ class TrainMain extends StatelessWidget {
                                 decoration: BoxDecoration(
                                     image: DecorationImage(
                                         image: AssetImage(
-                                            'assets/icons/jumpsquat.jpg'),
+                                            'assets/icons/jumpsquat.png'),
                                         fit: BoxFit.contain)),
                               ),
                               OutlinedButton(

@@ -15,12 +15,14 @@ class _Instruction_4State extends State<Instruction_4> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(
+          iconTheme: IconThemeData(
+            color: Colors.black,
+          ),
           title: Text(
             'INSTRUCTION',
             style: TextStyle(color: Colors.black),
           ),
-          elevation: 0.0,
-          backgroundColor: Colors.blueAccent[100],
+          backgroundColor: Colors.white,
           centerTitle: true,
         ),
         body: CustomScrollView(slivers: [
@@ -65,7 +67,7 @@ class _Instruction_4State extends State<Instruction_4> {
                       );
                     },
                     child: Text(
-                      'GO!!   >',
+                      'START   >',
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                     ),

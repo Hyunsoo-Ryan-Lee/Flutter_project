@@ -21,153 +21,132 @@ class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Background(
-      child: SingleChildScrollView(
-        child: Form(
-          key: _formkey,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Container(
-                height: 15,
-              ),
-              Text(
-                "SIGN UP",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30,
-                    color: Colors.red),
-              ),
-              SizedBox(height: size.height * 0.03),
-              SvgPicture.asset(
-                "assets/icons/signup.svg",
-                height: size.height * 0.35,
-              ),
-              SizedBox(height: size.height * 0.03),
-              Padding(
-                padding: const EdgeInsets.only(left: 20, right: 30),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                      icon: Icon(Icons.mail),
-                      hintText: 'email',
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5),
-                          borderSide: BorderSide(
-                            width: 0,
-                          ))),
-                  controller: _emailController,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please input correct Email';
-                    }
-                    return null;
-                  },
+    return SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Form(
+            key: _formkey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  height: size.height * 0.05,
                 ),
-              ),
-              Container(
-                height: 5,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 20, right: 30),
-                child: TextFormField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                      icon: Icon(Icons.vpn_key),
-                      hintText: 'password',
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5),
-                          borderSide: BorderSide(
-                            width: 0,
-                          ))),
-                  controller: _passwordController,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please input correct Password';
-                    } else if (value.length < 6) {
-                      return 'p/w는 최소 6자 이상입니다.';
-                    }
-                    return null;
-                  },
-                ),
-              ),
-              Container(
-                height: 10.0,
-              ),
-              OutlinedButton(
-                style: OutlinedButton.styleFrom(
-                    padding: EdgeInsets.only(
-                        left: size.width * 0.3,
-                        right: size.width * 0.3,
-                        top: size.width * 0.025,
-                        bottom: size.width * 0.025),
-                    backgroundColor: Colors.black,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25.0))),
-                child: Text(
-                  "SIGN UP",
-                  style: new TextStyle(
-                      color: Colors.white,
+                Text(
+                  "Sign up with Email",
+                  style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 20),
+                      fontSize: 20,
+                      color: Colors.black),
                 ),
-                onPressed: () {
-                  if (_formkey.currentState.validate()) {
-                    // final snackBar = SnackBar(
-                    //   content: const Text("You're Signed in!"),
-                    // );
-                    // ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                    _register(context);
-                    // var route = new MaterialPageRoute(
-                    //   builder: (BuildContext context) => new selectSex(txt: [
-                    //     _emailController.text,
-                    //     _passwordController.text
-                    //   ]),
-                    // );
-                    // Navigator.of(context).push(route);
-                  }
-                },
-              ),
-              SizedBox(height: size.height * 0.03),
-              AlreadyHaveAnAccountCheck(
-                login: false,
-                press: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return LoginScreen();
-                      },
-                    ),
-                  );
-                },
-              ),
-              Divider(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  SocalIcon(
-                    iconSrc: "assets/icons/facebook.svg",
-                    press: () {},
-                  ),
-                  SocalIcon(
-                    iconSrc: "assets/icons/twitter.svg",
-                    press: () {},
-                  ),
-                  SocalIcon(
-                    iconSrc: "assets/icons/google-plus.svg",
-                    press: () {
-                      // var route = new MaterialPageRoute(
-                      //   builder: (BuildContext context) => new BMImen(txt: [
-                      //     _emailController.text,
-                      //     _passwordController.text
-                      //   ]),
-                      // );
-                      // Navigator.of(context).push(route);
+                SizedBox(height: size.height * 0.03),
+                Padding(
+                  padding: const EdgeInsets.only(left: 20, right: 30),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                        icon: Icon(Icons.mail),
+                        hintText: 'email',
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(5),
+                            borderSide: BorderSide(
+                              width: 0,
+                            ))),
+                    controller: _emailController,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please input correct Email';
+                      }
+                      return null;
                     },
                   ),
-                ],
-              )
-            ],
+                ),
+                Container(
+                  height: size.height * 0.01,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 20, right: 30),
+                  child: TextFormField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                        icon: Icon(Icons.vpn_key),
+                        hintText: 'password',
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(5),
+                            borderSide: BorderSide(
+                              width: 0,
+                            ))),
+                    controller: _passwordController,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please input correct Password';
+                      } else if (value.length < 6) {
+                        return 'p/w는 최소 6자 이상입니다.';
+                      }
+                      return null;
+                    },
+                  ),
+                ),
+                SizedBox(height: size.height * 0.03),
+                OutlinedButton(
+                  style: OutlinedButton.styleFrom(
+                    fixedSize: Size(300, 50),
+                    backgroundColor: Colors.black,
+                  ),
+                  child: Text(
+                    "SIGN UP",
+                    style: new TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20),
+                  ),
+                  onPressed: () {
+                    if (_formkey.currentState.validate()) {
+                      _register(context);
+                    }
+                  },
+                ),
+                SizedBox(height: size.height * 0.03),
+                AlreadyHaveAnAccountCheck(
+                  login: false,
+                  press: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return LoginScreen();
+                        },
+                      ),
+                    );
+                  },
+                ),
+                Divider(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    SocalIcon(
+                      iconSrc: "assets/icons/facebook.svg",
+                      press: () {},
+                    ),
+                    SocalIcon(
+                      iconSrc: "assets/icons/twitter.svg",
+                      press: () {},
+                    ),
+                    SocalIcon(
+                      iconSrc: "assets/icons/google-plus.svg",
+                      press: () {
+                        // var route = new MaterialPageRoute(
+                        //   builder: (BuildContext context) => new BMImen(txt: [
+                        //     _emailController.text,
+                        //     _passwordController.text
+                        //   ]),
+                        // );
+                        // Navigator.of(context).push(route);
+                      },
+                    ),
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       ),

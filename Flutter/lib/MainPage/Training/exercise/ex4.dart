@@ -71,12 +71,14 @@ class _Ex_4State extends State<Ex_4> {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
+          iconTheme: IconThemeData(
+            color: Colors.black,
+          ),
           title: Text(
             'SQUAT',
             style: TextStyle(color: Colors.black),
           ),
-          elevation: 0.0,
-          backgroundColor: Colors.blueAccent[100],
+          backgroundColor: Colors.white,
           centerTitle: true,
         ),
         body: SafeArea(
@@ -129,7 +131,7 @@ class _Ex_4State extends State<Ex_4> {
                         } else {}
                       },
                       child: Text(
-                        'START  >',
+                        'GO  >',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 14),
                       ),

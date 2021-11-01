@@ -42,15 +42,15 @@ class _CalendarState extends State<Calendar> {
             "Calendar",
             style: TextStyle(color: Colors.black),
           ),
-          backgroundColor: Colors.blueAccent[100],
+          backgroundColor: Colors.teal[200],
           centerTitle: true,
         ),
         body: SingleChildScrollView(
-          child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                TableCalendar(
+          child: Center(
+            child: Column(children: [
+              Container(
+                height: size.height * 0.55,
+                child: TableCalendar(
                   focusedDay: selectedDay,
                   firstDay: DateTime(1990),
                   lastDay: DateTime(2050),
@@ -114,54 +114,58 @@ class _CalendarState extends State<Calendar> {
                     ),
                   ),
                 ),
-                // ignore: sdk_version_ui_as_code
-                ..._getEventsfromDay(selectedDay).map(
-                  (Event event) => ListTile(
-                    title: Text(
-                      event.title,
+              ),
+              // ..._getEventsfromDay(selectedDay).map(
+              //   (Event event) => ListTile(
+              //     title: Text(
+              //       event.title,
+              //     ),
+              //   ),
+              // ),
+              Container(
+                child: Column(children: [
+                  OutlinedButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => FoodCamera()));
+                    },
+                    child: Text(
+                      '오늘 식단 등록하기',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+                    ),
+                    style: OutlinedButton.styleFrom(
+                      fixedSize: Size(200, 50),
+                      primary: Colors.black,
+                      side: BorderSide(width: 1, color: Colors.black),
                     ),
                   ),
-                ),
-                Container(
-                  child: Column(children: [
-                    OutlinedButton(
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => FoodCamera()));
-                      },
-                      child: Text(
-                        '오늘 식단 등록하기',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 14),
-                      ),
-                      style: OutlinedButton.styleFrom(
-                        fixedSize: Size(190, 20),
-                        primary: Colors.black,
-                        side: BorderSide(width: 1, color: Colors.black),
-                      ),
+                  SizedBox(
+                    height: size.height * 0.01,
+                  ),
+                  OutlinedButton(
+                    onPressed: () {
+                      // Navigator.of(context).push(MaterialPageRoute(
+                      //     builder: (context) => trainMain()));
+                    },
+                    child: Text(
+                      '오늘의 트레이닝',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
                     ),
-                    OutlinedButton(
-                      onPressed: () {
-                        // Navigator.of(context).push(MaterialPageRoute(
-                        //     builder: (context) => trainMain()));
-                      },
-                      child: Text(
-                        '오늘의 트레이닝',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 14),
-                      ),
-                      style: OutlinedButton.styleFrom(
-                        fixedSize: Size(190, 20),
-                        primary: Colors.black,
-                        side: BorderSide(width: 1, color: Colors.black),
-                      ),
-                    )
-                  ]),
-                ),
-                SizedBox(
-                  height: size.height * 0.03,
-                )
-              ]),
+                    style: OutlinedButton.styleFrom(
+                      fixedSize: Size(200, 50),
+                      primary: Colors.black,
+                      side: BorderSide(width: 1, color: Colors.black),
+                    ),
+                  )
+                ]),
+              ),
+              SizedBox(
+                height: size.height * 0.03,
+              )
+            ]),
+          ),
         ));
   }
 }

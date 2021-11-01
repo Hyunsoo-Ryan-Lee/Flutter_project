@@ -15,12 +15,14 @@ class _DietListviewState extends State<DietListview> {
     return SafeArea(
         child: Scaffold(
             appBar: AppBar(
+              iconTheme: IconThemeData(
+                color: Colors.black,
+              ),
               title: Text(
                 '${widget.data[7]} 일치 식단',
                 style: TextStyle(color: Colors.black),
               ),
-              elevation: 0.0,
-              backgroundColor: Colors.blueAccent[100],
+              backgroundColor: Colors.white,
               centerTitle: true,
             ),
             body: ListView(
@@ -32,7 +34,7 @@ class _DietListviewState extends State<DietListview> {
                         Text("${widget.data[0][i]}     ${widget.data[1][i]}"),
                     subtitle: Text(
                         "음식 : ${widget.data[2][i]}  칼로리 : ${widget.data[3][i]} kcal"),
-                    leading: Icon(Icons.food_bank),
+                    leading: Icon(Icons.restaurant),
                     onTap: () {
                       showDialog(
                           context: context,

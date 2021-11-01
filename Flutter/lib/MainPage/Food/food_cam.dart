@@ -286,11 +286,14 @@ class _FoodCameraState extends State<FoodCamera> {
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
+            iconTheme: IconThemeData(
+              color: Colors.black,
+            ),
             title: Text(
               '식단 사진',
               style: TextStyle(color: Colors.black),
             ),
-            backgroundColor: Colors.blueAccent[100],
+            backgroundColor: Colors.white,
             centerTitle: true,
           ),
           body: Center(
@@ -312,7 +315,8 @@ class _FoodCameraState extends State<FoodCamera> {
                         ? const SizedBox.shrink()
                         : ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                                fixedSize: Size(150, 20)),
+                                fixedSize: Size(170, 20),
+                                primary: Colors.teal[300]),
                             onPressed: () {
                               _showDialog(context);
                               hideWidget();
@@ -323,7 +327,8 @@ class _FoodCameraState extends State<FoodCamera> {
                         ? const SizedBox.shrink()
                         : ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                                fixedSize: Size(200, 20)),
+                                fixedSize: Size(170, 20),
+                                primary: Colors.teal[300]),
                             onPressed: () {
                               sendFoodData([
                                 uuid,
@@ -344,7 +349,7 @@ class _FoodCameraState extends State<FoodCamera> {
 
                               Navigator.of(context).pop();
                             },
-                            child: Text('SAVE FOOD DATA')),
+                            child: Text('Save Food Data')),
                   ],
                 ),
               ),

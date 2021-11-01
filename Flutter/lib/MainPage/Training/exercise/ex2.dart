@@ -69,12 +69,14 @@ class _Ex_2State extends State<Ex_2> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          iconTheme: IconThemeData(
+            color: Colors.black,
+          ),
           title: Text(
             'JUMP SQUAT',
             style: TextStyle(color: Colors.black),
           ),
-          elevation: 0.0,
-          backgroundColor: Colors.blueAccent[100],
+          backgroundColor: Colors.white,
           centerTitle: true,
         ),
         resizeToAvoidBottomInset: false,
@@ -90,7 +92,7 @@ class _Ex_2State extends State<Ex_2> {
                     height: size.height * 0.3,
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage('assets/icons/jumpsquat.jpg'),
+                            image: AssetImage('assets/icons/jumpsquat.png'),
                             fit: BoxFit.contain)),
                   ),
                   Row(
@@ -129,7 +131,7 @@ class _Ex_2State extends State<Ex_2> {
                         } else {}
                       },
                       child: Text(
-                        'START  >',
+                        'GO  >',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 14),
                       ),

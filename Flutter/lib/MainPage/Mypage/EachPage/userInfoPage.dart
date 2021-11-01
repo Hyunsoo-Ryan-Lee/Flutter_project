@@ -49,12 +49,14 @@ class _UserInfoPageState extends State<UserInfoPage> {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Colors.black,
+        ),
         title: Text(
           '사용자 정보',
           style: TextStyle(color: Colors.black),
         ),
-        elevation: 0.0,
-        backgroundColor: Colors.blueAccent[100],
+        backgroundColor: Colors.white,
         centerTitle: true,
       ),
       resizeToAvoidBottomInset: false,

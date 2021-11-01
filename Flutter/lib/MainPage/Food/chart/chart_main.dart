@@ -24,8 +24,7 @@ class _VisualDataState extends State<VisualData> {
           'Report ',
           style: TextStyle(color: Colors.black),
         ),
-        elevation: 0.0,
-        backgroundColor: Colors.blueAccent[100],
+        backgroundColor: Colors.teal[200],
         centerTitle: true,
       ),
       body: Center(
@@ -91,87 +90,6 @@ class _VisualDataState extends State<VisualData> {
             builder: (context) =>
                 ReportChart(data: [date, cal, carboh, protein, fat])));
   }
-
-  // Widget _dietTable() {
-  //   return Table(border: TableBorder.all(color: Colors.black), columnWidths: {
-  //     0: FixedColumnWidth(70.0),
-  //     1: FixedColumnWidth(36.0),
-  //     2: FixedColumnWidth(70.0),
-  //     3: FixedColumnWidth(40.0),
-  //     4: FixedColumnWidth(60.0),
-  //     5: FixedColumnWidth(40.0),
-  //     6: FixedColumnWidth(40.0)
-  //   }, children: [
-  //     TableRow(children: [
-  //       Text(
-  //         '날짜',
-  //         textAlign: TextAlign.center,
-  //         style: TextStyle(fontWeight: FontWeight.bold),
-  //       ),
-  //       Text(
-  //         '시간',
-  //         textAlign: TextAlign.center,
-  //         style: TextStyle(fontWeight: FontWeight.bold),
-  //       ),
-  //       Text(
-  //         '음식명',
-  //         textAlign: TextAlign.center,
-  //         style: TextStyle(fontWeight: FontWeight.bold),
-  //       ),
-  //       Text(
-  //         '칼로리',
-  //         textAlign: TextAlign.center,
-  //         style: TextStyle(fontWeight: FontWeight.bold),
-  //       ),
-  //       Text(
-  //         '탄수화물',
-  //         textAlign: TextAlign.center,
-  //         style: TextStyle(fontWeight: FontWeight.bold),
-  //       ),
-  //       Text(
-  //         '단백질',
-  //         textAlign: TextAlign.center,
-  //         style: TextStyle(fontWeight: FontWeight.bold),
-  //       ),
-  //       Text(
-  //         '지방',
-  //         textAlign: TextAlign.center,
-  //         style: TextStyle(fontWeight: FontWeight.bold),
-  //       ),
-  //     ]),
-  //     for (int i = 0; i < date.length; i++)
-  //       TableRow(children: [
-  //         Text(
-  //           date[i],
-  //           textAlign: TextAlign.center,
-  //         ),
-  //         Text(
-  //           meal[i],
-  //           textAlign: TextAlign.center,
-  //         ),
-  //         Text(
-  //           fname[i],
-  //           textAlign: TextAlign.center,
-  //         ),
-  //         Text(
-  //           cal[i].toString(),
-  //           textAlign: TextAlign.center,
-  //         ),
-  //         Text(
-  //           carboh[i].toString(),
-  //           textAlign: TextAlign.center,
-  //         ),
-  //         Text(
-  //           protein[i].toString(),
-  //           textAlign: TextAlign.center,
-  //         ),
-  //         Text(
-  //           fat[i].toString(),
-  //           textAlign: TextAlign.center,
-  //         ),
-  //       ])
-  //   ]);
-  // }
 
   Future<void> SelectDate(BuildContext context) {
     return showDialog(

@@ -58,7 +58,20 @@ class _ResultLungeState extends State<ResultLunge> {
                   Navigator.of(context).pop();
                 },
                 child: Text(
-                  'SAVE TRAINING DATA',
+                  'Save Training Data',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+                ),
+                style: OutlinedButton.styleFrom(
+                  fixedSize: Size(200, 20),
+                  primary: Colors.black,
+                  side: BorderSide(width: 1, color: Colors.black),
+                )),
+            OutlinedButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text(
+                  "Don't Save",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                 ),
                 style: OutlinedButton.styleFrom(

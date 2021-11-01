@@ -21,12 +21,14 @@ class _TrainListviewState extends State<TrainListview> {
     return SafeArea(
         child: Scaffold(
             appBar: AppBar(
+              iconTheme: IconThemeData(
+                color: Colors.black,
+              ),
               title: Text(
                 '${widget.data[3]} 일치 운동 기록',
                 style: TextStyle(color: Colors.black),
               ),
-              elevation: 0.0,
-              backgroundColor: Colors.blueAccent[100],
+              backgroundColor: Colors.white,
               centerTitle: true,
             ),
             body: ListView(

@@ -33,12 +33,14 @@ class _ReportChartState extends State<ReportChart> {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Colors.black,
+        ),
         title: Text(
-          'REPORT',
+          'Report',
           style: TextStyle(color: Colors.black),
         ),
-        elevation: 0.0,
-        backgroundColor: Colors.blueAccent[100],
+        backgroundColor: Colors.white,
         centerTitle: true,
       ),
       body: Center(

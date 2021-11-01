@@ -26,8 +26,7 @@ class _myPageState extends State<myPage> {
           'My page',
           style: TextStyle(color: Colors.black),
         ),
-        elevation: 0.0,
-        backgroundColor: Colors.blueAccent[100],
+        backgroundColor: Colors.teal[200],
         centerTitle: true,
       ),
       body: SafeArea(
@@ -104,9 +103,6 @@ class _myPageState extends State<myPage> {
           sendUserInfo();
           print(age);
           _navigatetoUserManage();
-          // Navigator.of(context).push(MaterialPageRoute(
-          //     builder: (context) => UserInfoPage(
-          //         userdata: [uuid, age, height, weight, activity, urdc])));
         },
       );
 

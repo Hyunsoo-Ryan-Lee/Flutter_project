@@ -28,18 +28,17 @@ class _myDietState extends State<myDiet> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'My Diet ',
+          'My Diary',
           style: TextStyle(color: Colors.black),
         ),
-        elevation: 0.0,
-        backgroundColor: Colors.blueAccent[100],
+        backgroundColor: Colors.teal[200],
         centerTitle: true,
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Stack(
+            Column(
               children: [
                 InkWell(
                     onTap: () {
@@ -51,14 +50,18 @@ class _myDietState extends State<myDiet> {
                           height: 120,
                           child: Image.asset('assets/icons/food.png')),
                     )),
-                Positioned.fill(
-                    child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Text('음식 정보'),
-                ))
+                Text('식단 기록', style: TextStyle(fontSize: 17))
+                // Positioned.fill(
+                //     child: Align(
+                //   alignment: Alignment.bottomCenter,
+                //   child: Text(
+                //     '식단 기록',
+                //     style: TextStyle(fontSize: 17),
+                //   ),
+                // ))
               ],
             ),
-            Stack(
+            Column(
               children: [
                 InkWell(
                     onTap: () {
@@ -70,11 +73,16 @@ class _myDietState extends State<myDiet> {
                           height: 120,
                           child: Image.asset('assets/icons/train.png')),
                     )),
-                Positioned.fill(
-                    child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Text('운동 정보'),
-                ))
+                Text('운동 기록', style: TextStyle(fontSize: 17))
+
+                // Positioned.fill(
+                //     child: Align(
+                //   alignment: Alignment.bottomCenter,
+                //   child: Text(
+                //     '운동 기록',
+                //     style: TextStyle(fontSize: 17),
+                //   ),
+                // ))
               ],
             ),
           ],

@@ -14,7 +14,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   }
 
   _navigatetohome() async {
-    await Future.delayed(Duration(milliseconds: 1500), () {});
+    await Future.delayed(Duration(milliseconds: 2000), () {});
     Navigator.pushReplacement(
         context, MaterialPageRoute(builder: (context) => WelcomePage()));
   }
@@ -27,7 +27,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           child: Image(image: AssetImage('assets/images/logo.png')),
         ),
       ),
-      // body: WelcomePage(),
     );
   }
 }

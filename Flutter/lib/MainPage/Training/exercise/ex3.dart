@@ -70,12 +70,14 @@ class _Ex_3State extends State<Ex_3> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          iconTheme: IconThemeData(
+            color: Colors.black,
+          ),
           title: Text(
             'LUNGE',
             style: TextStyle(color: Colors.black),
           ),
-          elevation: 0.0,
-          backgroundColor: Colors.blueAccent[100],
+          backgroundColor: Colors.white,
           centerTitle: true,
         ),
         resizeToAvoidBottomInset: false,
@@ -129,7 +131,7 @@ class _Ex_3State extends State<Ex_3> {
                         } else {}
                       },
                       child: Text(
-                        'START  >',
+                        'GO  >',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 14),
                       ),
