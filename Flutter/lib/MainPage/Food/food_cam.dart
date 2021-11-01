@@ -31,12 +31,6 @@ class _FoodCameraState extends State<FoodCamera> {
   String dropdownValue = '아침';
   String holder = '';
 
-  void hideWidget() {
-    setState(() {
-      _canShowButton = !_canShowButton;
-    });
-  }
-
   getFoodInfo() async {
     try {
       var response =
@@ -283,6 +277,8 @@ class _FoodCameraState extends State<FoodCamera> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
@@ -305,57 +301,56 @@ class _FoodCameraState extends State<FoodCamera> {
                     _imageView(),
                     _foodTable(),
                     SizedBox(
-                      height: 3,
+                      height: size.height * 0.01,
                     ),
                     _DayTime(),
                     SizedBox(
-                      height: 10,
+                      height: size.height * 0.01,
                     ),
-                    !_canShowButton
-                        ? const SizedBox.shrink()
-                        : ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                fixedSize: Size(170, 20),
-                                primary: Colors.teal[300]),
-                            onPressed: () {
-                              _showDialog(context);
-                              hideWidget();
-                              GetUserId();
-                            },
-                            child: Text('Select Image')),
-                    _canShowButton
-                        ? const SizedBox.shrink()
-                        : ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                fixedSize: Size(170, 20),
-                                primary: Colors.teal[300]),
-                            onPressed: () {
-                              sendFoodData([
-                                uuid,
-                                fid,
-                                dropdownValue,
-                                fname,
-                                famount,
-                                fcal,
-                                fcarboh,
-                                fprotein,
-                                ffat
-                              ]);
-                              final snackBar = SnackBar(
-                                content: const Text("영양소 정보 저장이 완료되었습니다."),
-                              );
-                              ScaffoldMessenger.of(context)
-                                  .showSnackBar(snackBar);
-
-                              Navigator.of(context).pop();
-                            },
-                            child: Text('Save Food Data')),
+                    SelectButton()
                   ],
                 ),
               ),
             ),
           )),
     );
+  }
+
+  Widget SelectButton() {
+    if (_image == null) {
+      return ElevatedButton(
+          style: ElevatedButton.styleFrom(
+              fixedSize: Size(170, 20), primary: Colors.teal[300]),
+          onPressed: () {
+            _showDialog(context);
+            GetUserId();
+          },
+          child: Text('Select Image'));
+    } else {
+      return ElevatedButton(
+          style: ElevatedButton.styleFrom(
+              fixedSize: Size(170, 20), primary: Colors.teal[300]),
+          onPressed: () {
+            sendFoodData([
+              uuid,
+              fid,
+              dropdownValue,
+              fname,
+              famount,
+              fcal,
+              fcarboh,
+              fprotein,
+              ffat
+            ]);
+            final snackBar = SnackBar(
+              content: const Text("영양소 정보 저장이 완료되었습니다."),
+            );
+            ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
+            Navigator.of(context).pop();
+          },
+          child: Text('Save Food Data'));
+    }
   }
 
   Future<http.Response> sendFoodData(List diet) {
