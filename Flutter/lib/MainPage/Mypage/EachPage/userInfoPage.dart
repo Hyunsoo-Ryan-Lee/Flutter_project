@@ -31,7 +31,8 @@ class _UserInfoPageState extends State<UserInfoPage> {
   var check;
   final _picker = ImagePicker();
   File _image;
-  // int userage;
+  int userage;
+  bool nullcheck = false;
   // double userheight;
   // double userweight;
   // String useract;
@@ -127,7 +128,7 @@ class _UserInfoPageState extends State<UserInfoPage> {
                         SizedBox(
                           width: size.width * 0.2,
                         ),
-                        Text('${widget.userdata[1]} 세'),
+                        Text('$userage 세'),
                       ],
                     ),
                     SizedBox(
@@ -195,6 +196,7 @@ class _UserInfoPageState extends State<UserInfoPage> {
                         icon: Icon(Icons.edit))
                   ],
                 ),
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
@@ -214,13 +216,16 @@ class _UserInfoPageState extends State<UserInfoPage> {
                     SizedBox(
                       width: size.width * 0.1,
                     ),
-                    IconButton(
-                        onPressed: () {
-                          check = '활동량';
-                          modify(context);
-                        },
-                        icon: Icon(Icons.edit))
+                    // IconButton(
+                    //     onPressed: () {
+                    //       check = '활동량';
+                    //       modify(context);
+                    //     },
+                    //     icon: Icon(Icons.edit))
                   ],
+                ),
+                SizedBox(
+                  height: size.height * 0.02,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -400,8 +405,7 @@ class _UserInfoPageState extends State<UserInfoPage> {
                           onPressed: () {
                             if (_formkey.currentState.validate()) {
                               setState(() {
-                                widget.userdata[1] =
-                                    int.parse(_agecontroller.text);
+                                userage = int.parse(_agecontroller.text);
                               });
                               _agecontroller.clear();
                               Navigator.of(context).pop();

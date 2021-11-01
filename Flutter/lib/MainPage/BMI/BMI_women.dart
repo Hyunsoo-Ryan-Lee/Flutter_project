@@ -34,214 +34,161 @@ class _BMIwomenState extends State<BMIwomen> {
 
   @override
   Widget build(BuildContext context) {
-    // SystemChrome.setPreferredOrientations([
-    //   DeviceOrientation.portraitDown,
-    //   DeviceOrientation.portraitUp,
-    // ]);
-    return Container(
-        child: Scaffold(
+    Size size = MediaQuery.of(context).size;
+
+    return Scaffold(
       appBar: AppBar(
         title: Text(
-          'BMI Calculator',
+          'Question(2/2)',
           style: TextStyle(color: Colors.black),
         ),
         elevation: 0.0,
-        backgroundColor: Colors.blueAccent[100],
+        backgroundColor: Colors.teal[200],
         centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => BottomNavigator()));
-            },
-            icon: Icon(
-              Icons.settings,
-              color: Colors.black,
-            ),
-          ),
-        ],
       ),
-      body: SingleChildScrollView(
-        child: Form(
-          key: this.formKey,
-          child: Padding(
-            padding: const EdgeInsets.only(top: 20, right: 20, left: 20),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // Row(
-                //   children: [
-                //     radioButton('Man', Colors.blueAccent, 0),
-                //     radioButton('Woman', Colors.redAccent, 1)
-                //   ],
-                // ),
-                Text('성별선택 : 여자'),
-                SizedBox(
-                  height: 20.0,
-                ),
-                Text(
-                  '나이를 입력하세요 :',
-                  style: TextStyle(
-                    fontSize: 15.0,
+      body: Form(
+        key: this.formKey,
+        child: SafeArea(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 20, right: 30, left: 30),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: size.height * 0.03,
                   ),
-                ),
-                SizedBox(
-                  height: 8.0,
-                ),
-                TextFormField(
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                    hintText: '나이를 입력하세요',
-                    filled: true,
-                    fillColor: Colors.white,
+                  Text(
+                    '나이를 입력하세요',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
-                  controller: _agecontroller,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return '나이를 입력해주세요';
-                    }
-                    return null;
-                  },
-                ),
-                SizedBox(
-                  height: 10.0,
-                ),
-                Text(
-                  '신장을 입력하세요(cm) :',
-                  style: TextStyle(
-                    fontSize: 15.0,
-                  ),
-                ),
-                SizedBox(
-                  height: 8.0,
-                ),
-                TextFormField(
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                    hintText: '신장를 입력하세요(cm)',
-                    filled: true,
-                    fillColor: Colors.white,
-                  ),
-                  controller: _heightcontroller,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return '신장를 입력해주세요';
-                    }
-                    return null;
-                  },
-                ),
-                SizedBox(
-                  height: 10.0,
-                ),
-                Text(
-                  '체중을 입력하세요(Kg) :',
-                  style: TextStyle(
-                    fontSize: 15.0,
-                  ),
-                ),
-                SizedBox(
-                  height: 8.0,
-                ),
-                TextFormField(
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                    hintText: '체중를 입력하세요(kg)',
-                    filled: true,
-                    fillColor: Colors.white,
-                  ),
-                  controller: _weightcontroller,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return '체중를 입력해주세요';
-                    }
-                    return null;
-                  },
-                ),
-                SizedBox(
-                  height: 10.0,
-                ),
-                Container(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        '활동 정도를 선택하세요',
-                        style: TextStyle(
-                          fontSize: 15.0,
-                        ),
-                      ),
-                      DropdownButton(
-                        value: dropdownValue,
-                        onChanged: (String newValue) {
-                          getDropDownItem();
-                          setState(() {
-                            dropdownValue = newValue;
-                          });
-                        },
-                        items: _valuelist
-                            .map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
-                        elevation: 4,
-                        icon: const Icon(Icons.arrow_drop_down_rounded),
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  width: double.infinity,
-                  child: Text(
-                    '${widget.txt}',
+                  SizedBox(height: size.height * 0.02),
+                  TextFormField(
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 15.0,
-                      fontWeight: FontWeight.bold,
+                    decoration: InputDecoration(
+                      hintText: '',
+                      filled: true,
+                      fillColor: Colors.white,
+                    ),
+                    controller: _agecontroller,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return '나이를 입력해주세요';
+                      }
+                      return null;
+                    },
+                  ),
+                  SizedBox(height: size.height * 0.05),
+                  Text(
+                    '신장을 입력하세요',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(height: size.height * 0.02),
+                  TextFormField(
+                    textAlign: TextAlign.center,
+                    decoration: InputDecoration(
+                      hintText: 'cm',
+                      filled: true,
+                      fillColor: Colors.white,
+                    ),
+                    controller: _heightcontroller,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return '신장을 입력해주세요';
+                      }
+                      return null;
+                    },
+                  ),
+                  SizedBox(height: size.height * 0.05),
+                  Text(
+                    '체중을 입력하세요',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(height: size.height * 0.02),
+                  TextFormField(
+                    textAlign: TextAlign.center,
+                    decoration: InputDecoration(
+                      hintText: 'kg',
+                      filled: true,
+                      fillColor: Colors.white,
+                    ),
+                    controller: _weightcontroller,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return '체중을 입력해주세요';
+                      }
+                      return null;
+                    },
+                  ),
+                  SizedBox(height: size.height * 0.05),
+                  Text(
+                    '활동 정도를 선택하세요',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(height: size.height * 0.02),
+                  Center(
+                    child: DropdownButton(
+                      value: dropdownValue,
+                      onChanged: (String newValue) {
+                        getDropDownItem();
+                        setState(() {
+                          dropdownValue = newValue;
+                        });
+                      },
+                      items: _valuelist
+                          .map<DropdownMenuItem<String>>((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      }).toList(),
+                      elevation: 4,
+                      icon: const Icon(Icons.arrow_drop_down_rounded),
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                Container(
-                    width: double.infinity,
-                    height: 50.0,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        if (formKey.currentState.validate()) {
-                          setState(() {
-                            height = double.parse(_heightcontroller.value.text);
-                            weight = double.parse(_weightcontroller.value.text);
-                            age = int.parse(_agecontroller.value.text);
-                          });
-                          calculateBmi(age, height, weight);
-                          sendWomenInfo([
-                            _agecontroller.value.text,
-                            _heightcontroller.value.text,
-                            _weightcontroller.value.text,
-                            dropdownValue
-                          ]);
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => BottomNavigator()));
-                        }
-                      },
-                      style: TextButton.styleFrom(primary: Colors.blue[200]),
-                      child: Text(
-                        'Calculate',
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                    )),
-              ],
+                  SizedBox(height: size.height * 0.04),
+                  Center(
+                    child: OutlinedButton(
+                        style: OutlinedButton.styleFrom(
+                            fixedSize: Size(300, 50),
+                            primary: Colors.black,
+                            backgroundColor: Colors.black12),
+                        onPressed: () {
+                          if (formKey.currentState.validate()) {
+                            setState(() {
+                              age = int.parse(_agecontroller.value.text);
+                              height =
+                                  double.parse(_heightcontroller.value.text);
+                              weight =
+                                  double.parse(_weightcontroller.value.text);
+                            });
+                            calculateBmi(age, height, weight);
+
+                            sendWomenInfo([
+                              _agecontroller.value.text,
+                              _heightcontroller.value.text,
+                              _weightcontroller.value.text,
+                              dropdownValue
+                            ]);
+                            Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                    builder: (context) => BottomNavigator()));
+                          }
+                        },
+                        child: Text(
+                          '회원가입 완료하기!',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 16),
+                        )),
+                  )
+                ],
+              ),
             ),
           ),
         ),
       ),
-    ));
+    );
   }
 
   Future<http.Response> sendWomenInfo(List title) {
@@ -294,32 +241,4 @@ class _BMIwomenState extends State<BMIwomen> {
       holder = dropdownValue;
     });
   }
-
-  // Widget radioButton(String value, Color color, int index) {
-  //   return Expanded(
-  //     child: Container(
-  //       margin: EdgeInsets.symmetric(horizontal: 12.0),
-  //       height: 50.0,
-  //       child: OutlinedButton(
-  //         style: OutlinedButton.styleFrom(
-  //           backgroundColor: currentindex == index ? color : Colors.white,
-  //           shape: RoundedRectangleBorder(
-  //             borderRadius: BorderRadius.circular(8.0),
-  //           ),
-  //         ),
-  //         onPressed: () {
-  //           change(index);
-  //         },
-  //         child: Text(
-  //           value,
-  //           style: TextStyle(
-  //             color: currentindex == index ? Colors.black : color,
-  //             fontSize: 20.0,
-  //             fontWeight: FontWeight.bold,
-  //           ),
-  //         ),
-  //       ),
-  //     ),
-  //   );
-  // }
 }

@@ -1,6 +1,6 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/MainPage/Food/chart/visual.dart';
 import 'package:flutter_auth/main.dart';
 import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -178,8 +178,8 @@ class _ReportChartSecondState extends State<ReportChartSecond> {
     Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-            builder: (context) => ReportChartSecond(
-                data: [date, cal, carboh, protein, fat, period])));
+            builder: (context) =>
+                ReportChart(data: [date, cal, carboh, protein, fat, period])));
   }
 
   List<ExpenseData> getChartData() {

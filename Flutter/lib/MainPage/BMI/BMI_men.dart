@@ -60,8 +60,7 @@ class _BMImenState extends State<BMImen> {
                   ),
                   Text(
                     '나이를 입력하세요',
-                    style:
-                        TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: size.height * 0.02),
                   TextFormField(
@@ -82,8 +81,7 @@ class _BMImenState extends State<BMImen> {
                   SizedBox(height: size.height * 0.05),
                   Text(
                     '신장을 입력하세요',
-                    style:
-                        TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: size.height * 0.02),
                   TextFormField(
@@ -104,8 +102,7 @@ class _BMImenState extends State<BMImen> {
                   SizedBox(height: size.height * 0.05),
                   Text(
                     '체중을 입력하세요',
-                    style:
-                        TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: size.height * 0.02),
                   TextFormField(
@@ -126,8 +123,7 @@ class _BMImenState extends State<BMImen> {
                   SizedBox(height: size.height * 0.05),
                   Text(
                     '활동 정도를 선택하세요',
-                    style:
-                        TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: size.height * 0.02),
                   Center(
@@ -150,33 +146,41 @@ class _BMImenState extends State<BMImen> {
                       icon: const Icon(Icons.arrow_drop_down_rounded),
                     ),
                   ),
-                  SizedBox(height: size.height * 0.03),
-                  OutlinedButton(
-                      onPressed: () {
-                        if (formKey.currentState.validate()) {
-                          setState(() {
-                            age = int.parse(_agecontroller.value.text);
-                            height = double.parse(_heightcontroller.value.text);
-                            weight = double.parse(_weightcontroller.value.text);
-                          });
-                          calculateBmi(age, height, weight);
+                  SizedBox(height: size.height * 0.04),
+                  Center(
+                    child: OutlinedButton(
+                        style: OutlinedButton.styleFrom(
+                            fixedSize: Size(300, 50),
+                            primary: Colors.black,
+                            backgroundColor: Colors.black12),
+                        onPressed: () {
+                          if (formKey.currentState.validate()) {
+                            setState(() {
+                              age = int.parse(_agecontroller.value.text);
+                              height =
+                                  double.parse(_heightcontroller.value.text);
+                              weight =
+                                  double.parse(_weightcontroller.value.text);
+                            });
+                            calculateBmi(age, height, weight);
 
-                          sendMenInfo([
-                            _agecontroller.value.text,
-                            _heightcontroller.value.text,
-                            _weightcontroller.value.text,
-                            dropdownValue
-                          ]);
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => BottomNavigator()));
-                        }
-                      },
-                      child: Text(
-                        'Calculate',
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      )),
+                            sendMenInfo([
+                              _agecontroller.value.text,
+                              _heightcontroller.value.text,
+                              _weightcontroller.value.text,
+                              dropdownValue
+                            ]);
+                            Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                    builder: (context) => BottomNavigator()));
+                          }
+                        },
+                        child: Text(
+                          '회원가입 완료하기!',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 16),
+                        )),
+                  )
                 ],
               ),
             ),

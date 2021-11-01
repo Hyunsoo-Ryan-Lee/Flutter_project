@@ -17,6 +17,7 @@ class _selectSexState extends State<selectSex> {
 
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text(
           'Question(1/2)',
           style: TextStyle(color: Colors.black),
@@ -39,57 +40,51 @@ class _selectSexState extends State<selectSex> {
               SizedBox(height: size.height * 0.04),
               Column(
                 children: [
-                  InkWell(
-                      onTap: () {
-                        var route = new MaterialPageRoute(
-                          builder: (BuildContext context) =>
-                              new BMImen(txt: widget.txt),
-                        );
-                        Navigator.of(context).push(route);
-                      },
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(10.0),
-                        child: Image.asset('assets/icons/men.png',
-                            width: 200, height: 200, fit: BoxFit.fill),
-                      )),
-                  Positioned.fill(
-                      child: Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Text(
-                      'MALE',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                  ))
+                  Column(
+                    children: [
+                      InkWell(
+                          onTap: () {
+                            var route = new MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  new BMImen(txt: widget.txt),
+                            );
+                            Navigator.of(context).push(route);
+                          },
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10.0),
+                            child: Image.asset('assets/icons/men.png',
+                                width: 200, height: 200, fit: BoxFit.fill),
+                          )),
+                      Text('Male')
+                    ],
+                  ),
                 ],
               ),
               SizedBox(
-                height: size.height * 0.1,
+                height: size.height * 0.05,
               ),
               Column(
                 children: [
-                  InkWell(
-                      onTap: () {
-                        var route = new MaterialPageRoute(
-                          builder: (BuildContext context) =>
-                              new BMIwomen(txt: widget.txt),
-                        );
-                        Navigator.of(context).pushReplacement(route);
-                        // Navigator.of(context).push(
-                        //     MaterialPageRoute(builder: (context) => BMIwomen()));
-                      },
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20.0),
-                        child: Image.asset('assets/icons/women.png',
-                            width: 200, height: 200, fit: BoxFit.fill),
-                      )),
-                  Positioned.fill(
-                      child: Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Text(
-                      'FEMALE',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                  ))
+                  Column(
+                    children: [
+                      InkWell(
+                          onTap: () {
+                            var route = new MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  new BMIwomen(txt: widget.txt),
+                            );
+                            Navigator.of(context).push(route);
+                            // Navigator.of(context).push(
+                            //     MaterialPageRoute(builder: (context) => BMIwomen()));
+                          },
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: Image.asset('assets/icons/women.png',
+                                width: 200, height: 200, fit: BoxFit.fill),
+                          )),
+                      Text('Female')
+                    ],
+                  ),
                 ],
               ),
             ],
