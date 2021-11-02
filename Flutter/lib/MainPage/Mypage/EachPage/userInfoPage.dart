@@ -37,11 +37,12 @@ class _UserInfoPageState extends State<UserInfoPage> {
   // double userweight;
   // String useract;
   // double usercal;
+  int temp1;
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    // int userage = widget.userdata[1];
+    userage = widget.userdata[1];
     // double userheight = widget.userdata[2];
     // double userweight = widget.userdata[3];
     // String useract = widget.userdata[4];
@@ -404,8 +405,9 @@ class _UserInfoPageState extends State<UserInfoPage> {
                       TextButton(
                           onPressed: () {
                             if (_formkey.currentState.validate()) {
+                              temp1 = int.parse(_agecontroller.text);
                               setState(() {
-                                userage = int.parse(_agecontroller.text);
+                                widget.userdata[1] = temp1;
                               });
                               _agecontroller.clear();
                               Navigator.of(context).pop();

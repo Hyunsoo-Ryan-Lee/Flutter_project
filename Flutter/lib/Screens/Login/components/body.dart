@@ -141,6 +141,7 @@ class Login extends StatelessWidget {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: _emailController.text, password: _passwordController.text);
       final snackBar = SnackBar(
+        duration: const Duration(milliseconds: 500),
         content: const Text("환영합니다!"),
       );
       ScaffoldMessenger.of(context).showSnackBar(snackBar);

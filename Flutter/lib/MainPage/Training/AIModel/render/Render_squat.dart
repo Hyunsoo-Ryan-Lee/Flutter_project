@@ -339,7 +339,7 @@ class _RenderDataSquatState extends State<RenderDataSquat> {
         Align(
           alignment: Alignment.topCenter,
           child: Container(
-            height: 50,
+            height: 60,
             width: widget.screenW,
             decoration: BoxDecoration(
               color: correctColor,
@@ -392,75 +392,3 @@ class MyPainter extends CustomPainter {
     return false;
   }
 }
-
-// class MyPainter extends CustomPainter {
-//   Vector leftShoulderPos;
-//   Vector rightShoulderPos;
-//   Vector leftHipPos;
-//   Vector rightHipPos;
-//   Vector leftElbowPos;
-//   Vector rightElbowPos;
-//   Vector leftWristPos;
-//   Vector rightWristPos;
-//   Vector leftKneePos;
-//   Vector rightKneePos;
-//   Vector leftAnklePos;
-//   Vector rightAnklePos;
-//   MyPainter(
-//       {this.leftShoulderPos,
-//       this.leftAnklePos,
-//       this.leftElbowPos,
-//       this.leftHipPos,
-//       this.leftKneePos,
-//       this.leftWristPos,
-//       this.rightAnklePos,
-//       this.rightElbowPos,
-//       this.rightHipPos,
-//       this.rightKneePos,
-//       this.rightShoulderPos,
-//       this.rightWristPos});
-//   @override
-//   void paint(Canvas canvas, Size size) {
-//     final pointMode = ui.PointMode.polygon;
-//     final points = [
-//       Offset(leftWristPos.x, leftWristPos.y),
-//       Offset(leftElbowPos.x, leftElbowPos.y),
-//       Offset(leftShoulderPos.x, leftShoulderPos.y),
-//       Offset(leftHipPos.x, leftHipPos.y),
-//       Offset(leftKneePos.x, leftKneePos.y),
-//       Offset(leftAnklePos.x, leftAnklePos.y),
-//       Offset(rightHipPos.x, rightHipPos.y),
-//       Offset(rightKneePos.x, rightKneePos.y),
-//       Offset(rightAnklePos.x, rightAnklePos.y),
-//       Offset(rightShoulderPos.x, rightShoulderPos.y),
-//       Offset(rightElbowPos.x, rightElbowPos.y),
-//       Offset(rightWristPos.x, rightWristPos.y),
-//     ];
-//     final paint = Paint()
-//       ..color = Colors.black
-//       ..strokeWidth = 4
-//       ..strokeCap = StrokeCap.round;
-//     canvas.drawPoints(pointMode, points, paint);
-//   }
-
-//   @override
-//   bool shouldRepaint(CustomPainter old) {
-//     return false;
-//   }
-// }
-
-// CustomPaint(
-//               painter: MyPainter(
-//                   leftShoulderPos: leftShoulderPos,
-//                   leftElbowPos: leftElbowPos,
-//                   leftWristPos: leftWristPos,
-//                   leftHipPos: leftHipPos,
-//                   leftKneePos: leftKneePos,
-//                   leftAnklePos: leftAnklePos,
-//                   rightHipPos: rightHipPos,
-//                   rightKneePos: rightKneePos,
-//                   rightAnklePos: rightAnklePos,
-//                   rightShoulderPos: rightShoulderPos,
-//                   rightElbowPos: rightElbowPos,
-//                   rightWristPos: rightWristPos),
-//             ),

@@ -53,7 +53,7 @@ class _myPageState extends State<myPage> {
   }
 
   _navigatetoUserManage() async {
-    await Future.delayed(Duration(milliseconds: 1000), () {});
+    await Future.delayed(Duration(milliseconds: 500), () {});
     Navigator.push(
         context,
         MaterialPageRoute(
@@ -82,6 +82,7 @@ class _myPageState extends State<myPage> {
     // );
     final resJson = jsonDecode(response.body);
     if (response.statusCode == 200) {
+      print(resJson);
       age = resJson['uage'];
       height = resJson['uheight'];
       weight = resJson['uweight'];
@@ -101,7 +102,6 @@ class _myPageState extends State<myPage> {
         onTap: () {
           GetUserId();
           sendUserInfo();
-          print(age);
           _navigatetoUserManage();
         },
       );

@@ -171,10 +171,6 @@ class SignUp extends StatelessWidget {
           builder: (BuildContext context) => new selectSex(
               txt: [_emailController.text, _passwordController.text]));
       Navigator.of(context).push(route);
-      final snackBar = SnackBar(
-        content: const Text("You're Signed in!"),
-      );
-      ScaffoldMessenger.of(context).showSnackBar(snackBar);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         final snackBar = SnackBar(

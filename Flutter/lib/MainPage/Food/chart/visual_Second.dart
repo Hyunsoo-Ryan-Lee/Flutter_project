@@ -65,7 +65,7 @@ class _ReportChartSecondState extends State<ReportChartSecond> {
               width: size.width * 0.85,
               child: SfCartesianChart(
                 title: ChartTitle(
-                    text: '영양정보',
+                    text: '영양정보(g)',
                     textStyle: TextStyle(fontWeight: FontWeight.bold)),
                 legend: Legend(isVisible: true),
                 tooltipBehavior: _tooltipBehavior,

@@ -298,7 +298,8 @@ class _FoodCameraState extends State<FoodCamera> {
                 child: Column(
                   children: [
                     _imageView(),
-                    _foodTable(),
+                    Align(
+                        alignment: Alignment.bottomCenter, child: _foodTable()),
                     SizedBox(
                       height: size.height * 0.01,
                     ),
@@ -342,6 +343,7 @@ class _FoodCameraState extends State<FoodCamera> {
               ffat
             ]);
             final snackBar = SnackBar(
+              duration: const Duration(milliseconds: 500),
               content: const Text("영양소 정보 저장이 완료되었습니다."),
             );
             ScaffoldMessenger.of(context).showSnackBar(snackBar);

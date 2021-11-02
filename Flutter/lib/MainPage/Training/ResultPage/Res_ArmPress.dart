@@ -52,6 +52,7 @@ class _ResultArmPressState extends State<ResultArmPress> {
                 onPressed: () {
                   sendTrainInfo();
                   final snackBar = SnackBar(
+                    duration: const Duration(milliseconds: 500),
                     content: const Text("운동 정보 저장이 완료되었습니다."),
                   );
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);

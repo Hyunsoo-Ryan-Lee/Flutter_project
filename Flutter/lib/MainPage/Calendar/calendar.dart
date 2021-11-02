@@ -1,6 +1,12 @@
+import 'dart:math';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/MainPage/Calendar/event.dart';
 import 'package:flutter_auth/MainPage/Food/food_cam.dart';
+import 'package:flutter_auth/MainPage/Training/exercise/ex1.dart';
+import 'package:flutter_auth/MainPage/Training/exercise/ex2.dart';
+import 'package:flutter_auth/MainPage/Training/exercise/ex3.dart';
+import 'package:flutter_auth/MainPage/Training/exercise/ex4.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class Calendar extends StatefulWidget {
@@ -13,8 +19,8 @@ class _CalendarState extends State<Calendar> {
   CalendarFormat format = CalendarFormat.month;
   DateTime selectedDay = DateTime.now();
   DateTime focusedDay = DateTime.now();
-
   TextEditingController _eventController = TextEditingController();
+  Random rnd = new Random();
 
   @override
   void initState() {
@@ -145,11 +151,10 @@ class _CalendarState extends State<Calendar> {
                   ),
                   OutlinedButton(
                     onPressed: () {
-                      // Navigator.of(context).push(MaterialPageRoute(
-                      //     builder: (context) => trainMain()));
+                      randomTrain();
                     },
                     child: Text(
-                      '오늘의 트레이닝',
+                      '랜덤 트레이닝',
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
                     ),
@@ -167,5 +172,39 @@ class _CalendarState extends State<Calendar> {
             ]),
           ),
         ));
+  }
+
+  Widget randomTrain() {
+    int randnumber = 1 + rnd.nextInt(4);
+    if (randnumber == 1) {
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => Ex_1()));
+      final snackBar = SnackBar(
+        duration: const Duration(milliseconds: 1000),
+        content: const Text("Arm Press에 당첨되셨습니다."),
+      );
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    } else if (randnumber == 2) {
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => Ex_2()));
+      final snackBar = SnackBar(
+          duration: const Duration(milliseconds: 1000),
+          content: const Text('Jump Squat에 당첨되셨습니다.'));
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    } else if (randnumber == 3) {
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => Ex_3()));
+      final snackBar = SnackBar(
+          duration: const Duration(milliseconds: 1000),
+          content: const Text('Lunge에 당첨되셨습니다.'));
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    } else {
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => Ex_4()));
+      final snackBar = SnackBar(
+          duration: const Duration(milliseconds: 1000),
+          content: const Text('Squat에 당첨되셨습니다.'));
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    }
   }
 }

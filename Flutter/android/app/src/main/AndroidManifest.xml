@@ -31,7 +31,7 @@
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <!-- <uses-permission android:name="android.permission.INTERNET"/> -->
+        <uses-permission android:name="android.permission.INTERNET"/>
             
     </application>
 </manifest>
