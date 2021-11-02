@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/MainPage/Food/chart/visual_Second.dart';
 import 'package:flutter_auth/main.dart';
@@ -20,8 +19,8 @@ class ReportChart extends StatefulWidget {
 class _ReportChartState extends State<ReportChart> {
   List<ExpenseData> _chartData;
   TooltipBehavior _tooltipBehavior;
-  final _valuelist = ['', '3일', '7일', '15일', '30일'];
-  String dropdownValue = '';
+  final _valuelist = ['3일', '7일', '15일', '30일'];
+  String dropdownValue = '3일';
   String holder = '';
 
   @override
@@ -175,7 +174,7 @@ class _ReportChartState extends State<ReportChart> {
   }
 
   _navigatetograph() async {
-    await Future.delayed(Duration(milliseconds: 1500), () {});
+    await Future.delayed(Duration(milliseconds: 500), () {});
     Navigator.pushReplacement(
         context,
         MaterialPageRoute(

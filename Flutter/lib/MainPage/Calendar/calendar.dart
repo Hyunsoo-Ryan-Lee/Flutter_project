@@ -39,7 +39,7 @@ class _CalendarState extends State<Calendar> {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            "Calendar",
+            "Home",
             style: TextStyle(color: Colors.black),
           ),
           backgroundColor: Colors.teal[200],

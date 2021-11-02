@@ -58,7 +58,7 @@ class _ResultJumpSquatState extends State<ResultJumpSquat> {
                   Navigator.of(context).pop();
                 },
                 child: Text(
-                  'SAVE TRAINING DATA',
+                  'Save Training Data',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                 ),
                 style: OutlinedButton.styleFrom(

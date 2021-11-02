@@ -155,7 +155,7 @@ class _myDietState extends State<myDiet> {
   // }
 
   _NavigateDietList() async {
-    await Future.delayed(Duration(milliseconds: 2000), () {});
+    await Future.delayed(Duration(milliseconds: 500), () {});
     Navigator.push(
         context,
         MaterialPageRoute(
@@ -164,7 +164,7 @@ class _myDietState extends State<myDiet> {
   }
 
   _NavigateTrainList() async {
-    await Future.delayed(Duration(milliseconds: 2000), () {});
+    await Future.delayed(Duration(milliseconds: 500), () {});
     Navigator.push(
         context,
         MaterialPageRoute(

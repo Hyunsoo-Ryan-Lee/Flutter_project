@@ -330,7 +330,7 @@ class _RenderDataJumpSquatState extends State<RenderDataJumpSquat> {
         Align(
           alignment: Alignment.topCenter,
           child: Container(
-            height: 50,
+            height: 60,
             width: widget.screenW,
             decoration: BoxDecoration(
               color: correctColor,

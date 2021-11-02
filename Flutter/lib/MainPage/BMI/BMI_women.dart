@@ -171,6 +171,11 @@ class _BMIwomenState extends State<BMIwomen> {
                               _weightcontroller.value.text,
                               dropdownValue
                             ]);
+                            final snackBar = SnackBar(
+                              content: const Text("회원가입이 완료되었습니다."),
+                            );
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(snackBar);
                             Navigator.of(context).pushReplacement(
                                 MaterialPageRoute(
                                     builder: (context) => BottomNavigator()));

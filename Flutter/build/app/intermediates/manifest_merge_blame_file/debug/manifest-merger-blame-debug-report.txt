@@ -260,20 +260,43 @@
 147-->[com.google.firebase:firebase-common:20.0.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\9d7fe74da07fa20f0d69d44f9be58a11\jetified-firebase-common-20.0.0\AndroidManifest.xml:31:13-36
 148
 149        <activity
-149-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\fe53dd02fea6f00fc0146f74a725f819\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
-150            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-150-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\fe53dd02fea6f00fc0146f74a725f819\play-services-base-17.1.0\AndroidManifest.xml:24:13-79
-151            android:exported="false"
-151-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\fe53dd02fea6f00fc0146f74a725f819\play-services-base-17.1.0\AndroidManifest.xml:25:13-37
-152            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-152-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\fe53dd02fea6f00fc0146f74a725f819\play-services-base-17.1.0\AndroidManifest.xml:26:13-72
-153
-154        <meta-data
-154-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\8e92bd42e11b17d72f1df0e0fc7b3653\jetified-play-services-basement-17.1.0\AndroidManifest.xml:23:9-25:69
-155            android:name="com.google.android.gms.version"
-155-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\8e92bd42e11b17d72f1df0e0fc7b3653\jetified-play-services-basement-17.1.0\AndroidManifest.xml:24:13-58
-156            android:value="@integer/google_play_services_version" />
-156-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\8e92bd42e11b17d72f1df0e0fc7b3653\jetified-play-services-basement-17.1.0\AndroidManifest.xml:25:13-66
-157    </application>
-158
-159</manifest>
+149-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\6337ba463ec060adf3166fd1eabeb6d9\jetified-play-services-auth-16.0.1\AndroidManifest.xml:23:9-27:75
+150            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+150-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\6337ba463ec060adf3166fd1eabeb6d9\jetified-play-services-auth-16.0.1\AndroidManifest.xml:24:13-93
+151            android:excludeFromRecents="true"
+151-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\6337ba463ec060adf3166fd1eabeb6d9\jetified-play-services-auth-16.0.1\AndroidManifest.xml:25:13-46
+152            android:exported="false"
+152-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\6337ba463ec060adf3166fd1eabeb6d9\jetified-play-services-auth-16.0.1\AndroidManifest.xml:26:13-37
+153            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+153-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\6337ba463ec060adf3166fd1eabeb6d9\jetified-play-services-auth-16.0.1\AndroidManifest.xml:27:13-72
+154        <!--
+155            Service handling Google Sign-In user revocation. For apps that do not integrate with
+156            Google Sign-In, this service will never be started.
+157        -->
+158        <service
+158-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\6337ba463ec060adf3166fd1eabeb6d9\jetified-play-services-auth-16.0.1\AndroidManifest.xml:33:9-36:110
+159            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+159-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\6337ba463ec060adf3166fd1eabeb6d9\jetified-play-services-auth-16.0.1\AndroidManifest.xml:34:13-89
+160            android:exported="true"
+160-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\6337ba463ec060adf3166fd1eabeb6d9\jetified-play-services-auth-16.0.1\AndroidManifest.xml:35:13-36
+161            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
+161-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\6337ba463ec060adf3166fd1eabeb6d9\jetified-play-services-auth-16.0.1\AndroidManifest.xml:36:13-107
+162
+163        <activity
+163-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\fe53dd02fea6f00fc0146f74a725f819\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+164            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+164-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\fe53dd02fea6f00fc0146f74a725f819\play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+165            android:exported="false"
+165-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\fe53dd02fea6f00fc0146f74a725f819\play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+166            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+166-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\fe53dd02fea6f00fc0146f74a725f819\play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+167
+168        <meta-data
+168-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\8e92bd42e11b17d72f1df0e0fc7b3653\jetified-play-services-basement-17.1.0\AndroidManifest.xml:23:9-25:69
+169            android:name="com.google.android.gms.version"
+169-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\8e92bd42e11b17d72f1df0e0fc7b3653\jetified-play-services-basement-17.1.0\AndroidManifest.xml:24:13-58
+170            android:value="@integer/google_play_services_version" />
+170-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\8e92bd42e11b17d72f1df0e0fc7b3653\jetified-play-services-basement-17.1.0\AndroidManifest.xml:25:13-66
+171    </application>
+172
+173</manifest>

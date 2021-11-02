@@ -19,8 +19,8 @@ class ReportChartSecond extends StatefulWidget {
 class _ReportChartSecondState extends State<ReportChartSecond> {
   List<ExpenseData> _chartData;
   TooltipBehavior _tooltipBehavior;
-  final _valuelist = ['', '3일', '7일', '15일', '30일'];
-  String dropdownValue = '';
+  final _valuelist = ['3일', '7일', '15일', '30일'];
+  String dropdownValue = '3일';
   String holder = '';
 
   @override
@@ -174,7 +174,7 @@ class _ReportChartSecondState extends State<ReportChartSecond> {
   }
 
   _navigatetograph() async {
-    await Future.delayed(Duration(milliseconds: 1500), () {});
+    await Future.delayed(Duration(milliseconds: 500), () {});
     Navigator.pushReplacement(
         context,
         MaterialPageRoute(

@@ -206,6 +206,30 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "font_awesome_flutter",
+      "rootUri": "file:///C:/Users/YEIN/Desktop/python/00.sw/flutter/.pub-cache/hosted/pub.dartlang.org/font_awesome_flutter-9.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "google_sign_in",
+      "rootUri": "file:///C:/Users/YEIN/Desktop/python/00.sw/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in-5.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "google_sign_in_platform_interface",
+      "rootUri": "file:///C:/Users/YEIN/Desktop/python/00.sw/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in_platform_interface-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "google_sign_in_web",
+      "rootUri": "file:///C:/Users/YEIN/Desktop/python/00.sw/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in_web-0.10.0+3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "http",
       "rootUri": "file:///C:/Users/YEIN/Desktop/python/00.sw/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.4",
       "packageUri": "lib/",
@@ -566,7 +590,7 @@
       "languageVersion": "2.2"
     }
   ],
-  "generated": "2021-11-01T11:10:07.373967Z",
+  "generated": "2021-11-02T00:39:03.632309Z",
   "generator": "pub",
   "generatorVersion": "2.14.4"
 }

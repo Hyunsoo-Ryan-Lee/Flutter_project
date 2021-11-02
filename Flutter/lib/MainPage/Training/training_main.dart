@@ -44,24 +44,27 @@ class TrainMain extends StatelessWidget {
                                             'assets/icons/shoulder.png'),
                                         fit: BoxFit.contain)),
                               ),
-                              OutlinedButton(
-                                  onPressed: () {
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (context) => Ex_1()));
-                                  },
-                                  child: Text(
-                                    'ARM-PRESS  >',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 14),
-                                  ),
-                                  style: OutlinedButton.styleFrom(
-                                    fixedSize: Size(140, 15),
-                                    primary: Colors.black,
-                                    side: BorderSide(
-                                        width: 1, color: Colors.black),
-                                  ))
+                              FittedBox(
+                                fit: BoxFit.fitWidth,
+                                child: OutlinedButton(
+                                    onPressed: () {
+                                      Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                              builder: (context) => Ex_1()));
+                                    },
+                                    child: Text(
+                                      'ARM-PRESS  >',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 14),
+                                    ),
+                                    style: OutlinedButton.styleFrom(
+                                      fixedSize: Size(150, 15),
+                                      primary: Colors.black,
+                                      side: BorderSide(
+                                          width: 1, color: Colors.black),
+                                    )),
+                              )
                             ]),
                             SizedBox(
                               height: size.height * 0.05,
@@ -75,24 +78,27 @@ class TrainMain extends StatelessWidget {
                                             'assets/icons/lunge.png'),
                                         fit: BoxFit.contain)),
                               ),
-                              OutlinedButton(
-                                  onPressed: () {
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (context) => Ex_3()));
-                                  },
-                                  child: Text(
-                                    'LUNGE  >',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 14),
-                                  ),
-                                  style: OutlinedButton.styleFrom(
-                                    fixedSize: Size(140, 15),
-                                    primary: Colors.black,
-                                    side: BorderSide(
-                                        width: 1, color: Colors.black),
-                                  ))
+                              FittedBox(
+                                fit: BoxFit.fitWidth,
+                                child: OutlinedButton(
+                                    onPressed: () {
+                                      Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                              builder: (context) => Ex_3()));
+                                    },
+                                    child: Text(
+                                      'LUNGE  >',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 14),
+                                    ),
+                                    style: OutlinedButton.styleFrom(
+                                      fixedSize: Size(150, 15),
+                                      primary: Colors.black,
+                                      side: BorderSide(
+                                          width: 1, color: Colors.black),
+                                    )),
+                              )
                             ]),
                           ],
                         ),
@@ -109,24 +115,27 @@ class TrainMain extends StatelessWidget {
                                             'assets/icons/jumpsquat.png'),
                                         fit: BoxFit.contain)),
                               ),
-                              OutlinedButton(
-                                  onPressed: () {
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (context) => Ex_2()));
-                                  },
-                                  child: Text(
-                                    'JUMP-SQUAT  >',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 14),
-                                  ),
-                                  style: OutlinedButton.styleFrom(
-                                    fixedSize: Size(140, 15),
-                                    primary: Colors.black,
-                                    side: BorderSide(
-                                        width: 1, color: Colors.black),
-                                  ))
+                              FittedBox(
+                                fit: BoxFit.fitWidth,
+                                child: OutlinedButton(
+                                    onPressed: () {
+                                      Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                              builder: (context) => Ex_2()));
+                                    },
+                                    child: Text(
+                                      'JUMP-SQUAT  >',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 14),
+                                    ),
+                                    style: OutlinedButton.styleFrom(
+                                      fixedSize: Size(150, 15),
+                                      primary: Colors.black,
+                                      side: BorderSide(
+                                          width: 1, color: Colors.black),
+                                    )),
+                              )
                             ]),
                             SizedBox(
                               height: size.height * 0.05,
@@ -140,24 +149,27 @@ class TrainMain extends StatelessWidget {
                                             'assets/icons/squat.jpg'),
                                         fit: BoxFit.contain)),
                               ),
-                              OutlinedButton(
-                                  onPressed: () {
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (context) => Ex_4()));
-                                  },
-                                  child: Text(
-                                    'SQUAT  >',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 14),
-                                  ),
-                                  style: OutlinedButton.styleFrom(
-                                    fixedSize: Size(140, 15),
-                                    primary: Colors.black,
-                                    side: BorderSide(
-                                        width: 1, color: Colors.black),
-                                  ))
+                              FittedBox(
+                                fit: BoxFit.fitWidth,
+                                child: OutlinedButton(
+                                    onPressed: () {
+                                      Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                              builder: (context) => Ex_4()));
+                                    },
+                                    child: Text(
+                                      'SQUAT  >',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 14),
+                                    ),
+                                    style: OutlinedButton.styleFrom(
+                                      fixedSize: Size(150, 15),
+                                      primary: Colors.black,
+                                      side: BorderSide(
+                                          width: 1, color: Colors.black),
+                                    )),
+                              )
                             ]),
                           ],
                         ),

@@ -1,12 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/MainPage/Bottom_navbar.dart';
-// import 'package:flutter_auth/MainPage/BMI/sex_select.dart';
-import 'package:flutter_auth/Screens/Login/components/background.dart';
 import 'package:flutter_auth/Screens/Signup/components/social_icon.dart';
 import 'package:flutter_auth/Screens/Signup/signup_screen.dart';
 import 'package:flutter_auth/components/already_have_an_account_acheck.dart';
-import 'package:flutter_svg/svg.dart';
 
 class Login extends StatelessWidget {
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();

@@ -75,7 +75,7 @@ class _VisualDataState extends State<VisualData> {
   }
 
   _navigatetograph() async {
-    await Future.delayed(Duration(milliseconds: 2000), () {});
+    await Future.delayed(Duration(milliseconds: 500), () {});
     Navigator.push(
         context,
         MaterialPageRoute(
