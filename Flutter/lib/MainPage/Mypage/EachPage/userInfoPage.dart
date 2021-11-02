@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_auth/main.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:http_parser/http_parser.dart';
@@ -43,6 +44,7 @@ class _UserInfoPageState extends State<UserInfoPage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     userage = widget.userdata[1];
+
     // double userheight = widget.userdata[2];
     // double userweight = widget.userdata[3];
     // String useract = widget.userdata[4];
@@ -113,149 +115,134 @@ class _UserInfoPageState extends State<UserInfoPage> {
                   height: size.height * 0.02,
                 ),
                 Text('${widget.userdata[0]}'),
+
                 SizedBox(
                   height: size.height * 0.05,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    SizedBox(width: size.width * 0.1),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50),
+                  child: Column(children: [
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.max,
                       children: [
-                        Text('나이',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 20)),
-                        SizedBox(
-                          width: size.width * 0.2,
+                        SizedBox(width: size.width * 0.1),
+                        Row(
+                          children: [
+                            Text('나    이',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 20)),
+                            SizedBox(
+                              width: size.width * 0.2,
+                            ),
+                            Text('$userage 세'),
+                          ],
                         ),
-                        Text('$userage 세'),
+                        SizedBox(
+                          width: size.width * 0.1,
+                        ),
                       ],
                     ),
                     SizedBox(
-                      width: size.width * 0.1,
+                      height: size.height * 0.01,
                     ),
-                    IconButton(
-                        onPressed: () {
-                          check = '나이';
-                          modify(context);
-                        },
-                        icon: Icon(Icons.edit))
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    SizedBox(width: size.width * 0.1),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.max,
                       children: [
-                        Text('신장',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 20)),
-                        SizedBox(
-                          width: size.width * 0.2,
+                        SizedBox(width: size.width * 0.1),
+                        Row(
+                          children: [
+                            Text('신    장',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 20)),
+                            SizedBox(
+                              width: size.width * 0.2,
+                            ),
+                            Text('${widget.userdata[2]} cm'),
+                          ],
                         ),
-                        Text('${widget.userdata[2]} cm'),
+                        SizedBox(
+                          width: size.width * 0.1,
+                        ),
                       ],
                     ),
                     SizedBox(
-                      width: size.width * 0.1,
+                      height: size.height * 0.01,
                     ),
-                    IconButton(
-                        onPressed: () {
-                          check = '신장';
-                          modify(context);
-                        },
-                        icon: Icon(Icons.edit))
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    SizedBox(width: size.width * 0.1),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.max,
                       children: [
-                        Text('몸무게',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 20)),
-                        SizedBox(
-                          width: size.width * 0.2,
+                        SizedBox(width: size.width * 0.1),
+                        Row(
+                          children: [
+                            Text('몸무게',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 20)),
+                            SizedBox(
+                              width: size.width * 0.2,
+                            ),
+                            Text('${widget.userdata[3]} Kg'),
+                          ],
                         ),
-                        Text('${widget.userdata[3]} Kg'),
+                        SizedBox(
+                          width: size.width * 0.1,
+                        ),
                       ],
                     ),
                     SizedBox(
-                      width: size.width * 0.1,
+                      height: size.height * 0.01,
                     ),
-                    IconButton(
-                        onPressed: () {
-                          check = '몸무게';
-                          modify(context);
-                        },
-                        icon: Icon(Icons.edit))
-                  ],
-                ),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    SizedBox(width: size.width * 0.1),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.max,
                       children: [
-                        Text('활동량',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 20)),
-                        SizedBox(
-                          width: size.width * 0.2,
+                        SizedBox(width: size.width * 0.1),
+                        Row(
+                          children: [
+                            Text('활동량',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 20)),
+                            SizedBox(
+                              width: size.width * 0.2,
+                            ),
+                            Text('${widget.userdata[4]}'),
+                          ],
                         ),
-                        Text('${widget.userdata[4]}'),
+                        SizedBox(
+                          width: size.width * 0.1,
+                        ),
                       ],
                     ),
                     SizedBox(
-                      width: size.width * 0.1,
+                      height: size.height * 0.01,
                     ),
-                    // IconButton(
-                    //     onPressed: () {
-                    //       check = '활동량';
-                    //       modify(context);
-                    //     },
-                    //     icon: Icon(Icons.edit))
-                  ],
-                ),
-                SizedBox(
-                  height: size.height * 0.02,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    SizedBox(width: size.width * 0.1),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.max,
                       children: [
-                        Text('권장 칼로리',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 20)),
-                        SizedBox(
-                          width: size.width * 0.2,
+                        SizedBox(width: size.width * 0.1),
+                        Row(
+                          children: [
+                            Text('권장 칼로리',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 20)),
+                            SizedBox(
+                              width: size.width * 0.1,
+                            ),
+                            Text('${widget.userdata[5]} Kcal'),
+                          ],
                         ),
-                        Text('${widget.userdata[5]} Kcal'),
                       ],
                     ),
-                  ],
+                  ]),
                 ),
-                Text('${widget.userdata}'),
                 SizedBox(height: size.height * 0.05),
                 TextButton(
                     onPressed: () {
-                      OtherDate(context);
-                      // print(userage);
-                      // print(userheight);
-                      // print(userweight);
-                      // print(useract);
-                      // print(usercal);
+                      // Navigator.of(context).pop();
+                      ModifyPersonalInfo(context);
                     },
                     child: Text('개인정보 수정'))
               ],
@@ -368,214 +355,68 @@ class _UserInfoPageState extends State<UserInfoPage> {
     }
   }
 
-  Future<void> modify(BuildContext context) {
-    if (check == '나이') {
-      return showDialog(
-          context: context,
-          builder: (context) {
-            return AlertDialog(
-              title: Text(
-                '개인정보 기입',
-                textAlign: TextAlign.center,
-              ),
-              content: SingleChildScrollView(
-                child: Form(
-                  key: _formkey,
-                  child: ListBody(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            top: 10, bottom: 10, left: 20, right: 20),
-                        child: TextFormField(
-                          textAlign: TextAlign.center,
-                          decoration: InputDecoration(
-                              label: Text('나이',
-                                  style:
-                                      TextStyle(fontWeight: FontWeight.bold))),
-                          controller: _agecontroller,
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return '나이를 입력해주세요';
-                            }
-                            return null;
-                          },
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      TextButton(
-                          onPressed: () {
-                            if (_formkey.currentState.validate()) {
-                              temp1 = int.parse(_agecontroller.text);
-                              setState(() {
-                                widget.userdata[1] = temp1;
-                              });
-                              _agecontroller.clear();
-                              Navigator.of(context).pop();
-                            }
-                          },
-                          child: Text('수정'))
-                    ],
-                  ),
-                ),
-              ),
-            );
-          });
-    } else if (check == '신장') {
-      return showDialog(
-          context: context,
-          builder: (context) {
-            return AlertDialog(
-              title: Text(
-                '개인정보 기입',
-                textAlign: TextAlign.center,
-              ),
-              content: SingleChildScrollView(
-                child: Form(
-                  key: _formkey,
-                  child: ListBody(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            top: 10, bottom: 10, left: 20, right: 20),
-                        child: TextFormField(
-                          textAlign: TextAlign.center,
-                          decoration: InputDecoration(
-                              label: Text('신장',
-                                  style:
-                                      TextStyle(fontWeight: FontWeight.bold))),
-                          controller: _heightcontroller,
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return '신장을 입력해주세요';
-                            }
-                            return null;
-                          },
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      TextButton(
-                          onPressed: () {
-                            if (_formkey.currentState.validate()) {
-                              widget.userdata[2] =
-                                  double.parse(_heightcontroller.text);
-                              _heightcontroller.clear();
-                              Navigator.of(context).pop();
-                            }
-                          },
-                          child: Text('수정'))
-                    ],
-                  ),
-                ),
-              ),
-            );
-          });
-    } else if (check == '몸무게') {
-      return showDialog(
-          context: context,
-          builder: (context) {
-            return AlertDialog(
-              title: Text(
-                '개인정보 기입',
-                textAlign: TextAlign.center,
-              ),
-              content: SingleChildScrollView(
-                child: Form(
-                  key: _formkey,
-                  child: ListBody(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            top: 10, bottom: 10, left: 20, right: 20),
-                        child: TextFormField(
-                          textAlign: TextAlign.center,
-                          decoration: InputDecoration(
-                              label: Text('몸무게',
-                                  style:
-                                      TextStyle(fontWeight: FontWeight.bold))),
-                          controller: _weightcontroller,
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return '몸무게를 입력해주세요';
-                            }
-                            return null;
-                          },
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      TextButton(
-                          onPressed: () {
-                            if (_formkey.currentState.validate()) {
-                              widget.userdata[3] =
-                                  double.parse(_weightcontroller.text);
-                              _weightcontroller.clear();
-                              Navigator.of(context).pop();
-                            }
-                          },
-                          child: Text('수정'))
-                    ],
-                  ),
-                ),
-              ),
-            );
-          });
-    } else {
-      return showDialog(
-          context: context,
-          builder: (context) {
-            return AlertDialog(
-              title: Text(
-                '개인정보 기입',
-                textAlign: TextAlign.center,
-              ),
-              content: SingleChildScrollView(
-                child: Form(
-                  key: _formkey,
-                  child: ListBody(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            top: 10, bottom: 10, left: 20, right: 20),
-                        child: TextFormField(
-                          textAlign: TextAlign.center,
-                          decoration: InputDecoration(
-                              label: Text('활동량',
-                                  style:
-                                      TextStyle(fontWeight: FontWeight.bold))),
-                          controller: _weightcontroller,
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return '활동량을 선택해주세요';
-                            }
-                            return null;
-                          },
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      TextButton(
-                          onPressed: () {
-                            if (_formkey.currentState.validate()) {
-                              widget.userdata[4] = _actcontroller.text;
-                              _actcontroller.clear();
-                              Navigator.of(context).pop();
-                            }
-                          },
-                          child: Text('수정'))
-                    ],
-                  ),
-                ),
-              ),
-            );
-          });
+  final _valuelist = [
+    '주로 좌식 생활',
+    '주 1~3일 운동',
+    '주 3~5일 운동',
+    '거의 매일 운동',
+    '매일 강도높게 운동'
+  ];
+  String dropdownValue = '주로 좌식 생활';
+  String holder = '';
+  double activation = 0;
+  String result = '';
+
+  sendModifiedData() async {
+    print('데이터 전송 시작');
+    http.Response response = await http.post(
+      Uri.parse('http://' + address + '/member/userinfo'),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode({
+        'uuid': uuid,
+        'uage': int.parse(_agecontroller.value.text),
+        'uheight': int.parse(_heightcontroller.value.text),
+        'uweight': int.parse(_weightcontroller.value.text),
+        'uact': dropdownValue,
+        'urdc': result
+      }),
+    );
+    final resJson = jsonDecode(response.body);
+    if (response.statusCode == 200) {
+      print(resJson);
     }
+    setState(() {});
   }
 
-  Future<void> OtherDate(BuildContext context) {
+  void calculateBmi(int age, double height, double weight) {
+    if (dropdownValue == '주로 좌식 생활') {
+      activation = 1.2;
+    } else if (dropdownValue == '주 1~3일 운동') {
+      activation = 1.3;
+    } else if (dropdownValue == '주 3~5일 운동') {
+      activation = 1.5;
+    } else if (dropdownValue == '거의 매일 운동') {
+      activation = 1.7;
+    } else {
+      activation = 1.9;
+    }
+    double finalresult =
+        (66 + (13.7 * weight) + (5 * height) - (6.5 * age)) * activation;
+    String bmi = finalresult.toStringAsFixed(0);
+    setState(() {
+      result = bmi;
+    });
+  }
+
+  Future<void> ModifyPersonalInfo(BuildContext context) {
     return showDialog(
         context: context,
         builder: (context) {
           return AlertDialog(
             title: Text(
-              '개인정보 기입',
+              '개인정보 수정',
               textAlign: TextAlign.center,
             ),
             content: SingleChildScrollView(
@@ -610,7 +451,7 @@ class _UserInfoPageState extends State<UserInfoPage> {
                           '신장',
                           style: TextStyle(fontWeight: FontWeight.bold),
                         )),
-                        controller: _agecontroller,
+                        controller: _heightcontroller,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return '키를 입력해주세요';
@@ -627,7 +468,7 @@ class _UserInfoPageState extends State<UserInfoPage> {
                         decoration: InputDecoration(
                             label: Text('몸무게',
                                 style: TextStyle(fontWeight: FontWeight.bold))),
-                        controller: _agecontroller,
+                        controller: _weightcontroller,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return '몸무게를 입력해주세요';
@@ -637,15 +478,37 @@ class _UserInfoPageState extends State<UserInfoPage> {
                       ),
                     ),
                     SizedBox(height: 10),
+                    Padding(
+                        padding: const EdgeInsets.only(
+                            top: 10, bottom: 10, left: 20, right: 20),
+                        child: Column(
+                          children: [
+                            Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text('활동량')),
+                            _DayTime()
+                          ],
+                        )),
+                    SizedBox(height: 10),
                     TextButton(
                         onPressed: () {
                           if (_formkey.currentState.validate()) {
-                            // _agecontroller.clear();
-                            // period = int.parse(_agecontroller.text);
-                            // sendFoodData();
-                            // Navigator.of(context).pop();
-                            // print(period);
-                            // _navigatetolist();
+                            calculateBmi(
+                                int.parse(_agecontroller.value.text),
+                                double.parse(_heightcontroller.value.text),
+                                double.parse(_weightcontroller.value.text));
+                            // sendModifiedData();
+                            print([
+                              int.parse(_agecontroller.value.text),
+                              _heightcontroller.value.text,
+                              _weightcontroller.value.text,
+                              dropdownValue,
+                              result
+                            ]);
+                            _agecontroller.clear();
+                            _heightcontroller.clear();
+                            _weightcontroller.clear();
+                            Navigator.of(context).pop();
                           }
                         },
                         child: Text('조회'))
@@ -655,5 +518,32 @@ class _UserInfoPageState extends State<UserInfoPage> {
             ),
           );
         });
+  }
+
+  Widget _DayTime() {
+    return DropdownButton(
+      value: dropdownValue,
+      onChanged: (String newValue) {
+        getDropDownItem();
+        setState(() {
+          dropdownValue = newValue;
+          print(dropdownValue);
+        });
+      },
+      items: _valuelist.map<DropdownMenuItem<String>>((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      }).toList(),
+      elevation: 4,
+      icon: const Icon(Icons.arrow_drop_down_rounded),
+    );
+  }
+
+  void getDropDownItem() {
+    setState(() {
+      holder = dropdownValue;
+    });
   }
 }

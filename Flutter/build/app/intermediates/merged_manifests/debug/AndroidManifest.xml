@@ -26,8 +26,8 @@
         android:name="io.flutter.app.FlutterApplication"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="flutter_auth"
+        android:icon="@mipmap/launcher_icon"
+        android:label="HAIlab"
         android:usesCleartextTraffic="true" >
         <activity
             android:name="com.example.flutter_auth.MainActivity"

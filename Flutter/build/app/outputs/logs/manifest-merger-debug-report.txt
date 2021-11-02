@@ -133,9 +133,9 @@ MERGED from [org.tensorflow:tensorflow-lite-api:2.7.0-rc0] C:\Users\YEIN\.gradle
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.5.0] C:\Users\YEIN\.gradle\caches\transforms-2\files-2.1\bf22273e1cbbff169f8c0939ba66a0d0\core-1.5.0\AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from D:\HAI_LAB\Flutter\android\app\src\main\AndroidManifest.xml:10:9-37
+		ADDED from D:\HAI_LAB\Flutter\android\app\src\main\AndroidManifest.xml:10:9-31
 	android:icon
-		ADDED from D:\HAI_LAB\Flutter\android\app\src\main\AndroidManifest.xml:11:9-43
+		ADDED from D:\HAI_LAB\Flutter\android\app\src\main\AndroidManifest.xml:11:9-45
 	android:usesCleartextTraffic
 		ADDED from D:\HAI_LAB\Flutter\android\app\src\main\AndroidManifest.xml:12:9-46
 	android:name

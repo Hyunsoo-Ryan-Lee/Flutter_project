@@ -317,10 +317,13 @@ class _myDietState extends State<myDiet> {
                           if (check == 'food') {
                             sendFoodData();
                             Navigator.of(context).pop();
+                            _datePeriod.clear();
+
                             _NavigateDietList();
                           } else {
                             sendTrainData();
                             Navigator.of(context).pop();
+                            _datePeriod.clear();
                           }
                         }
                       },

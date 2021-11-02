@@ -7,8 +7,8 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="flutter_auth"
-        android:icon="@mipmap/ic_launcher"
+        android:label="HAIlab"
+        android:icon="@mipmap/launcher_icon"
         android:usesCleartextTraffic = "true">
         <activity
             android:name=".MainActivity"
@@ -31,7 +31,7 @@
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <uses-permission android:name="android.permission.INTERNET"/>
+        <!-- <uses-permission android:name="android.permission.INTERNET"/> -->
             
     </application>
 </manifest>

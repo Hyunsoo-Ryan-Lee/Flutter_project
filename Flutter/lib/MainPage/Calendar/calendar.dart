@@ -141,7 +141,7 @@ class _CalendarState extends State<Calendar> {
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
                     ),
                     style: OutlinedButton.styleFrom(
-                      fixedSize: Size(200, 50),
+                      fixedSize: Size(200, 40),
                       primary: Colors.black,
                       side: BorderSide(width: 1, color: Colors.black),
                     ),
@@ -159,7 +159,7 @@ class _CalendarState extends State<Calendar> {
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
                     ),
                     style: OutlinedButton.styleFrom(
-                      fixedSize: Size(200, 50),
+                      fixedSize: Size(200, 40),
                       primary: Colors.black,
                       side: BorderSide(width: 1, color: Colors.black),
                     ),

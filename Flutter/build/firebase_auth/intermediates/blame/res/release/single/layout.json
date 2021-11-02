@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "D:\\HAI_LAB\\Flutter\\build\\firebase_auth\\intermediates\\res\\merged\\release\\layout\\browser_actions_context_menu_page.xml",
+        "source": "C:\\Users\\YEIN\\.gradle\\caches\\transforms-2\\files-2.1\\50f1e51b0e163799788399af31644303\\browser-1.0.0\\res\\layout\\browser_actions_context_menu_page.xml"
+    },
+    {
+        "merged": "D:\\HAI_LAB\\Flutter\\build\\firebase_auth\\intermediates\\res\\merged\\release\\layout\\custom_dialog.xml",
+        "source": "C:\\Users\\YEIN\\.gradle\\caches\\transforms-2\\files-2.1\\b608c3d8537f54a7ed8ad86b3bfe3664\\core-1.1.0\\res\\layout\\custom_dialog.xml"
+    },
+    {
+        "merged": "D:\\HAI_LAB\\Flutter\\build\\firebase_auth\\intermediates\\res\\merged\\release\\layout\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\YEIN\\.gradle\\caches\\transforms-2\\files-2.1\\b608c3d8537f54a7ed8ad86b3bfe3664\\core-1.1.0\\res\\layout\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "D:\\HAI_LAB\\Flutter\\build\\firebase_auth\\intermediates\\res\\merged\\release\\layout\\notification_action.xml",
+        "source": "C:\\Users\\YEIN\\.gradle\\caches\\transforms-2\\files-2.1\\b608c3d8537f54a7ed8ad86b3bfe3664\\core-1.1.0\\res\\layout\\notification_action.xml"
+    },
+    {
+        "merged": "D:\\HAI_LAB\\Flutter\\build\\firebase_auth\\intermediates\\res\\merged\\release\\layout\\browser_actions_context_menu_row.xml",
+        "source": "C:\\Users\\YEIN\\.gradle\\caches\\transforms-2\\files-2.1\\50f1e51b0e163799788399af31644303\\browser-1.0.0\\res\\layout\\browser_actions_context_menu_row.xml"
+    },
+    {
+        "merged": "D:\\HAI_LAB\\Flutter\\build\\firebase_auth\\intermediates\\res\\merged\\release\\layout\\notification_template_part_chronometer.xml",
+        "source": "C:\\Users\\YEIN\\.gradle\\caches\\transforms-2\\files-2.1\\b608c3d8537f54a7ed8ad86b3bfe3664\\core-1.1.0\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "D:\\HAI_LAB\\Flutter\\build\\firebase_auth\\intermediates\\res\\merged\\release\\layout\\notification_template_part_time.xml",
+        "source": "C:\\Users\\YEIN\\.gradle\\caches\\transforms-2\\files-2.1\\b608c3d8537f54a7ed8ad86b3bfe3664\\core-1.1.0\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "D:\\HAI_LAB\\Flutter\\build\\firebase_auth\\intermediates\\res\\merged\\release\\layout\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\YEIN\\.gradle\\caches\\transforms-2\\files-2.1\\b608c3d8537f54a7ed8ad86b3bfe3664\\core-1.1.0\\res\\layout\\notification_action_tombstone.xml"
+    }
+]
