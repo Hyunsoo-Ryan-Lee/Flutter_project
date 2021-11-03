@@ -357,6 +357,11 @@ class _RenderDataSquatState extends State<RenderDataSquat> {
             ),
           ),
         ),
+        IconButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            icon: const Icon(Icons.arrow_back))
         // ElevatedButton(
         //     onPressed: () {
         //       print(widget.count);

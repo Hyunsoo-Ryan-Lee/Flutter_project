@@ -348,6 +348,11 @@ class _RenderDataJumpSquatState extends State<RenderDataJumpSquat> {
             ),
           ),
         ),
+        IconButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            icon: const Icon(Icons.arrow_back))
         // ElevatedButton(
         //     onPressed: () {
         //       print(widget.count);
