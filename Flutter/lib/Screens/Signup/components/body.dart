@@ -1,11 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/MainPage/BMI/BMI_men.dart';
-import 'package:flutter_auth/MainPage/BMI/BMI_women.dart';
 import 'package:flutter_auth/MainPage/BMI/sex_select.dart';
-// import 'package:flutter_auth/Screens/Login/components/body.dart';
 import 'package:flutter_auth/Screens/Login/login_screen.dart';
-import 'package:flutter_auth/Screens/Signup/components/background.dart';
 import 'package:flutter_auth/Screens/Signup/components/social_icon.dart';
 import 'package:flutter_auth/components/already_have_an_account_acheck.dart';
 import 'package:http/http.dart' as http;
@@ -15,7 +11,6 @@ class SignUp extends StatelessWidget {
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  String address = 'http://3.38.2.230:8000/member/register';
 
   @override
   Widget build(BuildContext context) {
@@ -132,15 +127,7 @@ class SignUp extends StatelessWidget {
                     ),
                     SocalIcon(
                       iconSrc: "assets/icons/google-plus.svg",
-                      press: () {
-                        // var route = new MaterialPageRoute(
-                        //   builder: (BuildContext context) => new BMImen(txt: [
-                        //     _emailController.text,
-                        //     _passwordController.text
-                        //   ]),
-                        // );
-                        // Navigator.of(context).push(route);
-                      },
+                      press: () {},
                     ),
                   ],
                 )
@@ -149,16 +136,6 @@ class SignUp extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-
-  Future<http.Response> sendMailPass(List title) {
-    return http.post(
-      Uri.parse(address),
-      headers: <String, String>{
-        'Content-Type': 'application/json; charset=UTF-8',
-      },
-      body: jsonEncode(<String, String>{'UUID': title[0], 'UPW': title[1]}),
     );
   }
 

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Playdata\\Documents\\Flutter_Project_Final\\Flutter\\build\\google_sign_in\\intermediates\\res\\merged\\debug\\values-watch-v20\\values-watch-v20.xml",
+            "outputFile": "D:\\HAI_LAB\\Flutter\\build\\google_sign_in\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v20\\values-watch-v20.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Playdata\\.gradle\\caches\\transforms-2\\files-2.1\\613916dbdd357b5a9fff9e185210d350\\jetified-play-services-auth-16.0.1\\res\\values-watch-v20\\values.xml",
+                    "source": "C:\\Users\\YEIN\\.gradle\\caches\\transforms-2\\files-2.1\\6337ba463ec060adf3166fd1eabeb6d9\\jetified-play-services-auth-16.0.1\\res\\values-watch-v20\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11",
                         "startColumns": "0,0,0,0,0,0,0,0",
@@ -23,10 +23,10 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\Playdata\\Documents\\Flutter_Project_Final\\Flutter\\build\\google_sign_in\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v20\\values-watch-v20.xml",
+            "outputFile": "D:\\HAI_LAB\\Flutter\\build\\google_sign_in\\intermediates\\res\\merged\\debug\\values-watch-v20\\values-watch-v20.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Playdata\\.gradle\\caches\\transforms-2\\files-2.1\\613916dbdd357b5a9fff9e185210d350\\jetified-play-services-auth-16.0.1\\res\\values-watch-v20\\values.xml",
+                    "source": "C:\\Users\\YEIN\\.gradle\\caches\\transforms-2\\files-2.1\\6337ba463ec060adf3166fd1eabeb6d9\\jetified-play-services-auth-16.0.1\\res\\values-watch-v20\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11",
                         "startColumns": "0,0,0,0,0,0,0,0",

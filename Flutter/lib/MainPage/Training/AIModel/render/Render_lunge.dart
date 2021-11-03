@@ -362,12 +362,6 @@ class _RenderDataLungeState extends State<RenderDataLunge> {
               Navigator.of(context).pop();
             },
             icon: const Icon(Icons.arrow_back))
-        // ElevatedButton(
-        //     onPressed: () {
-        //       print(widget.count);
-        //       incrementCounter();
-        //     },
-        //     child: Text('버튼 : $_counter')),
       ],
     );
   }

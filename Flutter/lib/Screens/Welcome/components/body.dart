@@ -28,14 +28,6 @@ class WelcomePage extends StatelessWidget {
                   onPressed: () {
                     Navigator.of(context)
                         .push(MaterialPageRoute(builder: (context) => Login()));
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) {
-                    //       return LoginScreen();
-                    //     },
-                    //   ),
-                    // );
                   },
                   child: Text(
                     'LOGIN',
@@ -53,14 +45,6 @@ class WelcomePage extends StatelessWidget {
                   onPressed: () {
                     Navigator.of(context).push(
                         MaterialPageRoute(builder: (context) => SignUp()));
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) {
-                    //       return SignUpScreen();
-                    //     },
-                    //   ),
-                    // );
                   },
                   child: Text(
                     'SIGN UP',
