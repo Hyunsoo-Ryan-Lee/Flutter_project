@@ -206,6 +206,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_secure_storage",
+      "rootUri": "file:///C:/Users/YEIN/Desktop/python/00.sw/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_secure_storage-4.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_settings_screens",
       "rootUri": "file:///C:/Users/YEIN/Desktop/python/00.sw/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_settings_screens-0.2.2+1",
       "packageUri": "lib/",
@@ -620,7 +626,7 @@
       "languageVersion": "2.2"
     }
   ],
-  "generated": "2021-11-02T07:45:20.613185Z",
+  "generated": "2021-11-02T13:45:28.466388Z",
   "generator": "pub",
   "generatorVersion": "2.14.4"
 }

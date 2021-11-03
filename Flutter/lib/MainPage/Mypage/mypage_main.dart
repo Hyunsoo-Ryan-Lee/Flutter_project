@@ -147,8 +147,7 @@ class _myPageState extends State<myPage> {
           color: Colors.redAccent,
         ),
         onTap: () {
-          // Navigator.of(context)
-          //     .pushReplacement(MaterialPageRoute(builder: (context) => WelcomePage()));
+          // makeRoutePage(context: context, pageRef: WelcomePage());
         },
       );
 
@@ -161,5 +160,12 @@ class _myPageState extends State<myPage> {
             );
 
     launch(emailLaunchUri.toString());
+  }
+
+  void makeRoutePage({BuildContext context, Widget pageRef}) {
+    Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => pageRef),
+        (Route<dynamic> route) => false);
   }
 }
