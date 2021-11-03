@@ -26,7 +26,7 @@ class _BottomNavigatorState extends State<BottomNavigator> {
           BottomNavigationBarItem(icon: Icon(Icons.date_range)),
           BottomNavigationBarItem(icon: Icon(Icons.bar_chart)),
           BottomNavigationBarItem(icon: Icon(Icons.directions_run_rounded)),
-          BottomNavigationBarItem(icon: Icon(Icons.account_circle_outlined)),
+          BottomNavigationBarItem(icon: Icon(Icons.settings)),
         ],
       ),
       tabBuilder: (BuildContext context, int index) {

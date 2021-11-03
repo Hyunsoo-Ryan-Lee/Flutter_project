@@ -357,12 +357,12 @@ class _RenderDataLungeState extends State<RenderDataLunge> {
             ),
           ),
         ),
-        ElevatedButton(
-            onPressed: () {
-              print(widget.count);
-              incrementCounter();
-            },
-            child: Text('버튼 : $_counter')),
+        // ElevatedButton(
+        //     onPressed: () {
+        //       print(widget.count);
+        //       incrementCounter();
+        //     },
+        //     child: Text('버튼 : $_counter')),
       ],
     );
   }
