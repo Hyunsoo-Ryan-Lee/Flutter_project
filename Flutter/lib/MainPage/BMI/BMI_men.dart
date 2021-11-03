@@ -171,7 +171,7 @@ class _BMImenState extends State<BMImen> {
                               dropdownValue
                             ]);
                             final snackBar = SnackBar(
-                              duration: const Duration(milliseconds: 500),
+                              duration: const Duration(milliseconds: 1500),
                               content: const Text("회원가입이 완료되었습니다."),
                             );
                             ScaffoldMessenger.of(context)

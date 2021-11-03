@@ -1,26 +1,26 @@
 [
     {
-        "merged": "D:\\HAI_LAB\\Flutter\\build\\image_cropper\\intermediates\\res\\merged\\release\\animator\\fragment_close_enter.xml",
-        "source": "C:\\Users\\YEIN\\.gradle\\caches\\transforms-2\\files-2.1\\f390b1535aaf9b6f24ad96afc603873f\\fragment-1.3.4\\res\\animator\\fragment_close_enter.xml"
+        "merged": "C:\\Users\\Playdata\\Documents\\Flutter_Project_Final\\Flutter\\build\\image_cropper\\intermediates\\res\\merged\\release\\animator\\fragment_close_enter.xml",
+        "source": "C:\\Users\\Playdata\\.gradle\\caches\\transforms-2\\files-2.1\\f390b1535aaf9b6f24ad96afc603873f\\fragment-1.3.4\\res\\animator\\fragment_close_enter.xml"
     },
     {
-        "merged": "D:\\HAI_LAB\\Flutter\\build\\image_cropper\\intermediates\\res\\merged\\release\\animator\\fragment_fade_exit.xml",
-        "source": "C:\\Users\\YEIN\\.gradle\\caches\\transforms-2\\files-2.1\\f390b1535aaf9b6f24ad96afc603873f\\fragment-1.3.4\\res\\animator\\fragment_fade_exit.xml"
+        "merged": "C:\\Users\\Playdata\\Documents\\Flutter_Project_Final\\Flutter\\build\\image_cropper\\intermediates\\res\\merged\\release\\animator\\fragment_open_enter.xml",
+        "source": "C:\\Users\\Playdata\\.gradle\\caches\\transforms-2\\files-2.1\\f390b1535aaf9b6f24ad96afc603873f\\fragment-1.3.4\\res\\animator\\fragment_open_enter.xml"
     },
     {
-        "merged": "D:\\HAI_LAB\\Flutter\\build\\image_cropper\\intermediates\\res\\merged\\release\\animator\\fragment_open_enter.xml",
-        "source": "C:\\Users\\YEIN\\.gradle\\caches\\transforms-2\\files-2.1\\f390b1535aaf9b6f24ad96afc603873f\\fragment-1.3.4\\res\\animator\\fragment_open_enter.xml"
+        "merged": "C:\\Users\\Playdata\\Documents\\Flutter_Project_Final\\Flutter\\build\\image_cropper\\intermediates\\res\\merged\\release\\animator\\fragment_open_exit.xml",
+        "source": "C:\\Users\\Playdata\\.gradle\\caches\\transforms-2\\files-2.1\\f390b1535aaf9b6f24ad96afc603873f\\fragment-1.3.4\\res\\animator\\fragment_open_exit.xml"
     },
     {
-        "merged": "D:\\HAI_LAB\\Flutter\\build\\image_cropper\\intermediates\\res\\merged\\release\\animator\\fragment_open_exit.xml",
-        "source": "C:\\Users\\YEIN\\.gradle\\caches\\transforms-2\\files-2.1\\f390b1535aaf9b6f24ad96afc603873f\\fragment-1.3.4\\res\\animator\\fragment_open_exit.xml"
+        "merged": "C:\\Users\\Playdata\\Documents\\Flutter_Project_Final\\Flutter\\build\\image_cropper\\intermediates\\res\\merged\\release\\animator\\fragment_close_exit.xml",
+        "source": "C:\\Users\\Playdata\\.gradle\\caches\\transforms-2\\files-2.1\\f390b1535aaf9b6f24ad96afc603873f\\fragment-1.3.4\\res\\animator\\fragment_close_exit.xml"
     },
     {
-        "merged": "D:\\HAI_LAB\\Flutter\\build\\image_cropper\\intermediates\\res\\merged\\release\\animator\\fragment_close_exit.xml",
-        "source": "C:\\Users\\YEIN\\.gradle\\caches\\transforms-2\\files-2.1\\f390b1535aaf9b6f24ad96afc603873f\\fragment-1.3.4\\res\\animator\\fragment_close_exit.xml"
+        "merged": "C:\\Users\\Playdata\\Documents\\Flutter_Project_Final\\Flutter\\build\\image_cropper\\intermediates\\res\\merged\\release\\animator\\fragment_fade_enter.xml",
+        "source": "C:\\Users\\Playdata\\.gradle\\caches\\transforms-2\\files-2.1\\f390b1535aaf9b6f24ad96afc603873f\\fragment-1.3.4\\res\\animator\\fragment_fade_enter.xml"
     },
     {
-        "merged": "D:\\HAI_LAB\\Flutter\\build\\image_cropper\\intermediates\\res\\merged\\release\\animator\\fragment_fade_enter.xml",
-        "source": "C:\\Users\\YEIN\\.gradle\\caches\\transforms-2\\files-2.1\\f390b1535aaf9b6f24ad96afc603873f\\fragment-1.3.4\\res\\animator\\fragment_fade_enter.xml"
+        "merged": "C:\\Users\\Playdata\\Documents\\Flutter_Project_Final\\Flutter\\build\\image_cropper\\intermediates\\res\\merged\\release\\animator\\fragment_fade_exit.xml",
+        "source": "C:\\Users\\Playdata\\.gradle\\caches\\transforms-2\\files-2.1\\f390b1535aaf9b6f24ad96afc603873f\\fragment-1.3.4\\res\\animator\\fragment_fade_exit.xml"
     }
 ]

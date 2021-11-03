@@ -1,4 +1,4 @@
-#Tue Nov 02 16:02:56 KST 2021
-base.0=D\:\\HAI_LAB\\Flutter\\build\\app\\intermediates\\transforms\\r8\\release\\0\\classes.dex
+#Wed Nov 03 10:50:19 KST 2021
+base.0=C\:\\Users\\Playdata\\Documents\\Flutter_Project_Final\\Flutter\\build\\app\\intermediates\\transforms\\r8\\release\\0\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

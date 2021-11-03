@@ -27,10 +27,6 @@ class _ResultSquatState extends State<ResultSquat> {
             SizedBox(
               height: size.height * 0.12,
             ),
-            Text(
-              '축하합니다!',
-              style: TextStyle(fontSize: 40, color: Colors.redAccent),
-            ),
             Container(
               height: size.height * 0.4,
               decoration: BoxDecoration(
@@ -52,7 +48,7 @@ class _ResultSquatState extends State<ResultSquat> {
                 onPressed: () {
                   sendTrainInfo();
                   final snackBar = SnackBar(
-                    duration: const Duration(milliseconds: 500),
+                    duration: const Duration(milliseconds: 1500),
                     content: const Text("운동 정보 저장이 완료되었습니다."),
                   );
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);

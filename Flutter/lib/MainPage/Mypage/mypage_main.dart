@@ -33,7 +33,7 @@ class _myPageState extends State<myPage> {
         child: ListView(
           padding: EdgeInsets.all(24),
           children: [
-            SettingsGroup(title: '설정', children: [
+            SettingsGroup(title: '', children: [
               myInfo(context),
               introduction(context),
               sendFeedback(),

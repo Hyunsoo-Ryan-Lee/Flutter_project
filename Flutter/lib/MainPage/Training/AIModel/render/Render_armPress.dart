@@ -391,12 +391,18 @@ class _RenderDataArmPressState extends State<RenderDataArmPress> {
             ),
           ),
         ),
-        ElevatedButton(
+        IconButton(
             onPressed: () {
-              print(widget.count);
-              incrementCounter();
+              Navigator.of(context).pop();
             },
-            child: Text('버튼 : $_counter')),
+            icon: const Icon(Icons.arrow_back))
+
+        // ElevatedButton(
+        //     onPressed: () {
+        //       print(widget.count);
+        //       incrementCounter();
+        //     },
+        //     child: Text('버튼 : $_counter')),
       ],
     );
   }
